@@ -13,6 +13,29 @@ cd scripts
 python ilp_plot.py
 ```
 
+## How to generate the circuits used in evaluation (optional)
+
+NWQBench:
+1. Clone the repository:
+```shell
+git clone git@github.com:pnnl/nwqbench.git
+git checkout 3c322b789f5a26636d368253817c8d3f4676ae52  # optional
+```
+2. Manually remove the line "pip==21.1.2" from requirements.txt (optional) and then follow the instructions of NWQBench to install it (i.e., `pip install -r requirements.txt`).
+3. Run the following commands to generate the `bv` circuits:
+```shell
+cd NWQ_Bench
+cd bv
+python bv.py 28
+python bv.py 29
+python bv.py 31
+python bv.py 32
+python bv.py 33
+python bv.py 34
+python bv.py 42
+```
+Similar for `ising` and `ising.py`, `qsvm` and `qsvm_raw.py`, `vqc` and `vqc_raw.py`.
+4. Copy the result circuits from `(path/to/nwqbench)/NWQ_Bench/bv/qasm/` (and similar for others) to `(path/to/torque-artifact)/circuit/NWQBench`.
 
 # TODO: Remove Quartz below
 
