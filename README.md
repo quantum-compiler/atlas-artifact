@@ -19,6 +19,7 @@ NWQBench:
 1. Clone the repository:
 ```shell
 git clone git@github.com:pnnl/nwqbench.git
+cd nwqbench
 git checkout 3c322b789f5a26636d368253817c8d3f4676ae52  # optional
 ```
 2. Manually remove the line "pip==21.1.2" from requirements.txt (optional) and then follow the instructions of NWQBench to install it (i.e., `pip install -r requirements.txt`).
