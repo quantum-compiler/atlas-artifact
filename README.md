@@ -1,19 +1,63 @@
 # Torque: Fast and Scalable Quantum Circuit Simulation on a Machine Learning System
 
-## Circuit Partitioner
-
-To run the experiment:
+Torque is built on [Quartz](https://github.com/quantum-compiler/quartz).
+To run the artifact, please install Quartz and copy the necessary circuits first.
+Following parts will assume that these commands are executed:
 ```shell
-./build/benchmark_ilp_num_stages
+# Create Python environment
+cd deps/quartz
+conda env create --name quartz --file env.yml
+conda activate quartz
+
+# Build Quartz
+mkdir build
+cd build
+cmake ..
+
+# Copy circuits
+cd ../../..
+yes | cp -rf circuit deps/quartz
 ```
 
-To plot the results:
+## Circuit Partitioner
+
+To plot the existing results:
 ```shell
-cd scripts
+cd partitioner_bench
 python ilp_plot.py
 ```
 
+To run the experiment and update the results (takes ~TODO hours):
+```shell
+cd deps/quartz/build
+make benchmark_ilp_num_stages
+cd ..
+./build/benchmark_ilp_num_stages
+cp ilp_result.csv ../../partitioner_bench
+```
+
+## Circuit Kernelizer
+
+To plot the existing results:
+```shell
+cd kernelizer_bench
+python dp_plot.py
+```
+
+To run the experiment and update the results (takes ~9 hours):
+```shell
+cd deps/quartz/build
+make benchmark_dp
+./benchmark_dp
+cp ilp_result.csv ../../partitioner_bench
+```
+
 ## How to generate the circuits used in evaluation (optional)
+
+We include all circuits used in evaluation in this repository so there is no need to generate them again.
+These instructions are only for your information.
+
+MQT Bench: Download the circuits from https://www.cda.cit.tum.de/mqtbench/. Choose scalable benchmarks and "Target-independent Level"->"Qiskit".
 
 NWQBench:
 1. Clone the repository:
@@ -36,4 +80,4 @@ python qsvm_raw.py 34
 python qsvm_raw.py 42
 ```
 Similar for `ising` and `ising.py`, `vqc` and `vqc_raw.py`.
-4. Copy the result circuits from `(path/to/nwqbench)/NWQ_Bench/bv/qasm/` (and similar for others) to `(path/to/torque-artifact)/deps/quartz/circuit/NWQBench`.
+4. The result circuits are in the folder `(path/to/nwqbench)/NWQ_Bench/bv/qasm/` (and similar for others).
