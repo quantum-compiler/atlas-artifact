@@ -27,7 +27,7 @@ cd partitioner_bench
 python ilp_plot.py
 ```
 
-To run the experiment and update the results (takes ~TODO hours):
+To run the experiment and update the results (takes ~14 hours):
 ```shell
 cd deps/quartz/build
 make benchmark_ilp_num_stages
@@ -44,12 +44,13 @@ cd kernelizer_bench
 python dp_plot.py
 ```
 
-To run the experiment and update the results (takes ~9 hours):
+To run the experiment and update the results (takes ~17 hours):
 ```shell
 cd deps/quartz/build
 make benchmark_dp
 ./benchmark_dp
-cp ilp_result.csv ../../partitioner_bench
+cd ..
+cp dp_result.csv ../../kernelizer_bench
 ```
 
 ## How to generate the circuits used in evaluation (optional)
@@ -57,7 +58,14 @@ cp ilp_result.csv ../../partitioner_bench
 We include all circuits used in evaluation in this repository so there is no need to generate them again.
 These instructions are only for your information.
 
-MQT Bench: Download the circuits from https://www.cda.cit.tum.de/mqtbench/. Choose scalable benchmarks and "Target-independent Level"->"Qiskit".
+MQT Bench:
+1. Download the circuits from https://www.cda.cit.tum.de/mqtbench/. Choose scalable benchmarks and "Target-independent Level"->"Qiskit".
+2. Change the SWAP gates to logical qubit swaps:
+```shell
+cd deps/quartz/build
+make test_remove_swap
+./test_remove_swap
+```
 
 NWQBench:
 1. Clone the repository:
@@ -73,6 +81,7 @@ cd NWQ_Bench
 cd qsvm
 python qsvm_raw.py 28
 python qsvm_raw.py 29
+# The 30-qubit circuit already exists
 python qsvm_raw.py 31
 python qsvm_raw.py 32
 python qsvm_raw.py 33
@@ -80,4 +89,4 @@ python qsvm_raw.py 34
 python qsvm_raw.py 42
 ```
 Similar for `ising` and `ising.py`, `vqc` and `vqc_raw.py`.
-4. The result circuits are in the folder `(path/to/nwqbench)/NWQ_Bench/bv/qasm/` (and similar for others).
+4. The result circuits are in the folder `(path/to/nwqbench)/NWQ_Bench/qsvm/qasm/` (and similar for others).

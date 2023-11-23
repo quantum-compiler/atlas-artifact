@@ -47,7 +47,7 @@ results_geomean = [
     }
     for results_item in results
 ]
-labels = ['SnuQS', 'SnuQS', 'Torque', 'Torque']
+labels = ['SnuQS', 'SnuQS', 'Atlas', 'Atlas']
 styles = ['x-', 'x-', '.-', '.-']
 markersize = [4, 4, 8, 8]
 

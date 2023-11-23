@@ -7,8 +7,9 @@ from matplotlib import ticker
 num_of_num_local_qubits = {}
 max_global_qubits = 24
 circuit_name = None
-ts = [-5, 0, 2, 4, 10, 20, 50, 100, 200,
-      300, 400, 500, 600, 800, 1000, 2000, 3000]
+ts = [-5, 0, 2, 4, 10, 16, 20, 32,
+      50, 70, 100, 150, 200, 300, 400, 500,
+      650, 800, 1000, 1500, 2000, 3000, 4000]
 num_t = len(ts)
 results = [{} for _ in range(num_t)]
 running_time = [{} for _ in range(num_t)]
@@ -79,7 +80,7 @@ running_time_geomean = [
     for time_item in running_time_without_hhl
 ]
 
-labels = ['Baseline', 'Torque-Naïve'] + ['Torque'] * (num_t - 2)
+labels = ['Baseline', 'Atlas-Naïve'] + ['Atlas'] * (num_t - 2)
 styles = ['.-', '+-'] + ['x-'] * (num_t - 2)
 markersize = [8] * num_t
 plot_loc = [11, 1, 0]
