@@ -15,6 +15,7 @@ results = [{} for _ in range(num_t)]
 running_time = [{} for _ in range(num_t)]
 ilp_time = {}
 total_time = 0.0
+total_preprocessing_time = {}
 keep_circuit_names = {"ae", "dj", "ghz", "graphstate", "qft", "qpeexact", "su2random", "wstate", "ising", "qsvm",
                       "vqc", "hhl"}
 num_circuits = len(keep_circuit_names)
@@ -42,10 +43,13 @@ with open('dp_result.csv') as f:
                 running_time[i][circuit_name] = []
         if circuit_name not in ilp_time.keys():
             ilp_time[circuit_name] = []
+            total_preprocessing_time[circuit_name] = 0.0
         for i in range(num_t):
             running_time[i][circuit_name].append(float(numbers[i + num_t + 2].strip()))
             total_time += float(numbers[i + num_t + 2].strip())
         ilp_time[circuit_name].append(float(numbers[num_t * 2 + 2].strip()))
+        total_preprocessing_time[circuit_name] += float(numbers[num_t * 2 + 2].strip()) + float(
+            numbers[15 + num_t + 2].strip())
         total_time += float(numbers[num_t * 2 + 2].strip())
 
 results_without_hhl = [
@@ -83,11 +87,20 @@ running_time_geomean = [
 labels = ['Baseline', 'Atlas-Naïve'] + ['Atlas'] * (num_t - 2)
 styles = ['.-', '+-'] + ['x-'] * (num_t - 2)
 markersize = [8] * num_t
-plot_loc = [11, 1, 0]
+plot_loc = [15, 1, 0]
 
 
 def plot_individual():
-    for circuit in sorted(keep_circuit_names):
+    keep_circuit_names_sorted = [x for x in sorted(keep_circuit_names) if x != 'hhl'] + ["hhl"]
+
+    # to_ref = ','.join([f'fig:dp_{circuit}' for circuit in keep_circuit_names_sorted[:-1]])
+    # print(f'\\Cref{{{to_ref}}} show the resulting cost of \\Syss kernelizer for each circuit'
+    #       ' compared against a baseline greedily packing gates into'
+    #       'fusion kernels up to 5 qubits. ``\\Sys-Na\\"ive\'\' stands for \\tcd{OrderedKernelizer}.')
+    # to_ref = ','.join([f'fig:dp_time_{circuit}' for circuit in keep_circuit_names_sorted[:-1]])
+    # print(f'\\Cref{{{to_ref}}} show the preprocessing time of them.')
+
+    for circuit in keep_circuit_names_sorted:
         qubit_range = range(28, 35) if circuit != "hhl" else [4, 7, 9, 10]
         plt.cla()
         plt.figure(constrained_layout=True)
@@ -113,16 +126,27 @@ def plot_individual():
         # text.set_fontfamily('Sans Serif')
         fig.set_size_inches(5.6, 2.7)
         fig.savefig(f'dp_plot_{circuit}.pdf', dpi=800)
+        #         print(
+        #             f'''
+        # \\begin{{figure}}
+        # \\small
+        # \\begin{{minipage}}{{0.48\\linewidth}}
+        # \\includegraphics[width=0.99\\linewidth]{{figures/dp/dp_plot_{circuit}.pdf}}
+        # \\end{{minipage}}'''
+        #         )
         print(
             f'''
-\\begin{{figure}}
-\\small
-\\begin{{minipage}}{{0.48\\linewidth}}
-\\includegraphics[width=0.99\\linewidth]{{figures/dp/dp_plot_{circuit}.pdf}}
-\\end{{minipage}}'''
+\\begin{{figure}}[H]
+\\centering
+\\includegraphics[width=0.97\\linewidth]{{figures/dp/dp_plot_{circuit}.pdf}}
+\\caption{{The total execution cost of different kernelizers on the circuit \\tcd{{{circuit}}}.}}
+\\label{{fig:dp_{circuit}}}
+\\end{{figure}}'''
         )
         plt.close()
 
+    for circuit in keep_circuit_names_sorted:
+        qubit_range = range(28, 35) if circuit != "hhl" else [4, 7, 9, 10]
         plt.cla()
         plt.figure(constrained_layout=True)
         for i in plot_loc:
@@ -140,30 +164,44 @@ def plot_individual():
         )
         plt.ylabel('Preprocessing time (s)', fontsize=12, fontweight='bold')
         plt.yticks(fontsize=12)
-        if circuit == "hhl":
-            plt.yscale("log")
-        else:
-            plt.ylim(bottom=0)
+        # if circuit == "hhl":
+        plt.yscale("log")
+        # else:
+        #     plt.ylim(bottom=0)
         fig = plt.gcf()
         legend = plt.legend(fontsize=12, ncol=2)  # , loc='lower right')
         # text = legend.get_texts()[0]
         # text.set_fontfamily('Sans Serif')
         fig.set_size_inches(5.6, 2.7)
         fig.savefig(f'dp_time_{circuit}.pdf', dpi=800)
+        #         print(
+        #             f'''\\hfill
+        # \\begin{{minipage}}{{0.48\\linewidth}}
+        # \\includegraphics[width=0.99\\linewidth]{{figures/dp/dp_time_{circuit}.pdf}}
+        # \\end{{minipage}}
+        # \\caption{{The total execution cost and corresponding preprocessing time of different kernelizer algorithms on the circuit \\tcd{{{circuit}}}.}}
+        # \\label{{fig:dp_{circuit}}}
+        # \\end{{figure}}
+        #     '''
+        #         )
+
         print(
-            f'''\\hfill
-\\begin{{minipage}}{{0.48\\linewidth}}
-\\includegraphics[width=0.99\\linewidth]{{figures/dp/dp_time_{circuit}.pdf}}
-\\end{{minipage}}
-\\caption{{The total execution cost and corresponding preprocessing time of different kernelizer algorithms on the circuit \\tcd{{{circuit}}}.}}
-\\label{{fig:dp_{circuit}}}
-\\end{{figure}}
-    '''
+            f'''
+\\begin{{figure}}[H]
+\\centering
+\\includegraphics[width=0.97\\linewidth]{{figures/dp/dp_time_{circuit}.pdf}}
+\\caption{{The preprocessing time of different kernelizers on the circuit \\tcd{{{circuit}}}.}}
+\\label{{fig:dp_time_{circuit}}}
+\\end{{figure}}'''
         )
         plt.close()
 
-    to_ref = ','.join([f'fig:dp_{circuit}' for circuit in sorted(keep_circuit_names)])
-    print(f'\\Cref{{{to_ref}}}')
+    to_ref = ','.join([f'fig:dp_{circuit}' for circuit in keep_circuit_names_sorted[:-1]])
+    print(f'\\Cref{{{to_ref}}} show the resulting cost of \\Syss kernelizer for each circuit'
+          ' compared against a baseline greedily packing gates into'
+          'fusion kernels up to 5 qubits. ``\\Sys-Na\\"ive\'\' stands for \\tcd{OrderedKernelizer}.')
+    to_ref = ','.join([f'fig:dp_time_{circuit}' for circuit in keep_circuit_names_sorted[:-1]])
+    print(f'\\Cref{{{to_ref}}} show the preprocessing time of them.')
 
 
 def plot_geomean():
@@ -188,7 +226,7 @@ def plot_geomean():
     # ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
     plt.ylabel('Geometric mean cost', fontsize=12, fontweight='bold')
     plt.yticks(fontsize=12)
-    plt.ylim(bottom=0, top=1500)
+    plt.ylim(bottom=0, top=3200)
     fig = plt.gcf()
     legend = plt.legend(fontsize=12, ncol=2, loc='upper left')
     # text = legend.get_texts()[0]
@@ -254,7 +292,7 @@ def plot_pruning_threshold():
     plt.yscale("log")
     plt.xscale("log")
     for x, y, text in zip(xs, ys, ts[3:]):
-        ax.annotate(text, xy=(x, y * 1.005), fontsize=6)
+        ax.annotate(text, xy=(x, y * 1.003), fontsize=8)
         # plt.text(x, y, text)
     ax.plot(xs, ys, 'x-', label=labels[2])
     ax.plot(running_time_geomean[1], results_geomean_without_hhl[1] / results_geomean_without_hhl[0], '*',
@@ -268,13 +306,14 @@ def plot_pruning_threshold():
     fmt = ticker.StrMethodFormatter("{x:.2f}")
     ax.yaxis.set_major_formatter(fmt)
     ax.yaxis.set_minor_formatter(fmt)
-    fig.set_size_inches(5.6, 2.7)
+    fig.set_size_inches(11, 5)
     fig.savefig('dp_pruning_threshold.pdf', dpi=800)
     print(f'''
-\\begin{{figure}}
+\\begin{{figure*}}
 \\centering
 \\includegraphics[width=0.99\\linewidth]{{figures/dp/dp_pruning_threshold.pdf}}
-\\end{{figure}}'''
+\\label{{fig:dp-pruning}}
+\\end{{figure*}}'''
           )
     plt.close()
 
@@ -285,3 +324,5 @@ if __name__ == '__main__':
     plot_geomean_relative()
     plot_pruning_threshold()
     print('total time =', total_time)
+    print('total preprocessing time =', total_preprocessing_time)
+    print(sum(v for k, v in total_preprocessing_time.items() if k != 'hhl'))
