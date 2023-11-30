@@ -1,6 +1,6 @@
-# Torque: Fast and Scalable Quantum Circuit Simulation on a Machine Learning System
+# Atlas: Hierarchical Partitioning for Quantum Circuit Simulation on GPUs
 
-Torque is built on [Quartz](https://github.com/quantum-compiler/quartz).
+Atlas is built on [Quartz](https://github.com/quantum-compiler/quartz).
 To run the artifact, please install Quartz and copy the necessary circuits first.
 Following parts will assume that these commands are executed:
 ```shell
@@ -19,11 +19,11 @@ cd ../../..
 yes | cp -rf circuit deps/quartz
 ```
 
-## Circuit Partitioner
+## Circuit Staging
 
-To plot the existing results:
+To plot the existing results in Figures 9 and 11:
 ```shell
-cd partitioner_bench
+cd staging_bench
 python ilp_plot.py
 ```
 
@@ -33,14 +33,14 @@ cd deps/quartz/build
 make benchmark_ilp_num_stages
 cd ..
 ./build/benchmark_ilp_num_stages
-cp ilp_result.csv ../../partitioner_bench
+cp ilp_result.csv ../../staging_bench
 ```
 
-## Circuit Kernelizer
+## Circuit Kernelization
 
-To plot the existing results:
+To plot the existing results in Figure 6 and Figures 12 to 36:
 ```shell
-cd kernelizer_bench
+cd kernelization_bench
 python dp_plot.py
 ```
 
@@ -50,7 +50,7 @@ cd deps/quartz/build
 make benchmark_dp
 ./benchmark_dp
 cd ..
-cp dp_result.csv ../../kernelizer_bench
+cp dp_result.csv ../../kernelization_bench
 ```
 
 ## How to generate the circuits used in evaluation (optional)
@@ -60,7 +60,7 @@ These instructions are only for your information.
 
 MQT Bench:
 1. Download the circuits from https://www.cda.cit.tum.de/mqtbench/. Choose scalable benchmarks and "Target-independent Level"->"Qiskit".
-2. Change the SWAP gates to logical qubit swaps:
+2. Replace the SWAP gates with logical qubit swaps because some previous work does not support SWAP gates, and this replacement does not affect the result:
 ```shell
 cd deps/quartz/build
 make test_remove_swap
