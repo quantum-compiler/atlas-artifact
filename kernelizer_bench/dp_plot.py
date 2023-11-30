@@ -84,7 +84,7 @@ running_time_geomean = [
     for time_item in running_time_without_hhl
 ]
 
-labels = ['Baseline', 'Atlas-Naïve'] + ['Atlas'] * (num_t - 2)
+labels = ['Baseline', 'Atlas-Naive'] + ['Atlas'] * (num_t - 2)
 styles = ['.-', '+-'] + ['x-'] * (num_t - 2)
 markersize = [8] * num_t
 plot_loc = [15, 1, 0]
@@ -139,7 +139,7 @@ def plot_individual():
 \\begin{{figure}}[H]
 \\centering
 \\includegraphics[width=0.97\\linewidth]{{figures/dp/dp_plot_{circuit}.pdf}}
-\\caption{{The total execution cost of different kernelizers on the circuit \\tcd{{{circuit}}}.}}
+\\caption{{The total execution cost of different kernelization algorithms on the circuit \\tcd{{{circuit}}}.}}
 \\label{{fig:dp_{circuit}}}
 \\end{{figure}}'''
         )
@@ -190,16 +190,16 @@ def plot_individual():
 \\begin{{figure}}[H]
 \\centering
 \\includegraphics[width=0.97\\linewidth]{{figures/dp/dp_time_{circuit}.pdf}}
-\\caption{{The preprocessing time of different kernelizers on the circuit \\tcd{{{circuit}}}.}}
+\\caption{{The preprocessing time of different kernelization algorithms on the circuit \\tcd{{{circuit}}}.}}
 \\label{{fig:dp_time_{circuit}}}
 \\end{{figure}}'''
         )
         plt.close()
 
     to_ref = ','.join([f'fig:dp_{circuit}' for circuit in keep_circuit_names_sorted[:-1]])
-    print(f'\\Cref{{{to_ref}}} show the resulting cost of \\Syss kernelizer for each circuit'
+    print(f'\\Cref{{{to_ref}}} show the resulting cost of kernelization algorithms for each circuit'
           ' compared against a baseline greedily packing gates into'
-          'fusion kernels up to 5 qubits. ``\\Sys-Na\\"ive\'\' stands for \\tcd{OrderedKernelizer}.')
+          'fusion kernels up to 5 qubits. ``\\Sys\'\' denotes \\kernelize{}. ``\\Sys-Naive\'\' denotes \\dpordered{}.')
     to_ref = ','.join([f'fig:dp_time_{circuit}' for circuit in keep_circuit_names_sorted[:-1]])
     print(f'\\Cref{{{to_ref}}} show the preprocessing time of them.')
 
@@ -263,14 +263,14 @@ def plot_geomean_relative():
     plt.xlabel('Circuit Name', fontsize=12, fontweight='bold')
     ax.set_xticks(x + 0.5 - width, results_circuit_names_without_hhl)
     # ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
-    plt.ylabel('Relative Geomean Cost', fontsize=12, fontweight='bold')
+    plt.ylabel('Relative Geomean Cost   ', fontsize=12, fontweight='bold')
     plt.yticks(fontsize=12)
-    plt.ylim(bottom=0, top=1.6)
+    plt.ylim(bottom=0, top=1.71)
     fig = plt.gcf()
-    legend = plt.legend(fontsize=12, ncol=2, loc='upper left')
+    legend = plt.legend(fontsize=12, ncol=3, loc='upper left')
     # text = legend.get_texts()[0]
     # text.set_fontfamily('Sans Serif')
-    fig.set_size_inches(11, 3.5)
+    fig.set_size_inches(11, 2.5)
     fig.savefig(f'dp_circuit_geomean_relative.pdf', dpi=800)
     print(f'''
 \\begin{{figure}}
@@ -306,7 +306,7 @@ def plot_pruning_threshold():
     fmt = ticker.StrMethodFormatter("{x:.2f}")
     ax.yaxis.set_major_formatter(fmt)
     ax.yaxis.set_minor_formatter(fmt)
-    fig.set_size_inches(11, 5)
+    fig.set_size_inches(11, 5.6)
     fig.savefig('dp_pruning_threshold.pdf', dpi=800)
     print(f'''
 \\begin{{figure*}}
