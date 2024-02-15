@@ -252,6 +252,7 @@ def plot_geomean_relative():
         offset = width * multiplier
         to_plot = [results_circuit_geomean[i][j] / results_circuit_geomean[0][j] for j in
                    range(len(results_circuit_geomean[i]))]
+        print(f'Geomean of {labels[i]}: {np.array(to_plot).prod() ** (1.0 / len(to_plot))}')
         rects = ax.bar(
             x + offset,
             to_plot,
