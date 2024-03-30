@@ -297,7 +297,10 @@ def plot_pruning_threshold():
         # plt.text(x, y, text)
     ax.plot(xs, ys, 'x-', label=labels[2])
     ax.plot(running_time_geomean[1], results_geomean_without_hhl[1] / results_geomean_without_hhl[0], '*',
-            label=labels[1])
+            label=labels[1], markersize=12)
+    ax.annotate('Atlas-Naive',
+                xy=(running_time_geomean[1] * 1.1, results_geomean_without_hhl[1] / results_geomean_without_hhl[0]),
+                fontsize=8)
     # ax.plot(running_time_geomean[0], results_geomean_without_hhl[0] / results_geomean_without_hhl[0], '^', label=labels[0])
     legend = plt.legend(fontsize=12, ncol=2)  # , loc='lower right')
     # text = legend.get_texts()[0]

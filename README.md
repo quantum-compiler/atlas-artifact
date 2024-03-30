@@ -17,6 +17,9 @@ cmake ..
 # Copy circuits
 cd ../../..
 yes | cp -rf circuit deps/quartz
+cd circuit
+bash copy.sh
+cd ..
 ```
 
 ## Circuit Staging
@@ -52,6 +55,97 @@ make benchmark_dp
 cd ..
 cp dp_result.csv ../../kernelization_bench
 ```
+
+## End-to-end experiments
+
+We run the end-to-end experiments on Perlmutter.
+
+### cuQuantum
+```shell
+cd perlmutter/e2e
+bash cuQuantum.sh 1 1 28  # takes less than 1 minute each
+bash cuQuantum.sh 1 2 29
+bash cuQuantum.sh 1 4 30
+bash cuQuantum.sh 2 4 31
+bash cuQuantum.sh 4 4 32
+bash cuQuantum.sh 8 4 33
+bash cuQuantum.sh 16 4 34
+```
+
+### Qiskit
+```shell
+cd perlmutter/e2e
+bash Qiskit.sh 1 1 28  # takes around 3 minutes
+bash Qiskit.sh 1 2 29  # takes around 12 minutes
+bash Qiskit.sh 1 4 30  # takes around 47 minutes, recommended to allocate a node first
+```
+
+## DRAM Offloading
+
+We run the DRAM offloading experiments on Perlmutter.
+
+### Atlas
+
+1. Create a Python 3.8 environment with PuLP:
+```shell
+module load conda
+conda create --name pulp python=3.8
+conda activate pulp
+pip install pulp
+```
+
+2. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct location.
+
+3. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
+```shell
+cd build
+make -j 12
+cd ../scripts/perlmutter/offload
+salloc --nodes 1 -q regular --time 00:30:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
+bash offload.sh  # takes around 25 minutes
+```
+
+### QDAO-Qiskit
+
+1. Download and build QDAO v0.1.0 (assuming `qdao/` and `atlas-artifact/` share the same parent directory):
+```shell
+module load conda
+# at the parent directory of atlas-artifact now
+git clone https://github.com/Zhaoyilunnn/qdao.git
+cd qdao
+git checkout tags/v0.1.0
+conda create --name qdao python=3.9
+conda activate qdao
+pip install .
+```
+2. Comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L58) in the QDAO directory you just downloaded.
+3. Copy the scripts to QDAO directory and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
+```shell
+cp ../atlas-artifact/perlmutter/offload/run_qdao.py .
+cp ../atlas-artifact/perlmutter/offload/run_qdao.sh .
+salloc --nodes 1 -q regular --time 00:45:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
+LD_LIBRARY_PATH="" time bash run_qdao.sh  # takes around 28 minutes
+```
+The results are stored in `qdao/logs`.
+4. Copy the results back:
+```shell
+cp -r logs ../atlas-artifact/perlmutter/offload/logs/qdao-qiskit
+```
+
+### QDAO-cuQuantum
+
+1. Complete the first three steps in the QDAO-Qiskit section (`LD_LIBRARY_PATH="" time bash run_qdao.sh` is optional).
+2. Because cuQuantum is not integrated with quafu, please replace this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/simulator.py#L26) from `SIMS = {"qiskit": QiskitSimulator, "quafu": QuafuSimulator}` to `SIMS = {"qiskit": QiskitSimulator}`, replace this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/circuit.py#L119) from `INITIALIZERS = {"qiskit": QiskitCircuitWrapper, "quafu": QuafuCircuitHelper}` to `INITIALIZERS = {"qiskit": QiskitCircuitWrapper}`, and comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/simulator.py#L4) and this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/circuit.py#L9) (import statements). Please also comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L105).
+3. Run in interactive mode (assuming the same instance with:
+```shell
+shifter --image="nvcr.io/nvidia/cuquantum-appliance:23.03" bash run_qdao.sh 0  # takes 9-10 minutes
+```
+The results are stored in `qdao/logs`.
+4. Copy the results back:
+```shell
+cp -r logs ../atlas-artifact/perlmutter/offload/logs/qdao-cuquantum
+```
+
 
 ## How to generate the circuits used in evaluation (optional)
 

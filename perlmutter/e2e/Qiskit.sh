@@ -21,7 +21,7 @@ srun --account=m4138 \
      --gpus=${NUM_GPUS} \
      shifter --image="${REGISTRY}/${IMAGE_NAME}:${IMAGE_TAG}" \
      --module=cuda-mpich \
-     python dist_cuquantum.py --nqubits $3
+     python dist_cuquantum.py --qiskit --nqubits $3
      
 
 # python -m cuquantum_benchmarks circuit --frontend qiskit --backend cusvaer --benchmark general --name qft --nqubits 31 --ngpus 1 --precision double --cusvaer-global-index-bits 1 --cusvaer-p2p-device-bits 2 --cusvaer-comm-plugin-type mpi_mpich --cusvaer-comm-plugin-soname libmpi.so > /pscratch/sd/z/zjia/qs/result-srun/cusvaer/qft_31.log

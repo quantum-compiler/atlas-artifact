@@ -69,7 +69,7 @@ for bench in benchmark:
     for nq in num_qubits:
         t = 0
         try:
-            with open('./hyquas-new/on_'+bench+'_'+str(nq)+'.log', 'r') as f:
+            with open('./hyquas/on_'+bench+'_'+str(nq)+'.log', 'r') as f:
                 last_lines = f.readlines()
                 for line in last_lines:
                     match = re.search(pattern_hyquas, line)
@@ -111,22 +111,22 @@ for bench in benchmark:
 # print(simu_time_cusv)
 
 #read data from file: qiskit
-# for bench in benchmark:
-#     simulation_time = []
-#     for nq in num_qubits:
-#         t = 0
-#         try:
-#             with open('./result/qiskit/'+bench+'_'+str(nq)+'.log', 'r') as f:
-#                 last_lines = f.readlines()
-#                 for line in last_lines:
-#                     match = re.search(pattern_cusv, line)
-#                     if match:
-#                         t_rank = float(match.group(2))
-#                         t = max(t,t_rank)
-#                 simulation_time.append(t*1000)
-#         except IOError as e:
-#             simulation_time.append(None)
-#     simu_time_qiskit[bench] = simulation_time
+for bench in benchmark:
+    simulation_time = []
+    for nq in num_qubits:
+        t = 0
+        try:
+            with open('./qiskit/'+bench+'_'+str(nq)+'_0.log', 'r') as f:
+                last_lines = f.readlines()
+                for line in last_lines:
+                    match = re.search(pattern_cusvaer, line)
+                    if match:
+                        t_rank = float(match.group(1))
+                        t = max(t,t_rank)
+                simulation_time.append(t)
+        except IOError as e:
+            simulation_time.append(None)
+    simu_time_qiskit[bench] = simulation_time
 
 # print(simu_time_qiskit)
 
@@ -148,8 +148,8 @@ for bench in benchmark:
 
 # print(compile_time_quartz)
 
-# baselines = {'Torque':simu_time_quartz, "HyQuas":simu_time_hyquas, "cuQuantum": simu_time_cusv, "Qiskit": simu_time_qiskit}
-baselines = {'Torque':simu_time_quartz, "HyQuas":simu_time_hyquas,"cuQuantum": simu_time_cusv}
+baselines = {'Atlas':simu_time_quartz, "HyQuas":simu_time_hyquas, "cuQuantum": simu_time_cusv, "Qiskit": simu_time_qiskit}
+# baselines = {'Torque':simu_time_quartz, "HyQuas":simu_time_hyquas,"cuQuantum": simu_time_cusv}
 speedups = []
 mean_speedups = []
 for circuit in benchmark:
@@ -176,17 +176,20 @@ def plot_perf(circuit):
     ax = plt.gca()
     plt.grid(False, axis='y')
     best_baseline = np.repeat(1e12,len(num_qubits))
+    show_full_qiskit = False
+    max_y = 0
+    for baseline in baselines:
+        if baseline != 'Qiskit':
+            max_y = max(max_y, max(baselines[baseline][circuit]) * 1.05)
     for baseline in baselines:
         # c = next(color)
         m = next(marker)
-        if baseline == 'Torque':
-            name = 'Atlas'
-        else:
-            name = baseline
-        plt.plot(num_qubits, baselines[baseline][circuit], m, label=name, markersize=8)
-        if baseline == 'Torque':
+        name = baseline
+        if baseline == 'Qiskit' and not show_full_qiskit and baselines[baseline][circuit][0] * 1.05 >= max_y:
+            # out of plot, do not plot
             continue
-        else:
+        plt.plot(num_qubits, baselines[baseline][circuit], m, label=name, markersize=8)
+        if baseline != 'Atlas':
             tmp = np.array(baselines[baseline][circuit])
             tmp[tmp==None] = 1e10
             best_baseline = np.minimum(best_baseline, tmp)
@@ -203,13 +206,17 @@ def plot_perf(circuit):
     plt.xticks(num_qubits,labels=[str(num_gpus[x])+'\n('+str(round(improve[x],1))+'x)' for x in range(len(num_gpus))],fontsize=13)
     # plt.xticks(num_qubits,labels=[str(num_gpus[x]) for x in range(len(num_gpus))],fontsize=12)
     plt.yticks(fontsize=12)
+    if show_full_qiskit:
+        plt.yscale('log')
+    else:
+        plt.ylim(bottom=0, top=max_y)
 
     plt.xlabel('Number of GPUs / Speedup of Atlas', fontsize=14, fontweight='bold')
     plt.ylabel('Simulation Time (ms)', fontsize=14, fontweight='bold')
     fig = plt.gcf()
     plt.legend(fontsize=13, ncol=1)
     fig.set_size_inches(6, 2.9)
-    plt.savefig('./fig-largefont/'+circuit+'_perf.pdf', dpi=1000, bbox_inches='tight')
+    plt.savefig(f'./figures/{circuit}_perf{"_log" if show_full_qiskit else ""}.pdf', dpi=1000, bbox_inches='tight')
 
 def plot_scalability():
     gpu = ["1", "2", "4"]
