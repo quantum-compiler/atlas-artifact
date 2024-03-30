@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo " Defaults for Linux machine"
+
+# set CUQUANTUM dir
+CUQUANTUM_DIR=~/cuquantum-linux-x86_64-23.03.0.20-archive
+
+# set CUDA dir in case cmake cannot autodetect a path
+CUDA_DIR=/opt/nvidia/hpc_sdk/Linux_x86_64/23.9/cuda/12.2
+# CUDA_DIR=/usr/local/cuda-11.7
+
+# set nccl dir
+NCCL_DIR=/global/common/software/nersc9/nccl/2.19.4
+# NCCL_DIR=~/nccl/build
+
+# backend
+USE_LEGION=OFF
+
+. $(dirname $0)/config.inc
+run_cmake $*
