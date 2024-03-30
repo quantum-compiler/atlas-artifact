@@ -116,6 +116,10 @@ sbatch srun-8-quartz.sh
 sbatch srun-16-quartz.sh
 ```
 
+### HyQuas
+
+TODO
+
 ### cuQuantum
 1. Replace `YOUR_ACCOUNT` with your account name in `perlmutter/e2e/cuQuantum.sh`.
 2. Run:
@@ -143,6 +147,14 @@ bash Qiskit.sh 1 4 30  # takes around 47 minutes, recommended to allocate a node
 ## DRAM Offloading
 
 We run the DRAM offloading experiments on Perlmutter.
+
+To plot the existing results in Figure 6:
+```shell
+cd perlmutter/offload
+python plot_offload.py
+```
+
+Following are the instructions to run the experiment and reproduce the results.
 
 ### Atlas
 

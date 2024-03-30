@@ -151,18 +151,32 @@ for bench in benchmark:
 
 baselines = {'Atlas':simu_time_quartz, "HyQuas":simu_time_hyquas, "cuQuantum": simu_time_cusv, "Qiskit": simu_time_qiskit}
 # baselines = {'Atlas':simu_time_quartz, "HyQuas":simu_time_hyquas,"cuQuantum": simu_time_cusv}
+for baseline, simu_time in baselines.items():
+    if baseline == 'Atlas':
+        continue
+    speedups = []
+    mean_speedups = []
+    for circuit in benchmark:
+        cuquantum = np.array(simu_time[circuit])
+        quartz = np.array(simu_time_quartz[circuit])
+        if baseline == 'Qiskit':
+            cuquantum = cuquantum[:3]
+            quartz = quartz[:3]
+        speedup = cuquantum / quartz
+        mean_speedups.append(speedup.mean())
+        speedups.append(speedup.max())
+    print('max speedup over', baseline, np.array(speedups).max())
+    print('mean speedup over', baseline, np.array(mean_speedups).mean())
 speedups = []
 mean_speedups = []
 for circuit in benchmark:
-    cuquantum = np.array(simu_time_cusv[circuit])
-    # hyquas = np.array(simu_time_hyquas[circuit])
+    best = np.minimum(np.array(simu_time_hyquas[circuit]), np.array(simu_time_cusv[circuit]))
     quartz = np.array(simu_time_quartz[circuit])
-    speedup = cuquantum / quartz
-    # speedups.append(speedup.mean())
+    speedup = best / quartz
     mean_speedups.append(speedup.mean())
     speedups.append(speedup.max())
-print(np.array(speedups).max())
-print(np.array(mean_speedups).mean())
+print('max speedup over best for each individual circuit', np.array(speedups).max())
+print('mean speedup over best for each individual circuit', np.array(mean_speedups).mean())
 def plot_perf(circuit):
     # plt.style.use('seaborn-bright')
     # plt.figure(figsize=(18, 9))
