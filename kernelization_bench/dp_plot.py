@@ -242,7 +242,7 @@ def plot_geomean():
     plt.close()
 
 
-def plot_geomean_relative():
+def plot_geomean_relative_backup():
     x = np.arange(len(results_circuit_names_without_hhl))  # the label locations
     width = 1.0 / 4  # the width of the bars
     multiplier = 0
@@ -272,6 +272,46 @@ def plot_geomean_relative():
     # text = legend.get_texts()[0]
     # text.set_fontfamily('Sans Serif')
     fig.set_size_inches(11, 2.5)
+    fig.savefig(f'dp_circuit_geomean_relative.pdf', dpi=800)
+    print(f'''
+\\begin{{figure}}
+\\centering
+\\includegraphics[width=0.99\\linewidth]{{figures/dp/dp_circuit_geomean_relative.pdf}}
+\\end{{figure}}'''
+          )
+    plt.close()
+
+
+def plot_geomean_relative():
+    width = 1.0 / 3  # the width of the bars
+    x = np.arange(len(results_circuit_names_without_hhl))  # the label locations
+    plt.cla()
+    fig, ax = plt.subplots(layout='constrained')
+    current_plot_loc = plot_loc[0]
+    to_plot = [results_circuit_geomean[current_plot_loc][j] / results_circuit_geomean[0][j] for j in
+               range(len(results_circuit_geomean[current_plot_loc]))]
+    print(f'Geomean of {labels[current_plot_loc]}: {np.array(to_plot).prod() ** (1.0 / len(to_plot))}')
+    ones_loc = np.array(np.arange(len(results_circuit_names_without_hhl) + 1), dtype=float)
+    ones_loc[-1] -= 1 - width
+    plt.plot(ones_loc + 0.5 - 1.5 * width, np.ones(len(results_circuit_names_without_hhl) + 1), '--', label=labels[0], color='orange')
+    rects = ax.bar(
+        x + 0.5 - width,
+        to_plot,
+        width,
+        label=labels[current_plot_loc]
+    )
+    ax.bar_label(rects, fmt="%.3f", padding=3, rotation=90)
+    plt.xlabel('Circuit Name', fontsize=12, fontweight='bold')
+    ax.set_xticks(x + 0.5 - width, results_circuit_names_without_hhl)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=25, ha='right')
+    plt.ylabel('Relative Geomean Cost   ', fontsize=12, fontweight='bold')
+    plt.yticks(fontsize=12)
+    plt.ylim(bottom=0, top=1.71)
+    fig = plt.gcf()
+    legend = plt.legend(fontsize=12, ncol=3, loc='upper left')
+    # text = legend.get_texts()[0]
+    # text.set_fontfamily('Sans Serif')
+    fig.set_size_inches(5.6, 2.8)
     fig.savefig(f'dp_circuit_geomean_relative.pdf', dpi=800)
     print(f'''
 \\begin{{figure}}
@@ -323,10 +363,10 @@ def plot_pruning_threshold():
 
 
 if __name__ == '__main__':
-    plot_individual()
-    plot_geomean()
+    # plot_individual()
+    # plot_geomean()
     plot_geomean_relative()
-    plot_pruning_threshold()
+    # plot_pruning_threshold()
     print('total time =', total_time)
     print('total preprocessing time =', total_preprocessing_time)
     print(sum(v for k, v in total_preprocessing_time.items() if k != 'hhl'))

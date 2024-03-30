@@ -1,0 +1,16 @@
+Logger[0]: Local GPU: 4
+Logger[0]: [0] NVIDIA A100-SXM4-40GB
+Logger[0]: [1] NVIDIA A100-SXM4-40GB
+Logger[0]: [2] NVIDIA A100-SXM4-40GB
+Logger[0]: [3] NVIDIA A100-SXM4-40GB
+Logger[0]: Total Gates 1519
+Logger[0]: Total Groups: 5 16 1461 58
+Logger[0]: Compile Time: 1698 us + 9426 us = 11124 us
+Logger[0]: Time Cost: 1356774 us
+Logger[1]: Local GPU: 4
+Logger[1]: [0] NVIDIA A100-SXM4-40GB
+Logger[1]: [1] NVIDIA A100-SXM4-40GB
+Logger[1]: [2] NVIDIA A100-SXM4-40GB
+Logger[1]: [3] NVIDIA A100-SXM4-40GB
+Logger[1]: Compile Time: 11953 us + 9328 us = 21281 us
+Logger[1]: Time Cost: 1356904 us

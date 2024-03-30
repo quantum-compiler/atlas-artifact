@@ -1,0 +1,2207 @@
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - ...
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 2994 COLUMNS
+At line 10043 RHS
+At line 13033 BOUNDS
+At line 13963 ENDATA
+Problem MODEL has 2989 rows, 929 columns and 5191 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Problem is infeasible - 0.00 seconds
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.01   (Wallclock seconds):       0.01
+
+Welcome to the CBC MILP Solver 
+Version: 2.10.3 
+Build Date: Dec 15 2019 
+
+command line - ...
+At line 2 NAME          MODEL
+At line 3 ROWS
+At line 4359 COLUMNS
+At line 15438 RHS
+At line 19793 BOUNDS
+At line 21273 ENDATA
+Problem MODEL has 4354 rows, 1479 columns and 8062 elements
+Coin0008I MODEL read with 0 errors
+Option for timeMode changed from cpu to elapsed
+Continuous objective value is 0 - 0.01 seconds
+Cgl0002I 435 variables fixed
+Cgl0003I 0 fixed, 0 tightened bounds, 27 strengthened rows, 0 substitutions
+Cgl0004I processed model has 990 rows, 609 columns (609 integer (609 of which binary)) and 2173 elements
+Cutoff increment increased from 1e-05 to 0.9999
+Cbc0038I Initial state - 37 integers unsatisfied sum - 18.5
+Cbc0038I Pass   1: suminf.    7.33333 (21) obj. 2 iterations 97
+Cbc0038I Pass   2: suminf.    0.00000 (0) obj. 6 iterations 29
+Cbc0038I Solution found of 6
+Cbc0038I Before mini branch and bound, 564 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 990 rows 609 columns, reduced to 62 rows 43 columns
+Cbc0038I Mini branch and bound did not improve solution (0.04 seconds)
+Cbc0038I Round again with cutoff of 4.50009
+Cbc0038I Pass   3: suminf.    7.33333 (21) obj. 2 iterations 0
+Cbc0038I Pass   4: suminf.    3.56229 (16) obj. 4.50009 iterations 55
+Cbc0038I Pass   5: suminf.    3.46854 (21) obj. 4.50009 iterations 37
+Cbc0038I Pass   6: suminf.    5.50000 (11) obj. 4 iterations 63
+Cbc0038I Pass   7: suminf.    5.50000 (11) obj. 4 iterations 32
+Cbc0038I Pass   8: suminf.    4.99970 (10) obj. 4.50009 iterations 48
+Cbc0038I Pass   9: suminf.    3.84352 (22) obj. 4.50009 iterations 55
+Cbc0038I Pass  10: suminf.    6.33333 (18) obj. 2 iterations 45
+Cbc0038I Pass  11: suminf.    3.37480 (15) obj. 4.50009 iterations 68
+Cbc0038I Pass  12: suminf.    3.28105 (20) obj. 4.50009 iterations 27
+Cbc0038I Pass  13: suminf.    6.00000 (18) obj. 3 iterations 46
+Cbc0038I Pass  14: suminf.    3.93726 (16) obj. 4.50009 iterations 58
+Cbc0038I Pass  15: suminf.    3.74977 (22) obj. 4.50009 iterations 74
+Cbc0038I Pass  16: suminf.    6.75000 (19) obj. 3.5 iterations 71
+Cbc0038I Pass  17: suminf.    3.37480 (15) obj. 4.50009 iterations 77
+Cbc0038I Pass  18: suminf.    3.28105 (20) obj. 4.50009 iterations 27
+Cbc0038I Pass  19: suminf.    6.00000 (18) obj. 3 iterations 42
+Cbc0038I Pass  20: suminf.    3.93726 (16) obj. 4.50009 iterations 80
+Cbc0038I Pass  21: suminf.    3.74977 (22) obj. 4.50009 iterations 60
+Cbc0038I Pass  22: suminf.    3.42837 (14) obj. 4.50009 iterations 22
+Cbc0038I Pass  23: suminf.    2.99982 (20) obj. 4.50009 iterations 19
+Cbc0038I Pass  24: suminf.    6.00000 (18) obj. 3 iterations 78
+Cbc0038I Pass  25: suminf.    3.93726 (16) obj. 4.50009 iterations 106
+Cbc0038I Pass  26: suminf.    3.74977 (22) obj. 4.50009 iterations 61
+Cbc0038I Pass  27: suminf.    3.18731 (14) obj. 4.50009 iterations 30
+Cbc0038I Pass  28: suminf.    3.09356 (20) obj. 4.50009 iterations 23
+Cbc0038I Pass  29: suminf.    6.00000 (18) obj. 3 iterations 51
+Cbc0038I Pass  30: suminf.    3.93726 (16) obj. 4.50009 iterations 83
+Cbc0038I Pass  31: suminf.    3.74977 (22) obj. 4.50009 iterations 67
+Cbc0038I Pass  32: suminf.    3.42837 (14) obj. 4.50009 iterations 39
+Cbc0038I No solution found this major pass
+Cbc0038I Before mini branch and bound, 557 integers at bound fixed and 0 continuous
+Cbc0038I Full problem 990 rows 609 columns, reduced to 64 rows 49 columns
+Cbc0038I Mini branch and bound did not improve solution (0.09 seconds)
+Cbc0038I After 0.09 seconds - Feasibility pump exiting with objective of 6 - took 0.05 seconds
+Cbc0012I Integer solution of 6 found by feasibility pump after 0 iterations and 0 nodes (0.09 seconds)
+Cbc0038I Full problem 990 rows 609 columns, reduced to 58 rows 40 columns
+Cbc0031I 32 added rows had average density of 10.8125
+Cbc0013I At root node, 32 cuts changed objective from 0 to 3 in 14 passes
+Cbc0014I Cut generator 0 (Probing) - 16 row cuts average 2.0 elements, 0 column cuts (0 active)  in 0.012 seconds - new frequency is -100
+Cbc0014I Cut generator 1 (Gomory) - 119 row cuts average 63.8 elements, 0 column cuts (0 active)  in 0.039 seconds - new frequency is 1
+Cbc0014I Cut generator 2 (Knapsack) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 3 (Clique) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.003 seconds - new frequency is -100
+Cbc0014I Cut generator 4 (MixedIntegerRounding2) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.004 seconds - new frequency is -100
+Cbc0014I Cut generator 5 (FlowCover) - 0 row cuts average 0.0 elements, 0 column cuts (0 active)  in 0.000 seconds - new frequency is -100
+Cbc0014I Cut generator 6 (TwoMirCuts) - 62 row cuts average 80.7 elements, 0 column cuts (0 active)  in 0.035 seconds - new frequency is 1
+Cbc0010I After 0 nodes, 1 on tree, 6 best solution, best possible 3 (0.47 seconds)
+Cbc0001I Search completed - best objective 6, took 1971 iterations and 18 nodes (0.87 seconds)
+Cbc0032I Strong branching done 546 times (15119 iterations), fathomed 3 nodes and fixed 12 variables
+Cbc0035I Maximum depth 4, 37 variables fixed on reduced cost
+Cuts at root node changed objective from 0 to 3
+Probing was tried 14 times and created 16 cuts of which 0 were active after adding rounds of cuts (0.012 seconds)
+Gomory was tried 48 times and created 154 cuts of which 0 were active after adding rounds of cuts (0.053 seconds)
+Knapsack was tried 14 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+Clique was tried 14 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+MixedIntegerRounding2 was tried 14 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.004 seconds)
+FlowCover was tried 14 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.000 seconds)
+TwoMirCuts was tried 48 times and created 93 cuts of which 0 were active after adding rounds of cuts (0.077 seconds)
+ZeroHalf was tried 1 times and created 0 cuts of which 0 were active after adding rounds of cuts (0.001 seconds)
+ImplicationCuts was tried 34 times and created 20 cuts of which 0 were active after adding rounds of cuts (0.003 seconds)
+
+Result - Optimal solution found
+
+Objective value:                6.00000000
+Enumerated nodes:               18
+Total iterations:               1971
+Time (CPU seconds):             0.87
+Time (Wallclock seconds):       0.88
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       0.88   (Wallclock seconds):       0.89
+
+python path: ...
+[0 - 7f19b00b2000]    0.320362 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320409 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320421 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320429 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320440 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320447 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320453 {3}{Mapper}: Enabled Control Replication Optimizations.
+[0 - 7f19b00b2000]    0.320462 {3}{Mapper}: Enabled Control Replication Optimizations.
+Computed and cached schedule .schedule in 4.592 seconds.
+Current Layout0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, 27, 28, 23, 24, 25, Start fusing gates...
+Reset qubit group map
+(21, 21) (22, 22) (23, 26) (24, 27) (25, 28) current Layout: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,26,27,28,23,24,25,]
+Fusing Kernel (21 gates): qubits [21, 22, 26, 27, 28], gates fusion, qubits [21, 22, 26, 27, 28], gates CircuitSeq {
+  Q28 = h(Q28)
+  [Q28, Q27] = cp(Q28, Q27, P0)
+  [Q28, Q26] = cp(Q28, Q26, P1)
+  Q27 = h(Q27)
+  [Q27, Q26] = cp(Q27, Q26, P0)
+  [Q28, Q25] = cp(Q28, Q25, P2)
+  [Q28, Q24] = cp(Q28, Q24, P3)
+  [Q28, Q23] = cp(Q28, Q23, P4)
+  [Q28, Q22] = cp(Q28, Q22, P5)
+  [Q27, Q25] = cp(Q27, Q25, P1)
+  [Q27, Q24] = cp(Q27, Q24, P2)
+  [Q27, Q23] = cp(Q27, Q23, P3)
+  [Q27, Q22] = cp(Q27, Q22, P4)
+  Q26 = h(Q26)
+  [Q26, Q25] = cp(Q26, Q25, P0)
+  [Q26, Q24] = cp(Q26, Q24, P1)
+  [Q26, Q23] = cp(Q26, Q23, P2)
+  [Q26, Q22] = cp(Q26, Q22, P3)
+  [Q28, Q21] = cp(Q28, Q21, P6)
+  [Q27, Q21] = cp(Q27, Q21, P5)
+  [Q26, Q21] = cp(Q26, Q21, P4)
+}
+
+Gate 0: [28, ]
+Fusing gate 0(0) for rank 0
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 1
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 2
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 3
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 4
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 5
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 6
+t 28
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 7
+t 28
+Matrix Multiplication (5, 1), mask 16
+Gate 1: [28, 27, ]
+Fusing gate 26(1) for rank 0
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 1
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 2
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 3
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 4
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 5
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 6
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 7
+c,t 28,27
+Matrix Multiplication (5, 2), mask 24
+Gate 2: [28, 26, ]
+Fusing gate 26(1) for rank 0
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 1
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 2
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 3
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 4
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 5
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 6
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 7
+c,t 28,26
+Matrix Multiplication (5, 2), mask 20
+Gate 3: [27, ]
+Fusing gate 0(0) for rank 0
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 1
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 2
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 3
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 4
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 5
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 6
+t 27
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 7
+t 27
+Matrix Multiplication (5, 1), mask 8
+Gate 4: [27, 26, ]
+Fusing gate 26(1) for rank 0
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 1
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 2
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 3
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 4
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 5
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 6
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 7
+c,t 27,26
+Matrix Multiplication (5, 2), mask 12
+Gate 5: [28, 25, ]
+Fusing gate 26(1) for rank 0
+c,t 28,25
+Fusing gate 26(1) for rank 1
+c,t 28,25
+Fusing gate 26(1) for rank 2
+c,t 28,25
+Fusing gate 26(1) for rank 3
+c,t 28,25
+Fusing gate 26(1) for rank 4
+c,t 28,25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 5
+c,t 28,25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 6
+c,t 28,25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 7
+c,t 28,25
+Matrix Multiplication (5, 1), mask 16
+Gate 6: [28, 24, ]
+Fusing gate 26(1) for rank 0
+c,t 28,24
+Fusing gate 26(1) for rank 1
+c,t 28,24
+Fusing gate 26(1) for rank 2
+c,t 28,24
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 3
+c,t 28,24
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 4
+c,t 28,24
+Fusing gate 26(1) for rank 5
+c,t 28,24
+Fusing gate 26(1) for rank 6
+c,t 28,24
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 7
+c,t 28,24
+Matrix Multiplication (5, 1), mask 16
+Gate 7: [28, 23, ]
+Fusing gate 26(1) for rank 0
+c,t 28,23
+Fusing gate 26(1) for rank 1
+c,t 28,23
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 2
+c,t 28,23
+Fusing gate 26(1) for rank 3
+c,t 28,23
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 4
+c,t 28,23
+Fusing gate 26(1) for rank 5
+c,t 28,23
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 26(1) for rank 6
+c,t 28,23
+Fusing gate 26(1) for rank 7
+c,t 28,23
+Matrix Multiplication (5, 1), mask 16
+Gate 8: [28, 22, ]
+Fusing gate 26(1) for rank 0
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 1
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 2
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 3
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 4
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 5
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 6
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 7
+c,t 28,22
+Matrix Multiplication (5, 2), mask 18
+Gate 9: [27, 25, ]
+Fusing gate 26(1) for rank 0
+c,t 27,25
+Fusing gate 26(1) for rank 1
+c,t 27,25
+Fusing gate 26(1) for rank 2
+c,t 27,25
+Fusing gate 26(1) for rank 3
+c,t 27,25
+Fusing gate 26(1) for rank 4
+c,t 27,25
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 5
+c,t 27,25
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 6
+c,t 27,25
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 7
+c,t 27,25
+Matrix Multiplication (5, 1), mask 8
+Gate 10: [27, 24, ]
+Fusing gate 26(1) for rank 0
+c,t 27,24
+Fusing gate 26(1) for rank 1
+c,t 27,24
+Fusing gate 26(1) for rank 2
+c,t 27,24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 3
+c,t 27,24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 4
+c,t 27,24
+Fusing gate 26(1) for rank 5
+c,t 27,24
+Fusing gate 26(1) for rank 6
+c,t 27,24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 7
+c,t 27,24
+Matrix Multiplication (5, 1), mask 8
+Gate 11: [27, 23, ]
+Fusing gate 26(1) for rank 0
+c,t 27,23
+Fusing gate 26(1) for rank 1
+c,t 27,23
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 2
+c,t 27,23
+Fusing gate 26(1) for rank 3
+c,t 27,23
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 4
+c,t 27,23
+Fusing gate 26(1) for rank 5
+c,t 27,23
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 26(1) for rank 6
+c,t 27,23
+Fusing gate 26(1) for rank 7
+c,t 27,23
+Matrix Multiplication (5, 1), mask 8
+Gate 12: [27, 22, ]
+Fusing gate 26(1) for rank 0
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 1
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 2
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 3
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 4
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 5
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 6
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 7
+c,t 27,22
+Matrix Multiplication (5, 2), mask 10
+Gate 13: [26, ]
+Fusing gate 0(0) for rank 0
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 1
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 2
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 3
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 4
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 5
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 6
+t 26
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 7
+t 26
+Matrix Multiplication (5, 1), mask 4
+Gate 14: [26, 25, ]
+Fusing gate 26(1) for rank 0
+c,t 26,25
+Fusing gate 26(1) for rank 1
+c,t 26,25
+Fusing gate 26(1) for rank 2
+c,t 26,25
+Fusing gate 26(1) for rank 3
+c,t 26,25
+Fusing gate 26(1) for rank 4
+c,t 26,25
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 5
+c,t 26,25
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 6
+c,t 26,25
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 7
+c,t 26,25
+Matrix Multiplication (5, 1), mask 4
+Gate 15: [26, 24, ]
+Fusing gate 26(1) for rank 0
+c,t 26,24
+Fusing gate 26(1) for rank 1
+c,t 26,24
+Fusing gate 26(1) for rank 2
+c,t 26,24
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 3
+c,t 26,24
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 4
+c,t 26,24
+Fusing gate 26(1) for rank 5
+c,t 26,24
+Fusing gate 26(1) for rank 6
+c,t 26,24
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 7
+c,t 26,24
+Matrix Multiplication (5, 1), mask 4
+Gate 16: [26, 23, ]
+Fusing gate 26(1) for rank 0
+c,t 26,23
+Fusing gate 26(1) for rank 1
+c,t 26,23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 2
+c,t 26,23
+Fusing gate 26(1) for rank 3
+c,t 26,23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 4
+c,t 26,23
+Fusing gate 26(1) for rank 5
+c,t 26,23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 26(1) for rank 6
+c,t 26,23
+Fusing gate 26(1) for rank 7
+c,t 26,23
+Matrix Multiplication (5, 1), mask 4
+Gate 17: [26, 22, ]
+Fusing gate 26(1) for rank 0
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 1
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 2
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 3
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 4
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 5
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 6
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 7
+c,t 26,22
+Matrix Multiplication (5, 2), mask 6
+Gate 18: [28, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 1
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 2
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 3
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 4
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 5
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 6
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 7
+c,t 28,21
+Matrix Multiplication (5, 2), mask 17
+Gate 19: [27, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 1
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 2
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 3
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 4
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 5
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 6
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 7
+c,t 27,21
+Matrix Multiplication (5, 2), mask 9
+Gate 20: [26, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 1
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 2
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 3
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 4
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 5
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 6
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 7
+c,t 26,21
+Matrix Multiplication (5, 2), mask 5
+SHM Kernel Physical (63): [ shared_memory, qubits [], gates CircuitSeq {
+  [Q28, Q20] = cp(Q28, Q20, P7)
+  [Q27, Q20] = cp(Q27, Q20, P6)
+  [Q26, Q20] = cp(Q26, Q20, P5)
+  [Q28, Q19] = cp(Q28, Q19, P8)
+  [Q27, Q19] = cp(Q27, Q19, P7)
+  [Q26, Q19] = cp(Q26, Q19, P6)
+  [Q28, Q18] = cp(Q28, Q18, P9)
+  [Q27, Q18] = cp(Q27, Q18, P8)
+  [Q26, Q18] = cp(Q26, Q18, P7)
+  [Q28, Q17] = cp(Q28, Q17, P10)
+  [Q27, Q17] = cp(Q27, Q17, P9)
+  [Q26, Q17] = cp(Q26, Q17, P8)
+  [Q28, Q16] = cp(Q28, Q16, P11)
+  [Q27, Q16] = cp(Q27, Q16, P10)
+  [Q26, Q16] = cp(Q26, Q16, P9)
+  [Q28, Q15] = cp(Q28, Q15, P12)
+  [Q27, Q15] = cp(Q27, Q15, P11)
+  [Q26, Q15] = cp(Q26, Q15, P10)
+  [Q28, Q14] = cp(Q28, Q14, P13)
+  [Q27, Q14] = cp(Q27, Q14, P12)
+  [Q26, Q14] = cp(Q26, Q14, P11)
+  [Q28, Q13] = cp(Q28, Q13, P14)
+  [Q27, Q13] = cp(Q27, Q13, P13)
+  [Q26, Q13] = cp(Q26, Q13, P12)
+  [Q28, Q12] = cp(Q28, Q12, P15)
+  [Q27, Q12] = cp(Q27, Q12, P14)
+  [Q26, Q12] = cp(Q26, Q12, P13)
+  [Q28, Q11] = cp(Q28, Q11, P16)
+  [Q27, Q11] = cp(Q27, Q11, P15)
+  [Q26, Q11] = cp(Q26, Q11, P14)
+  [Q28, Q10] = cp(Q28, Q10, P17)
+  [Q27, Q10] = cp(Q27, Q10, P16)
+  [Q26, Q10] = cp(Q26, Q10, P15)
+  [Q28, Q9] = cp(Q28, Q9, P18)
+  [Q27, Q9] = cp(Q27, Q9, P17)
+  [Q26, Q9] = cp(Q26, Q9, P16)
+  [Q28, Q8] = cp(Q28, Q8, P19)
+  [Q27, Q8] = cp(Q27, Q8, P18)
+  [Q26, Q8] = cp(Q26, Q8, P17)
+  [Q28, Q7] = cp(Q28, Q7, P20)
+  [Q27, Q7] = cp(Q27, Q7, P19)
+  [Q26, Q7] = cp(Q26, Q7, P18)
+  [Q28, Q6] = cp(Q28, Q6, P21)
+  [Q27, Q6] = cp(Q27, Q6, P20)
+  [Q26, Q6] = cp(Q26, Q6, P19)
+  [Q28, Q5] = cp(Q28, Q5, P22)
+  [Q27, Q5] = cp(Q27, Q5, P21)
+  [Q26, Q5] = cp(Q26, Q5, P20)
+  [Q28, Q4] = cp(Q28, Q4, P23)
+  [Q27, Q4] = cp(Q27, Q4, P22)
+  [Q26, Q4] = cp(Q26, Q4, P21)
+  [Q28, Q3] = cp(Q28, Q3, P24)
+  [Q27, Q3] = cp(Q27, Q3, P23)
+  [Q26, Q3] = cp(Q26, Q3, P22)
+  [Q28, Q2] = cp(Q28, Q2, P25)
+  [Q27, Q2] = cp(Q27, Q2, P24)
+  [Q26, Q2] = cp(Q26, Q2, P23)
+  [Q28, Q1] = cp(Q28, Q1, P26)
+  [Q27, Q1] = cp(Q27, Q1, P25)
+  [Q26, Q1] = cp(Q26, Q1, P24)
+  [Q28, Q0] = cp(Q28, Q0, P27)
+  [Q27, Q0] = cp(Q27, Q0, P26)
+  [Q26, Q0] = cp(Q26, Q0, P25)
+}
+
+Current Layout0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 27, Start fusing gates...
+Reset qubit group map
+(21, 21) (22, 22) (23, 23) (24, 24) (25, 25) current Layout: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,27,]
+Fusing Kernel (14 gates): qubits [21, 22, 23, 24, 25], gates fusion, qubits [21, 22, 23, 24, 25], gates CircuitSeq {
+  Q25 = h(Q25)
+  [Q25, Q24] = cp(Q25, Q24, P0)
+  [Q25, Q23] = cp(Q25, Q23, P1)
+  Q24 = h(Q24)
+  [Q24, Q23] = cp(Q24, Q23, P0)
+  [Q25, Q22] = cp(Q25, Q22, P2)
+  [Q24, Q22] = cp(Q24, Q22, P1)
+  Q23 = h(Q23)
+  [Q23, Q22] = cp(Q23, Q22, P0)
+  [Q25, Q21] = cp(Q25, Q21, P3)
+  [Q24, Q21] = cp(Q24, Q21, P2)
+  [Q23, Q21] = cp(Q23, Q21, P1)
+  Q22 = h(Q22)
+  [Q22, Q21] = cp(Q22, Q21, P0)
+}
+
+Gate 0: [25, ]
+Fusing gate 0(0) for rank 0
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 1
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 2
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 3
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 4
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 5
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 6
+t 25
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 7
+t 25
+Matrix Multiplication (5, 1), mask 16
+Gate 1: [25, 24, ]
+Fusing gate 26(1) for rank 0
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 1
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 2
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 3
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 4
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 5
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 6
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 7
+c,t 25,24
+Matrix Multiplication (5, 2), mask 24
+Gate 2: [25, 23, ]
+Fusing gate 26(1) for rank 0
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 1
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 2
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 3
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 4
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 5
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 6
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 7
+c,t 25,23
+Matrix Multiplication (5, 2), mask 20
+Gate 3: [24, ]
+Fusing gate 0(0) for rank 0
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 1
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 2
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 3
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 4
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 5
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 6
+t 24
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 7
+t 24
+Matrix Multiplication (5, 1), mask 8
+Gate 4: [24, 23, ]
+Fusing gate 26(1) for rank 0
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 1
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 2
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 3
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 4
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 5
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 6
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 7
+c,t 24,23
+Matrix Multiplication (5, 2), mask 12
+Gate 5: [25, 22, ]
+Fusing gate 26(1) for rank 0
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 1
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 2
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 3
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 4
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 5
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 6
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 7
+c,t 25,22
+Matrix Multiplication (5, 2), mask 18
+Gate 6: [24, 22, ]
+Fusing gate 26(1) for rank 0
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 1
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 2
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 3
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 4
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 5
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 6
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 7
+c,t 24,22
+Matrix Multiplication (5, 2), mask 10
+Gate 7: [23, ]
+Fusing gate 0(0) for rank 0
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 1
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 2
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 3
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 4
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 5
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 6
+t 23
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 7
+t 23
+Matrix Multiplication (5, 1), mask 4
+Gate 8: [23, 22, ]
+Fusing gate 26(1) for rank 0
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 1
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 2
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 3
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 4
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 5
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 6
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 7
+c,t 23,22
+Matrix Multiplication (5, 2), mask 6
+Gate 9: [25, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 1
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 2
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 3
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 4
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 5
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 6
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 7
+c,t 25,21
+Matrix Multiplication (5, 2), mask 17
+Gate 10: [24, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 1
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 2
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 3
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 4
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 5
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 6
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 7
+c,t 24,21
+Matrix Multiplication (5, 2), mask 9
+Gate 11: [23, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 1
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 2
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 3
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 4
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 5
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 6
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 7
+c,t 23,21
+Matrix Multiplication (5, 2), mask 5
+Gate 12: [22, ]
+Fusing gate 0(0) for rank 0
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 1
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 2
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 3
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 4
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 5
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 6
+t 22
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 7
+t 22
+Matrix Multiplication (5, 1), mask 2
+Gate 13: [22, 21, ]
+Fusing gate 26(1) for rank 0
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 1
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 2
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 3
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 4
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 5
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 6
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 7
+c,t 22,21
+Matrix Multiplication (5, 2), mask 3
+SHM Kernel Physical (217): [ 15,16,17,18,19,20,21]
+shared_memory, qubits [15, 16, 17, 18, 19, 20, 21], gates CircuitSeq {
+  [Q25, Q20] = cp(Q25, Q20, P4)
+  [Q24, Q20] = cp(Q24, Q20, P3)
+  [Q23, Q20] = cp(Q23, Q20, P2)
+  [Q22, Q20] = cp(Q22, Q20, P1)
+  Q21 = h(Q21)
+  [Q21, Q20] = cp(Q21, Q20, P0)
+  [Q25, Q19] = cp(Q25, Q19, P5)
+  [Q24, Q19] = cp(Q24, Q19, P4)
+  [Q23, Q19] = cp(Q23, Q19, P3)
+  [Q22, Q19] = cp(Q22, Q19, P2)
+  [Q21, Q19] = cp(Q21, Q19, P1)
+  Q20 = h(Q20)
+  [Q20, Q19] = cp(Q20, Q19, P0)
+  [Q25, Q18] = cp(Q25, Q18, P6)
+  [Q24, Q18] = cp(Q24, Q18, P5)
+  [Q23, Q18] = cp(Q23, Q18, P4)
+  [Q22, Q18] = cp(Q22, Q18, P3)
+  [Q21, Q18] = cp(Q21, Q18, P2)
+  [Q20, Q18] = cp(Q20, Q18, P1)
+  Q19 = h(Q19)
+  [Q19, Q18] = cp(Q19, Q18, P0)
+  [Q25, Q17] = cp(Q25, Q17, P7)
+  [Q24, Q17] = cp(Q24, Q17, P6)
+  [Q23, Q17] = cp(Q23, Q17, P5)
+  [Q22, Q17] = cp(Q22, Q17, P4)
+  [Q21, Q17] = cp(Q21, Q17, P3)
+  [Q20, Q17] = cp(Q20, Q17, P2)
+  [Q19, Q17] = cp(Q19, Q17, P1)
+  Q18 = h(Q18)
+  [Q18, Q17] = cp(Q18, Q17, P0)
+  [Q25, Q16] = cp(Q25, Q16, P8)
+  [Q24, Q16] = cp(Q24, Q16, P7)
+  [Q23, Q16] = cp(Q23, Q16, P6)
+  [Q22, Q16] = cp(Q22, Q16, P5)
+  [Q21, Q16] = cp(Q21, Q16, P4)
+  [Q20, Q16] = cp(Q20, Q16, P3)
+  [Q19, Q16] = cp(Q19, Q16, P2)
+  [Q18, Q16] = cp(Q18, Q16, P1)
+  Q17 = h(Q17)
+  [Q17, Q16] = cp(Q17, Q16, P0)
+  [Q25, Q15] = cp(Q25, Q15, P9)
+  [Q24, Q15] = cp(Q24, Q15, P8)
+  [Q23, Q15] = cp(Q23, Q15, P7)
+  [Q22, Q15] = cp(Q22, Q15, P6)
+  [Q21, Q15] = cp(Q21, Q15, P5)
+  [Q20, Q15] = cp(Q20, Q15, P4)
+  [Q19, Q15] = cp(Q19, Q15, P3)
+  [Q18, Q15] = cp(Q18, Q15, P2)
+  [Q17, Q15] = cp(Q17, Q15, P1)
+  Q16 = h(Q16)
+  [Q16, Q15] = cp(Q16, Q15, P0)
+  [Q25, Q14] = cp(Q25, Q14, P10)
+  [Q24, Q14] = cp(Q24, Q14, P9)
+  [Q23, Q14] = cp(Q23, Q14, P8)
+  [Q22, Q14] = cp(Q22, Q14, P7)
+  [Q21, Q14] = cp(Q21, Q14, P6)
+  [Q20, Q14] = cp(Q20, Q14, P5)
+  [Q19, Q14] = cp(Q19, Q14, P4)
+  [Q18, Q14] = cp(Q18, Q14, P3)
+  [Q17, Q14] = cp(Q17, Q14, P2)
+  [Q16, Q14] = cp(Q16, Q14, P1)
+  Q15 = h(Q15)
+  [Q15, Q14] = cp(Q15, Q14, P0)
+  [Q25, Q13] = cp(Q25, Q13, P11)
+  [Q24, Q13] = cp(Q24, Q13, P10)
+  [Q23, Q13] = cp(Q23, Q13, P9)
+  [Q22, Q13] = cp(Q22, Q13, P8)
+  [Q21, Q13] = cp(Q21, Q13, P7)
+  [Q20, Q13] = cp(Q20, Q13, P6)
+  [Q19, Q13] = cp(Q19, Q13, P5)
+  [Q18, Q13] = cp(Q18, Q13, P4)
+  [Q17, Q13] = cp(Q17, Q13, P3)
+  [Q16, Q13] = cp(Q16, Q13, P2)
+  [Q15, Q13] = cp(Q15, Q13, P1)
+  [Q25, Q12] = cp(Q25, Q12, P12)
+  [Q24, Q12] = cp(Q24, Q12, P11)
+  [Q23, Q12] = cp(Q23, Q12, P10)
+  [Q22, Q12] = cp(Q22, Q12, P9)
+  [Q21, Q12] = cp(Q21, Q12, P8)
+  [Q20, Q12] = cp(Q20, Q12, P7)
+  [Q19, Q12] = cp(Q19, Q12, P6)
+  [Q18, Q12] = cp(Q18, Q12, P5)
+  [Q17, Q12] = cp(Q17, Q12, P4)
+  [Q16, Q12] = cp(Q16, Q12, P3)
+  [Q15, Q12] = cp(Q15, Q12, P2)
+  [Q25, Q11] = cp(Q25, Q11, P13)
+  [Q24, Q11] = cp(Q24, Q11, P12)
+  [Q23, Q11] = cp(Q23, Q11, P11)
+  [Q22, Q11] = cp(Q22, Q11, P10)
+  [Q21, Q11] = cp(Q21, Q11, P9)
+  [Q20, Q11] = cp(Q20, Q11, P8)
+  [Q19, Q11] = cp(Q19, Q11, P7)
+  [Q18, Q11] = cp(Q18, Q11, P6)
+  [Q17, Q11] = cp(Q17, Q11, P5)
+  [Q16, Q11] = cp(Q16, Q11, P4)
+  [Q15, Q11] = cp(Q15, Q11, P3)
+  [Q25, Q10] = cp(Q25, Q10, P14)
+  [Q24, Q10] = cp(Q24, Q10, P13)
+  [Q23, Q10] = cp(Q23, Q10, P12)
+  [Q22, Q10] = cp(Q22, Q10, P11)
+  [Q21, Q10] = cp(Q21, Q10, P10)
+  [Q20, Q10] = cp(Q20, Q10, P9)
+  [Q19, Q10] = cp(Q19, Q10, P8)
+  [Q18, Q10] = cp(Q18, Q10, P7)
+  [Q17, Q10] = cp(Q17, Q10, P6)
+  [Q16, Q10] = cp(Q16, Q10, P5)
+  [Q15, Q10] = cp(Q15, Q10, P4)
+  [Q25, Q9] = cp(Q25, Q9, P15)
+  [Q24, Q9] = cp(Q24, Q9, P14)
+  [Q23, Q9] = cp(Q23, Q9, P13)
+  [Q22, Q9] = cp(Q22, Q9, P12)
+  [Q21, Q9] = cp(Q21, Q9, P11)
+  [Q20, Q9] = cp(Q20, Q9, P10)
+  [Q19, Q9] = cp(Q19, Q9, P9)
+  [Q18, Q9] = cp(Q18, Q9, P8)
+  [Q17, Q9] = cp(Q17, Q9, P7)
+  [Q16, Q9] = cp(Q16, Q9, P6)
+  [Q15, Q9] = cp(Q15, Q9, P5)
+  [Q25, Q8] = cp(Q25, Q8, P16)
+  [Q24, Q8] = cp(Q24, Q8, P15)
+  [Q23, Q8] = cp(Q23, Q8, P14)
+  [Q22, Q8] = cp(Q22, Q8, P13)
+  [Q21, Q8] = cp(Q21, Q8, P12)
+  [Q20, Q8] = cp(Q20, Q8, P11)
+  [Q19, Q8] = cp(Q19, Q8, P10)
+  [Q18, Q8] = cp(Q18, Q8, P9)
+  [Q17, Q8] = cp(Q17, Q8, P8)
+  [Q16, Q8] = cp(Q16, Q8, P7)
+  [Q15, Q8] = cp(Q15, Q8, P6)
+  [Q25, Q7] = cp(Q25, Q7, P17)
+  [Q24, Q7] = cp(Q24, Q7, P16)
+  [Q23, Q7] = cp(Q23, Q7, P15)
+  [Q22, Q7] = cp(Q22, Q7, P14)
+  [Q21, Q7] = cp(Q21, Q7, P13)
+  [Q20, Q7] = cp(Q20, Q7, P12)
+  [Q19, Q7] = cp(Q19, Q7, P11)
+  [Q18, Q7] = cp(Q18, Q7, P10)
+  [Q17, Q7] = cp(Q17, Q7, P9)
+  [Q16, Q7] = cp(Q16, Q7, P8)
+  [Q15, Q7] = cp(Q15, Q7, P7)
+  [Q25, Q6] = cp(Q25, Q6, P18)
+  [Q24, Q6] = cp(Q24, Q6, P17)
+  [Q23, Q6] = cp(Q23, Q6, P16)
+  [Q22, Q6] = cp(Q22, Q6, P15)
+  [Q21, Q6] = cp(Q21, Q6, P14)
+  [Q20, Q6] = cp(Q20, Q6, P13)
+  [Q19, Q6] = cp(Q19, Q6, P12)
+  [Q18, Q6] = cp(Q18, Q6, P11)
+  [Q17, Q6] = cp(Q17, Q6, P10)
+  [Q16, Q6] = cp(Q16, Q6, P9)
+  [Q15, Q6] = cp(Q15, Q6, P8)
+  [Q25, Q5] = cp(Q25, Q5, P19)
+  [Q24, Q5] = cp(Q24, Q5, P18)
+  [Q23, Q5] = cp(Q23, Q5, P17)
+  [Q22, Q5] = cp(Q22, Q5, P16)
+  [Q21, Q5] = cp(Q21, Q5, P15)
+  [Q20, Q5] = cp(Q20, Q5, P14)
+  [Q19, Q5] = cp(Q19, Q5, P13)
+  [Q18, Q5] = cp(Q18, Q5, P12)
+  [Q17, Q5] = cp(Q17, Q5, P11)
+  [Q16, Q5] = cp(Q16, Q5, P10)
+  [Q15, Q5] = cp(Q15, Q5, P9)
+  [Q25, Q4] = cp(Q25, Q4, P20)
+  [Q24, Q4] = cp(Q24, Q4, P19)
+  [Q23, Q4] = cp(Q23, Q4, P18)
+  [Q22, Q4] = cp(Q22, Q4, P17)
+  [Q21, Q4] = cp(Q21, Q4, P16)
+  [Q20, Q4] = cp(Q20, Q4, P15)
+  [Q19, Q4] = cp(Q19, Q4, P14)
+  [Q18, Q4] = cp(Q18, Q4, P13)
+  [Q17, Q4] = cp(Q17, Q4, P12)
+  [Q16, Q4] = cp(Q16, Q4, P11)
+  [Q15, Q4] = cp(Q15, Q4, P10)
+  [Q25, Q3] = cp(Q25, Q3, P21)
+  [Q24, Q3] = cp(Q24, Q3, P20)
+  [Q23, Q3] = cp(Q23, Q3, P19)
+  [Q22, Q3] = cp(Q22, Q3, P18)
+  [Q21, Q3] = cp(Q21, Q3, P17)
+  [Q20, Q3] = cp(Q20, Q3, P16)
+  [Q19, Q3] = cp(Q19, Q3, P15)
+  [Q18, Q3] = cp(Q18, Q3, P14)
+  [Q17, Q3] = cp(Q17, Q3, P13)
+  [Q16, Q3] = cp(Q16, Q3, P12)
+  [Q15, Q3] = cp(Q15, Q3, P11)
+  [Q25, Q2] = cp(Q25, Q2, P22)
+  [Q24, Q2] = cp(Q24, Q2, P21)
+  [Q23, Q2] = cp(Q23, Q2, P20)
+  [Q22, Q2] = cp(Q22, Q2, P19)
+  [Q21, Q2] = cp(Q21, Q2, P18)
+  [Q20, Q2] = cp(Q20, Q2, P17)
+  [Q19, Q2] = cp(Q19, Q2, P16)
+  [Q18, Q2] = cp(Q18, Q2, P15)
+  [Q17, Q2] = cp(Q17, Q2, P14)
+  [Q16, Q2] = cp(Q16, Q2, P13)
+  [Q15, Q2] = cp(Q15, Q2, P12)
+  [Q25, Q1] = cp(Q25, Q1, P23)
+  [Q24, Q1] = cp(Q24, Q1, P22)
+  [Q23, Q1] = cp(Q23, Q1, P21)
+  [Q22, Q1] = cp(Q22, Q1, P20)
+  [Q21, Q1] = cp(Q21, Q1, P19)
+  [Q20, Q1] = cp(Q20, Q1, P18)
+  [Q19, Q1] = cp(Q19, Q1, P17)
+  [Q18, Q1] = cp(Q18, Q1, P16)
+  [Q17, Q1] = cp(Q17, Q1, P15)
+  [Q16, Q1] = cp(Q16, Q1, P14)
+  [Q15, Q1] = cp(Q15, Q1, P13)
+  [Q25, Q0] = cp(Q25, Q0, P24)
+  [Q24, Q0] = cp(Q24, Q0, P23)
+  [Q23, Q0] = cp(Q23, Q0, P22)
+  [Q22, Q0] = cp(Q22, Q0, P21)
+  [Q21, Q0] = cp(Q21, Q0, P20)
+  [Q20, Q0] = cp(Q20, Q0, P19)
+  [Q19, Q0] = cp(Q19, Q0, P18)
+  [Q18, Q0] = cp(Q18, Q0, P17)
+  [Q17, Q0] = cp(Q17, Q0, P16)
+  [Q16, Q0] = cp(Q16, Q0, P15)
+  [Q15, Q0] = cp(Q15, Q0, P14)
+}
+
+Start fusing gates...
+Reset qubit group map
+(10, 10) (11, 11) (12, 12) (13, 13) (14, 14) current Layout: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,27,]
+Fusing Kernel (14 gates): qubits [10, 11, 12, 13, 14], gates fusion, qubits [10, 11, 12, 13, 14], gates CircuitSeq {
+  Q14 = h(Q14)
+  [Q14, Q13] = cp(Q14, Q13, P0)
+  [Q14, Q12] = cp(Q14, Q12, P1)
+  Q13 = h(Q13)
+  [Q13, Q12] = cp(Q13, Q12, P0)
+  [Q14, Q11] = cp(Q14, Q11, P2)
+  [Q13, Q11] = cp(Q13, Q11, P1)
+  Q12 = h(Q12)
+  [Q12, Q11] = cp(Q12, Q11, P0)
+  [Q14, Q10] = cp(Q14, Q10, P3)
+  [Q13, Q10] = cp(Q13, Q10, P2)
+  [Q12, Q10] = cp(Q12, Q10, P1)
+  Q11 = h(Q11)
+  [Q11, Q10] = cp(Q11, Q10, P0)
+}
+
+Gate 0: [14, ]
+Fusing gate 0(0) for rank 0
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 1
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 2
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 3
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 4
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 5
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 6
+t 14
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 7
+t 14
+Matrix Multiplication (5, 1), mask 16
+Gate 1: [14, 13, ]
+Fusing gate 26(1) for rank 0
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 1
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 2
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 3
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 4
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 5
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 6
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 7
+c,t 14,13
+Matrix Multiplication (5, 2), mask 24
+Gate 2: [14, 12, ]
+Fusing gate 26(1) for rank 0
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 1
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 2
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 3
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 4
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 5
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 6
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 7
+c,t 14,12
+Matrix Multiplication (5, 2), mask 20
+Gate 3: [13, ]
+Fusing gate 0(0) for rank 0
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 1
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 2
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 3
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 4
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 5
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 6
+t 13
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 7
+t 13
+Matrix Multiplication (5, 1), mask 8
+Gate 4: [13, 12, ]
+Fusing gate 26(1) for rank 0
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 1
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 2
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 3
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 4
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 5
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 6
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 7
+c,t 13,12
+Matrix Multiplication (5, 2), mask 12
+Gate 5: [14, 11, ]
+Fusing gate 26(1) for rank 0
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 1
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 2
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 3
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 4
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 5
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 6
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 7
+c,t 14,11
+Matrix Multiplication (5, 2), mask 18
+Gate 6: [13, 11, ]
+Fusing gate 26(1) for rank 0
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 1
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 2
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 3
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 4
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 5
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 6
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 7
+c,t 13,11
+Matrix Multiplication (5, 2), mask 10
+Gate 7: [12, ]
+Fusing gate 0(0) for rank 0
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 1
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 2
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 3
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 4
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 5
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 6
+t 12
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 7
+t 12
+Matrix Multiplication (5, 1), mask 4
+Gate 8: [12, 11, ]
+Fusing gate 26(1) for rank 0
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 1
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 2
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 3
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 4
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 5
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 6
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 7
+c,t 12,11
+Matrix Multiplication (5, 2), mask 6
+Gate 9: [14, 10, ]
+Fusing gate 26(1) for rank 0
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 1
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 2
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 3
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 4
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 5
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 6
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 7
+c,t 14,10
+Matrix Multiplication (5, 2), mask 17
+Gate 10: [13, 10, ]
+Fusing gate 26(1) for rank 0
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 1
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 2
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 3
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 4
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 5
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 6
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 7
+c,t 13,10
+Matrix Multiplication (5, 2), mask 9
+Gate 11: [12, 10, ]
+Fusing gate 26(1) for rank 0
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 1
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 2
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 3
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 4
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 5
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 6
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 7
+c,t 12,10
+Matrix Multiplication (5, 2), mask 5
+Gate 12: [11, ]
+Fusing gate 0(0) for rank 0
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 1
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 2
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 3
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 4
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 5
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 6
+t 11
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 7
+t 11
+Matrix Multiplication (5, 1), mask 2
+Gate 13: [11, 10, ]
+Fusing gate 26(1) for rank 0
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 1
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 2
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 3
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 4
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 5
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 6
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 7
+c,t 11,10
+Matrix Multiplication (5, 2), mask 3
+SHM Kernel Physical (91): [ 5,6,7,8,9,10]
+shared_memory, qubits [5, 6, 7, 8, 9, 10], gates CircuitSeq {
+  [Q14, Q9] = cp(Q14, Q9, P4)
+  [Q13, Q9] = cp(Q13, Q9, P3)
+  [Q12, Q9] = cp(Q12, Q9, P2)
+  [Q11, Q9] = cp(Q11, Q9, P1)
+  Q10 = h(Q10)
+  [Q10, Q9] = cp(Q10, Q9, P0)
+  [Q14, Q8] = cp(Q14, Q8, P5)
+  [Q13, Q8] = cp(Q13, Q8, P4)
+  [Q12, Q8] = cp(Q12, Q8, P3)
+  [Q11, Q8] = cp(Q11, Q8, P2)
+  [Q10, Q8] = cp(Q10, Q8, P1)
+  [Q14, Q7] = cp(Q14, Q7, P6)
+  [Q13, Q7] = cp(Q13, Q7, P5)
+  [Q12, Q7] = cp(Q12, Q7, P4)
+  [Q11, Q7] = cp(Q11, Q7, P3)
+  [Q10, Q7] = cp(Q10, Q7, P2)
+  [Q14, Q6] = cp(Q14, Q6, P7)
+  [Q13, Q6] = cp(Q13, Q6, P6)
+  [Q12, Q6] = cp(Q12, Q6, P5)
+  [Q11, Q6] = cp(Q11, Q6, P4)
+  [Q10, Q6] = cp(Q10, Q6, P3)
+  [Q14, Q5] = cp(Q14, Q5, P8)
+  [Q13, Q5] = cp(Q13, Q5, P7)
+  [Q12, Q5] = cp(Q12, Q5, P6)
+  [Q11, Q5] = cp(Q11, Q5, P5)
+  [Q10, Q5] = cp(Q10, Q5, P4)
+  [Q14, Q4] = cp(Q14, Q4, P9)
+  [Q13, Q4] = cp(Q13, Q4, P8)
+  [Q12, Q4] = cp(Q12, Q4, P7)
+  [Q11, Q4] = cp(Q11, Q4, P6)
+  [Q10, Q4] = cp(Q10, Q4, P5)
+  [Q14, Q3] = cp(Q14, Q3, P10)
+  [Q13, Q3] = cp(Q13, Q3, P9)
+  [Q12, Q3] = cp(Q12, Q3, P8)
+  [Q11, Q3] = cp(Q11, Q3, P7)
+  [Q10, Q3] = cp(Q10, Q3, P6)
+  [Q14, Q2] = cp(Q14, Q2, P11)
+  [Q13, Q2] = cp(Q13, Q2, P10)
+  [Q12, Q2] = cp(Q12, Q2, P9)
+  [Q11, Q2] = cp(Q11, Q2, P8)
+  [Q10, Q2] = cp(Q10, Q2, P7)
+  [Q14, Q1] = cp(Q14, Q1, P12)
+  [Q13, Q1] = cp(Q13, Q1, P11)
+  [Q12, Q1] = cp(Q12, Q1, P10)
+  [Q11, Q1] = cp(Q11, Q1, P9)
+  [Q10, Q1] = cp(Q10, Q1, P8)
+  [Q14, Q0] = cp(Q14, Q0, P13)
+  [Q13, Q0] = cp(Q13, Q0, P12)
+  [Q12, Q0] = cp(Q12, Q0, P11)
+  [Q11, Q0] = cp(Q11, Q0, P10)
+  [Q10, Q0] = cp(Q10, Q0, P9)
+  Q9 = h(Q9)
+  [Q9, Q8] = cp(Q9, Q8, P0)
+  [Q9, Q7] = cp(Q9, Q7, P1)
+  Q8 = h(Q8)
+  [Q8, Q7] = cp(Q8, Q7, P0)
+  [Q9, Q6] = cp(Q9, Q6, P2)
+  [Q8, Q6] = cp(Q8, Q6, P1)
+  Q7 = h(Q7)
+  [Q7, Q6] = cp(Q7, Q6, P0)
+  [Q9, Q5] = cp(Q9, Q5, P3)
+  [Q8, Q5] = cp(Q8, Q5, P2)
+  [Q7, Q5] = cp(Q7, Q5, P1)
+  Q6 = h(Q6)
+  [Q6, Q5] = cp(Q6, Q5, P0)
+  [Q9, Q4] = cp(Q9, Q4, P4)
+  [Q8, Q4] = cp(Q8, Q4, P3)
+  [Q7, Q4] = cp(Q7, Q4, P2)
+  [Q6, Q4] = cp(Q6, Q4, P1)
+  Q5 = h(Q5)
+  [Q5, Q4] = cp(Q5, Q4, P0)
+  [Q9, Q3] = cp(Q9, Q3, P5)
+  [Q8, Q3] = cp(Q8, Q3, P4)
+  [Q7, Q3] = cp(Q7, Q3, P3)
+  [Q6, Q3] = cp(Q6, Q3, P2)
+  [Q5, Q3] = cp(Q5, Q3, P1)
+  [Q9, Q2] = cp(Q9, Q2, P6)
+  [Q8, Q2] = cp(Q8, Q2, P5)
+  [Q7, Q2] = cp(Q7, Q2, P4)
+  [Q6, Q2] = cp(Q6, Q2, P3)
+  [Q5, Q2] = cp(Q5, Q2, P2)
+  [Q9, Q1] = cp(Q9, Q1, P7)
+  [Q8, Q1] = cp(Q8, Q1, P6)
+  [Q7, Q1] = cp(Q7, Q1, P5)
+  [Q6, Q1] = cp(Q6, Q1, P4)
+  [Q5, Q1] = cp(Q5, Q1, P3)
+  [Q9, Q0] = cp(Q9, Q0, P8)
+  [Q8, Q0] = cp(Q8, Q0, P7)
+  [Q7, Q0] = cp(Q7, Q0, P6)
+  [Q6, Q0] = cp(Q6, Q0, P5)
+  [Q5, Q0] = cp(Q5, Q0, P4)
+}
+
+Start fusing gates...
+Reset qubit group map
+(0, 0) (1, 1) (2, 2) (3, 3) (4, 4) current Layout: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,27,]
+Fusing Kernel (15 gates): qubits [0, 1, 2, 3, 4], gates fusion, qubits [0, 1, 2, 3, 4], gates CircuitSeq {
+  Q4 = h(Q4)
+  [Q4, Q3] = cp(Q4, Q3, P0)
+  [Q4, Q2] = cp(Q4, Q2, P1)
+  Q3 = h(Q3)
+  [Q3, Q2] = cp(Q3, Q2, P0)
+  [Q4, Q1] = cp(Q4, Q1, P2)
+  [Q3, Q1] = cp(Q3, Q1, P1)
+  Q2 = h(Q2)
+  [Q2, Q1] = cp(Q2, Q1, P0)
+  [Q4, Q0] = cp(Q4, Q0, P3)
+  [Q3, Q0] = cp(Q3, Q0, P2)
+  [Q2, Q0] = cp(Q2, Q0, P1)
+  Q1 = h(Q1)
+  [Q1, Q0] = cp(Q1, Q0, P0)
+  Q0 = h(Q0)
+}
+
+Gate 0: [4, ]
+Fusing gate 0(0) for rank 0
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 1
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 2
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 3
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 4
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 5
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 6
+t 4
+Matrix Multiplication (5, 1), mask 16
+Fusing gate 0(0) for rank 7
+t 4
+Matrix Multiplication (5, 1), mask 16
+Gate 1: [4, 3, ]
+Fusing gate 26(1) for rank 0
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 1
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 2
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 3
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 4
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 5
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 6
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 26(1) for rank 7
+c,t 4,3
+Matrix Multiplication (5, 2), mask 24
+Gate 2: [4, 2, ]
+Fusing gate 26(1) for rank 0
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 1
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 2
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 3
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 4
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 5
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 6
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Fusing gate 26(1) for rank 7
+c,t 4,2
+Matrix Multiplication (5, 2), mask 20
+Gate 3: [3, ]
+Fusing gate 0(0) for rank 0
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 1
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 2
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 3
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 4
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 5
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 6
+t 3
+Matrix Multiplication (5, 1), mask 8
+Fusing gate 0(0) for rank 7
+t 3
+Matrix Multiplication (5, 1), mask 8
+Gate 4: [3, 2, ]
+Fusing gate 26(1) for rank 0
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 1
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 2
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 3
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 4
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 5
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 6
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 26(1) for rank 7
+c,t 3,2
+Matrix Multiplication (5, 2), mask 12
+Gate 5: [4, 1, ]
+Fusing gate 26(1) for rank 0
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 1
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 2
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 3
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 4
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 5
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 6
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Fusing gate 26(1) for rank 7
+c,t 4,1
+Matrix Multiplication (5, 2), mask 18
+Gate 6: [3, 1, ]
+Fusing gate 26(1) for rank 0
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 1
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 2
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 3
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 4
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 5
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 6
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Fusing gate 26(1) for rank 7
+c,t 3,1
+Matrix Multiplication (5, 2), mask 10
+Gate 7: [2, ]
+Fusing gate 0(0) for rank 0
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 1
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 2
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 3
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 4
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 5
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 6
+t 2
+Matrix Multiplication (5, 1), mask 4
+Fusing gate 0(0) for rank 7
+t 2
+Matrix Multiplication (5, 1), mask 4
+Gate 8: [2, 1, ]
+Fusing gate 26(1) for rank 0
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 1
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 2
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 3
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 4
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 5
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 6
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 26(1) for rank 7
+c,t 2,1
+Matrix Multiplication (5, 2), mask 6
+Gate 9: [4, 0, ]
+Fusing gate 26(1) for rank 0
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 1
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 2
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 3
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 4
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 5
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 6
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Fusing gate 26(1) for rank 7
+c,t 4,0
+Matrix Multiplication (5, 2), mask 17
+Gate 10: [3, 0, ]
+Fusing gate 26(1) for rank 0
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 1
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 2
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 3
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 4
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 5
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 6
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Fusing gate 26(1) for rank 7
+c,t 3,0
+Matrix Multiplication (5, 2), mask 9
+Gate 11: [2, 0, ]
+Fusing gate 26(1) for rank 0
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 1
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 2
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 3
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 4
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 5
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 6
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Fusing gate 26(1) for rank 7
+c,t 2,0
+Matrix Multiplication (5, 2), mask 5
+Gate 12: [1, ]
+Fusing gate 0(0) for rank 0
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 1
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 2
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 3
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 4
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 5
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 6
+t 1
+Matrix Multiplication (5, 1), mask 2
+Fusing gate 0(0) for rank 7
+t 1
+Matrix Multiplication (5, 1), mask 2
+Gate 13: [1, 0, ]
+Fusing gate 26(1) for rank 0
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 1
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 2
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 3
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 4
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 5
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 6
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 26(1) for rank 7
+c,t 1,0
+Matrix Multiplication (5, 2), mask 3
+Gate 14: [0, ]
+Fusing gate 0(0) for rank 0
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 1
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 2
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 3
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 4
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 5
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 6
+t 0
+Matrix Multiplication (5, 1), mask 1
+Fusing gate 0(0) for rank 7
+t 0
+Matrix Multiplication (5, 1), mask 1
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 4
+Num SHM Kernel: 3
+Start Simulating...
+Simulator (offloading) is running...
+Creating regions...
+num_state_vectors: 2
+Num_local_qubits = 26
+Num_local_qubits = 26
+Num_local_qubits = 26
+Num_local_qubits = 26
+Init done..
+sizeof FusedGate: 40 Bytes
+batch id 0
+fused: 0
+shm: 0
+Apply gates batch 0
+batch id 1
+fused: 1
+shm: 63
+fused: 2
+shm: 280
+fused: 3
+Apply gates batch 1
+my chunk id 0, num_sv_cpu 2, at 0[0]
+ok
+my chunk id 1, num_sv_cpu 2, at 0[1]
+ok
+my chunk id 2, num_sv_cpu 2, at 0[2]
+ok
+my chunk id 3, num_sv_cpu 2, at 0[3]
+ok
+my chunk id 4, num_sv_cpu 2, at 1[0]
+ok
+my chunk id 5, num_sv_cpu 2, at 1[1]
+ok
+my chunk id 6, num_sv_cpu 2, at 1[2]
+ok
+my chunk id 7, num_sv_cpu 2, at 1[3]
+ok
+Solving ILP for num_qubits=29, num_local_qubits=26, num_global_qubits=1, num_iterations=1...
+Available solvers: ['PULP_CBC_CMD']
+Solving ILP for num_qubits=29, num_local_qubits=26, num_global_qubits=1, num_iterations=2...
+Available solvers: ['PULP_CBC_CMD']
+ELAPSED TIME = 0.6570s

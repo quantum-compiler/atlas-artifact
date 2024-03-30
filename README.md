@@ -1,8 +1,8 @@
 # Atlas: Hierarchical Partitioning for Quantum Circuit Simulation on GPUs
 
 Atlas is built on [Quartz](https://github.com/quantum-compiler/quartz).
-To run the artifact, please install Quartz and copy the necessary circuits first.
-Following parts will assume that these commands are executed:
+To run the artifact, please create a Python environment for Quartz and copy the necessary circuits first.
+Following parts will assume that these commands are executed (unless specified otherwise, the `quartz` conda environment is used):
 ```shell
 # Create Python environment
 cd deps/quartz
@@ -24,13 +24,13 @@ cd ..
 
 ## Circuit Staging
 
-To plot the existing results in Figures 9 and 11:
+To plot the existing results in Figure 7:
 ```shell
 cd staging_bench
 python ilp_plot.py
 ```
 
-To run the experiment and update the results (takes ~14 hours):
+To run the experiment and reproduce the results (takes ~14 hours):
 ```shell
 cd deps/quartz/build
 make benchmark_ilp_num_stages
@@ -41,13 +41,13 @@ cp ilp_result.csv ../../staging_bench
 
 ## Circuit Kernelization
 
-To plot the existing results in Figure 6 and Figures 12 to 36:
+To plot the existing results in Figure 8 and Figures 12 to 36:
 ```shell
 cd kernelization_bench
 python dp_plot.py
 ```
 
-To run the experiment and update the results (takes ~17 hours):
+To run the experiment and reproduce the results (takes ~17 hours):
 ```shell
 cd deps/quartz/build
 make benchmark_dp
@@ -60,9 +60,67 @@ cp dp_result.csv ../../kernelization_bench
 
 We run the end-to-end experiments on Perlmutter.
 
-### cuQuantum
+To plot the existing results in Figure 9:
 ```shell
-cd perlmutter/e2e
+cd perlmutter/e2e/logs
+python plot.py
+```
+
+Following are the instructions to run the experiment and reproduce the results.
+
+### Atlas
+
+1. Set related environment variables in `config/config.linux`
+We support two modes for simulation in Atlas. First one is distributed GPU-based simulation (`USE_LEGION=OFF`). The other one is CPU-offload enabled simulation (`USE_LEGION=ON`), which support simulating more qubits on a single machine. Note that the second mode hasn't been tested for multi-node execution.
+
+In addition, please also replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact.
+
+2. Install the HiGHS solver in Quartz:
+```shell
+cd deps/quartz/external/HiGHS
+mkdir build
+cd build
+cmake ..
+make -j 12
+```
+
+3. Create a Python 3.8 environment with PuLP:
+```shell
+module load conda
+conda create --name pulp python=3.8
+conda activate pulp
+pip install pulp
+```
+
+4. Build and install:
+```shell
+# in pulp conda environment
+cd ../../../../..  # cd $ATLAS_HOME
+mkdir build
+cd build
+bash ../config/config.linux
+make -j 12
+```
+
+5. Replace `YOUR_ACCOUNT` with your account name in `perlmutter/e2e/srun-1-quartz.sh`, `perlmutter/e2e/srun-2-quartz.sh`, `perlmutter/e2e/srun-4-quartz.sh`, `perlmutter/e2e/srun-8-quartz.sh`, `perlmutter/e2e/srun-16-quartz.sh`.
+
+6. Run the sbatch scripts:
+```shell
+# in pulp conda environment
+cd ../perlmutter/e2e
+export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact
+sbatch srun-1-quartz.sh
+sbatch srun-2-quartz.sh
+sbatch srun-4-quartz.sh
+sbatch srun-8-quartz.sh
+sbatch srun-16-quartz.sh
+```
+
+### cuQuantum
+1. Replace `YOUR_ACCOUNT` with your account name in `perlmutter/e2e/cuQuantum.sh`.
+2. Run:
+```shell
+# cd perlmutter/e2e
 bash cuQuantum.sh 1 1 28  # takes less than 1 minute each
 bash cuQuantum.sh 1 2 29
 bash cuQuantum.sh 1 4 30
@@ -73,8 +131,10 @@ bash cuQuantum.sh 16 4 34
 ```
 
 ### Qiskit
+1. Replace `YOUR_ACCOUNT` with your account name in `perlmutter/e2e/Qiskit.sh`.
+2. Run:
 ```shell
-cd perlmutter/e2e
+# cd perlmutter/e2e
 bash Qiskit.sh 1 1 28  # takes around 3 minutes
 bash Qiskit.sh 1 2 29  # takes around 12 minutes
 bash Qiskit.sh 1 4 30  # takes around 47 minutes, recommended to allocate a node first
@@ -86,18 +146,17 @@ We run the DRAM offloading experiments on Perlmutter.
 
 ### Atlas
 
-1. Create a Python 3.8 environment with PuLP:
+1. Set related environment variables in `config/config.linux`, replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact,
+and use a Python 3.8 environment with PuLP:
 ```shell
-module load conda
-conda create --name pulp python=3.8
 conda activate pulp
-pip install pulp
 ```
 
 2. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct location.
 
 3. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
 ```shell
+# in pulp conda environment
 cd build
 make -j 12
 cd ../scripts/perlmutter/offload
@@ -121,6 +180,7 @@ pip install .
 2. Comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L58) in the QDAO directory you just downloaded.
 3. Copy the scripts to QDAO directory and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
 ```shell
+# in qdao conda environment
 cp ../atlas-artifact/perlmutter/offload/run_qdao.py .
 cp ../atlas-artifact/perlmutter/offload/run_qdao.sh .
 salloc --nodes 1 -q regular --time 00:45:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
@@ -136,8 +196,9 @@ cp -r logs ../atlas-artifact/perlmutter/offload/logs/qdao-qiskit
 
 1. Complete the first three steps in the QDAO-Qiskit section (`LD_LIBRARY_PATH="" time bash run_qdao.sh` is optional).
 2. Because cuQuantum is not integrated with quafu, please replace this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/simulator.py#L26) from `SIMS = {"qiskit": QiskitSimulator, "quafu": QuafuSimulator}` to `SIMS = {"qiskit": QiskitSimulator}`, replace this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/circuit.py#L119) from `INITIALIZERS = {"qiskit": QiskitCircuitWrapper, "quafu": QuafuCircuitHelper}` to `INITIALIZERS = {"qiskit": QiskitCircuitWrapper}`, and comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/simulator.py#L4) and this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/circuit.py#L9) (import statements). Please also comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L105).
-3. Run in interactive mode (assuming the same instance with:
+3. Run in interactive mode:
 ```shell
+# in qdao conda environment
 shifter --image="nvcr.io/nvidia/cuquantum-appliance:23.03" bash run_qdao.sh 0  # takes 9-10 minutes
 ```
 The results are stored in `qdao/logs`.

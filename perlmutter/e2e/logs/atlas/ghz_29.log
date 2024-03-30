@@ -1,0 +1,194 @@
+Num ranks: 1, myrank: 0
+Computed and cached schedule in 3.141 seconds.
+Current Layout0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 27, Start fusing gates...
+Reset qubit group map
+(27, 28) current Layout: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,27,]
+Fusing Kernel (1 gates): qubits [28], gates fusion, qubits [28], gates CircuitSeq {
+  Q28 = h(Q28)
+}
+
+Gate 0: [28, ]
+Fusing gate 0(0) for rank 0
+t 28
+Matrix Multiplication (1, 1), mask 1
+Fusing gate 0(0) for rank 1
+t 28
+Matrix Multiplication (1, 1), mask 1
+Current Layout0: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, Start fusing gates...
+Reset qubit group map
+(23, 23) (24, 24) (25, 25) (26, 26) (27, 27) current Layout: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,]
+Fusing Kernel (5 gates): qubits [23, 24, 25, 26, 27], gates fusion, qubits [23, 24, 25, 26, 27], gates CircuitSeq {
+  [Q28, Q27] = cx(Q28, Q27)
+  [Q27, Q26] = cx(Q27, Q26)
+  [Q26, Q25] = cx(Q26, Q25)
+  [Q25, Q24] = cx(Q25, Q24)
+  [Q24, Q23] = cx(Q24, Q23)
+}
+
+Gate 0: [28, 27, ]
+Fusing gate 6(1) for rank 0
+c,t 28,27
+Fusing gate 6(1) for rank 1
+c,t 28,27
+Matrix Multiplication (5, 1), mask 16
+Gate 1: [27, 26, ]
+Fusing gate 6(1) for rank 0
+c,t 27,26
+Matrix Multiplication (5, 2), mask 24
+Fusing gate 6(1) for rank 1
+c,t 27,26
+Matrix Multiplication (5, 2), mask 24
+Gate 2: [26, 25, ]
+Fusing gate 6(1) for rank 0
+c,t 26,25
+Matrix Multiplication (5, 2), mask 12
+Fusing gate 6(1) for rank 1
+c,t 26,25
+Matrix Multiplication (5, 2), mask 12
+Gate 3: [25, 24, ]
+Fusing gate 6(1) for rank 0
+c,t 25,24
+Matrix Multiplication (5, 2), mask 6
+Fusing gate 6(1) for rank 1
+c,t 25,24
+Matrix Multiplication (5, 2), mask 6
+Gate 4: [24, 23, ]
+Fusing gate 6(1) for rank 0
+c,t 24,23
+Matrix Multiplication (5, 2), mask 3
+Fusing gate 6(1) for rank 1
+c,t 24,23
+Matrix Multiplication (5, 2), mask 3
+SHM Kernel Physical (6): [ 17,18,19,20,21,22]
+shared_memory, qubits [17, 18, 19, 20, 21, 22], gates CircuitSeq {
+  [Q23, Q22] = cx(Q23, Q22)
+  [Q22, Q21] = cx(Q22, Q21)
+  [Q21, Q20] = cx(Q21, Q20)
+  [Q20, Q19] = cx(Q20, Q19)
+  [Q19, Q18] = cx(Q19, Q18)
+  [Q18, Q17] = cx(Q18, Q17)
+}
+
+SHM Kernel Physical (7): [ 10,11,12,13,14,15,16]
+shared_memory, qubits [10, 11, 12, 13, 14, 15, 16], gates CircuitSeq {
+  [Q17, Q16] = cx(Q17, Q16)
+  [Q16, Q15] = cx(Q16, Q15)
+  [Q15, Q14] = cx(Q15, Q14)
+  [Q14, Q13] = cx(Q14, Q13)
+  [Q13, Q12] = cx(Q13, Q12)
+  [Q12, Q11] = cx(Q12, Q11)
+  [Q11, Q10] = cx(Q11, Q10)
+}
+
+SHM Kernel Physical (10): [ 0,1,2,3,4,5,6,7,8,9]
+shared_memory, qubits [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], gates CircuitSeq {
+  [Q10, Q9] = cx(Q10, Q9)
+  [Q9, Q8] = cx(Q9, Q8)
+  [Q8, Q7] = cx(Q8, Q7)
+  [Q7, Q6] = cx(Q7, Q6)
+  [Q6, Q5] = cx(Q6, Q5)
+  [Q5, Q4] = cx(Q5, Q4)
+  [Q4, Q3] = cx(Q4, Q3)
+  [Q3, Q2] = cx(Q3, Q2)
+  [Q2, Q1] = cx(Q2, Q1)
+  [Q1, Q0] = cx(Q1, Q0)
+}
+
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 2
+Num SHM Kernel: 3
+Start Simulating...
+[warmup] size total:2147483648
+NCCL comm nRanks: 2, i am 0
+I am 0, mask 1, I am sending to 0
+I am 0, mask 1, I am sending to 1
+NCCL comm nRanks: 2, i am 1
+I am 1, mask 1, I am sending to 0
+I am 1, mask 1, I am sending to 1
+hello checking all2all
+Init State Vectors!
+Using NCCL for cross-node shuffle
+My physical id:0, 1
+NCCL comm nRanks: 2, i am 0
+I am 0, mask 1, I am sending to 0
+I am 0, mask 1, I am sending to 1
+My physical id:1, 1
+NCCL comm nRanks: 2, i am 1
+I am 1, mask 1, I am sending to 0
+I am 1, mask 1, I am sending to 1
+[NCCL Rank 0] Shuffle Time: 36.64ms
+[NCCL Rank 1] Shuffle Time: 36.65ms
+Finish Simulating! Total: 2 FUSE Kernel, 3 SHM Kernel, 1 Shuffles.
+[NCCL Rank 0] Total Simulation Time: 76.43ms
+[NCCL Rank 1] Total Simulation Time: 76.44ms
+[MPI Rank 0]: Shuffle 0 cost 36.65ms on average.
+Solving ILP for num_qubits=29, num_local_qubits=28, num_global_qubits=0, num_iterations=1...
+Available solvers: ['PULP_CBC_CMD', 'HiGHS_CMD']
+Running HiGHS 1.5.0 [date: 2023-11-09, git hash: 8a114449a]
+Copyright (c) 2022 HiGHS under MIT licence terms
+Number of BV entries in BOUNDS section is 116
+MIP  8a44f6a16acb4301acb64d448a0976f0-pulp has 203 rows; 117 cols; 431 nonzeros; 116 integer variables
+Presolving model
+115 rows, 29 cols, 58 nonzeros
+Presolve: Infeasible
+
+Solving report
+  Status            Infeasible
+  Primal bound      inf
+  Dual bound        -inf
+  Gap               inf
+  Solution status   -
+  Timing            0.00 (total)
+                    0.00 (presolve)
+                    0.00 (postsolve)
+  Nodes             0
+  LP iterations     0 (total)
+                    0 (strong br.)
+                    0 (separation)
+                    0 (heuristics)
+Writing the solution to /tmp/8a44f6a16acb4301acb64d448a0976f0-pulp.sol
+Solving ILP for num_qubits=29, num_local_qubits=28, num_global_qubits=0, num_iterations=2...
+Available solvers: ['PULP_CBC_CMD', 'HiGHS_CMD']
+Running HiGHS 1.5.0 [date: 2023-11-09, git hash: 8a114449a]
+Copyright (c) 2022 HiGHS under MIT licence terms
+Number of BV entries in BOUNDS section is 261
+MIP  ee083e23cfb143eda9eeaf31e65794c5-pulp has 378 rows; 261 cols; 922 nonzeros; 261 integer variables
+Presolving model
+231 rows, 116 cols, 375 nonzeros
+115 rows, 114 cols, 313 nonzeros
+108 rows, 109 cols, 295 nonzeros
+Objective function is integral with scale 1
+
+Solving MIP model with:
+   108 rows
+   109 cols (109 binary, 0 integer, 0 implied int., 0 continuous)
+   295 nonzeros
+
+        Nodes      |    B&B Tree     |            Objective Bounds              |  Dynamic Constraints |       Work      
+     Proc. InQueue |  Leaves   Expl. | BestBound       BestSol              Gap |   Cuts   InLp Confl. | LpIters     Time
+
+         0       0         0   0.00%   0               inf                  inf        0      0      0         0     0.0s
+
+Solving report
+  Status            Optimal
+  Primal bound      1
+  Dual bound        1
+  Gap               0% (tolerance: 0.01%)
+  Solution status   feasible
+                    1 (objective)
+                    0 (bound viol.)
+                    0 (int. viol.)
+                    0 (row viol.)
+  Timing            0.01 (total)
+                    0.01 (presolve)
+                    0.00 (postsolve)
+  Nodes             1
+  LP iterations     63 (total)
+                    0 (strong br.)
+                    0 (separation)
+                    0 (heuristics)
+Writing the solution to /tmp/ee083e23cfb143eda9eeaf31e65794c5-pulp.sol
+[MPI Rank 0]: Destroyed everthing!
+Time Cost: 163297 us
+Destroyed the simulator
