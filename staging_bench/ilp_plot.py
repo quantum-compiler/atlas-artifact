@@ -74,14 +74,14 @@ for num_qubits in num_of_num_local_qubits.keys():
         ),
         fontsize=12,
     )
-    plt.ylabel('Geomean of #stages', fontsize=12, fontweight='bold')
+    plt.ylabel('Geomean\nof #stages', fontsize=12, fontweight='bold')
     plt.yticks(fontsize=12)
     plt.ylim(bottom=0, top=6 if num_qubits == 31 else 8)
     fig = plt.gcf()
     legend = plt.legend(fontsize=12, ncol=2, loc='upper right')
     # text = legend.get_texts()[0]
     # text.set_fontfamily('Sans Serif')
-    fig.set_size_inches(5.6, 2.7)
+    fig.set_size_inches(5.6, 1.5)
     fig.savefig(f'ilp_plot_{num_qubits}.pdf', dpi=800)
     print(
         f'''
