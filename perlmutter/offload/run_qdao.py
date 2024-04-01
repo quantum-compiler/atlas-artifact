@@ -23,8 +23,8 @@ circ = transpile(circ, backend=backend)
 
 # `num_primary`: size of a compute unit
 # `num_local`: size of a storage unit
-eng = Engine(circuit=circ, num_primary=num_primary, num_local=num_local, sv_location="memory", device="GPU")
 st = time.time()
+eng = Engine(circuit=circ, num_primary=num_primary, num_local=num_local, sv_location="memory", device="GPU")
 eng.run()
 ed = time.time()
 print(ed - st)

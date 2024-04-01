@@ -84,12 +84,12 @@ cmake ..
 make -j 12
 ```
 
-3. Create a Python 3.8 environment with PuLP:
+3. Create a Python 3.8 environment with PuLP and Qiskit (Qiskit is not necessary for the end-to-end experiments but necessary for the DRAM offloading experiments):
 ```shell
 module load conda
 conda create --name pulp python=3.8
 conda activate pulp
-pip install pulp
+pip install pulp qiskit
 ```
 
 4. Build and install:
@@ -158,25 +158,23 @@ Following are the instructions to run the experiment and reproduce the results.
 
 ### Atlas
 
-1. Set related environment variables in `config/config.linux`, replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact,
-and use a Python 3.8 environment with PuLP:
-```shell
-conda activate pulp
-```
+1. Set related environment variables in `config/config.linux` (setting `USE_LEGION=ON`), replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact,
+and use a Python 3.8 environment with PuLP and Qiskit.
 
 2. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct location.
 
 3. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
 ```shell
-# in pulp conda environment
 cd build
+bash ../config/config.linux
 make -j 12
-cd ../scripts/perlmutter/offload
+cd ../perlmutter/offload
 salloc --nodes 1 -q regular --time 00:30:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
-bash offload.sh  # takes around 25 minutes
+conda activate pulp
+time bash offload.sh && exit  # takes around 22 minutes
 ```
 
-### QDAO-Qiskit
+### QDAO
 
 1. Download and build QDAO v0.1.0 (assuming `qdao/` and `atlas-artifact/` share the same parent directory):
 ```shell
@@ -189,34 +187,24 @@ conda create --name qdao python=3.9
 conda activate qdao
 pip install .
 ```
-2. Comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L58) in the QDAO directory you just downloaded.
+2. Comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L58) in the QDAO directory you just downloaded,
+and append these two lines after this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/simulator.py#L26):
+```python
+        self._sim.set_options(blocking_enable=True)
+        self._sim.set_options(blocking_qubits=28)
+```
 3. Copy the scripts to QDAO directory and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
 ```shell
-# in qdao conda environment
 cp ../atlas-artifact/perlmutter/offload/run_qdao.py .
 cp ../atlas-artifact/perlmutter/offload/run_qdao.sh .
-salloc --nodes 1 -q regular --time 00:45:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
-LD_LIBRARY_PATH="" time bash run_qdao.sh  # takes around 28 minutes
+salloc --nodes 1 -q regular --time 01:20:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
+conda activate qdao
+LD_LIBRARY_PATH="" time bash run_qdao.sh 0 && exit  # takes around 1 hour
 ```
 The results are stored in `qdao/logs`.
 4. Copy the results back:
 ```shell
-cp -r logs ../atlas-artifact/perlmutter/offload/logs/qdao-qiskit
-```
-
-### QDAO-cuQuantum
-
-1. Complete the first three steps in the QDAO-Qiskit section (`LD_LIBRARY_PATH="" time bash run_qdao.sh` is optional).
-2. Because cuQuantum is not integrated with quafu, please replace this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/simulator.py#L26) from `SIMS = {"qiskit": QiskitSimulator, "quafu": QuafuSimulator}` to `SIMS = {"qiskit": QiskitSimulator}`, replace this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/circuit.py#L119) from `INITIALIZERS = {"qiskit": QiskitCircuitWrapper, "quafu": QuafuCircuitHelper}` to `INITIALIZERS = {"qiskit": QiskitCircuitWrapper}`, and comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/simulator.py#L4) and this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/circuit.py#L9) (import statements). Please also comment out this [line](https://github.com/Zhaoyilunnn/qdao/blob/fd2dc544301fe0c67ef1b77b40ba926c03b055e6/qdao/qiskit/circuit.py#L105).
-3. Run in interactive mode:
-```shell
-# in qdao conda environment
-shifter --image="nvcr.io/nvidia/cuquantum-appliance:23.03" bash run_qdao.sh 0  # takes 9-10 minutes
-```
-The results are stored in `qdao/logs`.
-4. Copy the results back:
-```shell
-cp -r logs ../atlas-artifact/perlmutter/offload/logs/qdao-cuquantum
+cp logs/* ../atlas-artifact/perlmutter/offload/logs/qdao-qiskit
 ```
 
 
