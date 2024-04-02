@@ -24,7 +24,7 @@ cd ..
 
 ## Circuit Staging
 
-To plot the existing results in Figure 7:
+To plot the existing results in Figure 8:
 ```shell
 cd staging_bench
 python ilp_plot.py
@@ -41,7 +41,7 @@ cp ilp_result.csv ../../staging_bench
 
 ## Circuit Kernelization
 
-To plot the existing results in Figure 8 and Figures 12 to 36:
+To plot the existing results in Figure 9:
 ```shell
 cd kernelization_bench
 python dp_plot.py
@@ -60,7 +60,7 @@ cp dp_result.csv ../../kernelization_bench
 
 We run the end-to-end experiments on Perlmutter.
 
-To plot the existing results in Figure 9:
+To plot the existing results in Figures 5 and 10:
 ```shell
 cd perlmutter/e2e/logs
 python plot.py
@@ -148,7 +148,7 @@ bash Qiskit.sh 1 4 30  # takes around 47 minutes, recommended to allocate a node
 
 We run the DRAM offloading experiments on Perlmutter.
 
-To plot the existing results in Figure 6:
+To plot the existing results in Figures 6 and 7:
 ```shell
 cd perlmutter/offload
 python plot_offload.py

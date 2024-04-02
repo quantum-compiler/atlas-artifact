@@ -16,6 +16,7 @@ pattern_hyquas = r"Logger\[(\d+)\]: Time Cost: (\d+) us"
 pattern_cusv = r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}) INFO\s+- \[GPU\] Averaged elapsed time: (\d+\.\d+) s"
 pattern_cusvaer = r"(\d+\.\d+)ms"
 pattern_quartz_compile_time = r"Time Cost Compiling: (\d+) us, Total: (\d+) us"
+pattern_shuffle_time_quartz = r"\[MPI Rank 0\]: Shuffle (\d+) cost (\d+\.\d+)ms on average."
 pattern_shuffles_quartz = r"Num Shuffles: (\d+)"
 pattern_shuffles_hyquas = r"Logger\[(\d+)\]: Total Groups: (\d+) (\d+) (\d+) (\d+)"
 # process data
@@ -29,6 +30,7 @@ launch_method = "result-srun"
 # benchmark = {"qft"}
 # num_qubits = [28,30,31,32,33]
 # num_qubits = [28,30]
+shuffle_time_quartz = {}
 simu_time_quartz = {}
 simu_time_hyquas = {}
 simu_time_cusv = {}
@@ -40,9 +42,11 @@ num_shuffles_hyquas = {}
 #read data from file: quartz
 for bench in benchmark:
     simulation_time = []
+    shuffle_times = []
     num_shuffles = []
     for nq in num_qubits:
         t = 0
+        shuffle_time = 0
         try:
             with open('./atlas/'+bench+'_'+str(nq)+'.log', 'r') as f:
                 last_lines = f.readlines()[-1000:]
@@ -51,15 +55,21 @@ for bench in benchmark:
                     if match:
                         t_rank = float(match.group(2))
                         t = max(t,t_rank)
+                    shuffle = re.search(pattern_shuffle_time_quartz, line)
+                    if shuffle:
+                        shuffle_time += float(shuffle.group(2))
                     # shuffle = re.search(pattern_shuffles_quartz, line)
                     # if shuffle:
                     #     num_shuffles.append(int(shuffle.group(1)))
                 simulation_time.append(t)
+                shuffle_times.append(shuffle_time)
         except IOError as e:
             simulation_time.append(None)
+            shuffle_times.append(None)
             num_shuffles.append(None)
     simu_time_quartz[bench] = simulation_time
     num_shuffles_quartz[bench] = num_shuffles
+    shuffle_time_quartz[bench] = shuffle_times
 
 print(simu_time_quartz['graphstate'])
 
@@ -270,9 +280,142 @@ def plot_scalability():
     plt.savefig('figures/scalability.pdf', dpi=1000, bbox_inches='tight')
 
 
+baselines_comm = {'Total': simu_time_quartz, "Communication Time": shuffle_time_quartz}
+def plot_comm(circuit, font_size=14, font_size_legend=13, font_size_xticks=13, font_size_yticks=12):
+    # plt.style.use('seaborn-bright')
+    # plt.figure(figsize=(18, 9))
+    plt.cla()
+    # plt.grid(linestyle="--", axis='y')
+    # mpl.rcParams['axes.linewidth'] = 1
+    color_cycler =  [(0.2980392156862745, 0.4470588235294118, 0.6901960784313725), (0.8666666666666667, 0.5176470588235295, 0.3215686274509804), (0.3333333333333333, 0.6588235294117647, 0.40784313725490196), (0.7686274509803922, 0.3058823529411765, 0.3215686274509804),
+                     (0.5058823529411764, 0.4470588235294118, 0.7019607843137254), (0.5364705882352941, 0.06058823529411764, 0.3964705882352941), (0.8549019607843137, 0.5450980392156862, 0.7647058823529411), (0.5490196078431373, 0.5490196078431373, 0.5490196078431373), (0.8, 0.7254901960784313, 0.4549019607843137), (0.39215686274509803, 0.7098039215686275, 0.803921568627451)]
+    marker_cycler = ['x-', '.--', '^-', '*-', 's', 'D', 'v', 'd', '>', 'h', 'D']
+
+    marker = iter(marker_cycler)
+    ax = plt.gca()
+    plt.grid(False, axis='y')
+    best_baseline = np.repeat(1e12,len(num_qubits))
+    max_y = 0
+    for baseline in baselines_comm:
+        if baseline != 'Qiskit':
+            max_y = max(max_y, max(baselines_comm[baseline][circuit]) * 1.05)
+    for baseline in baselines_comm:
+        # c = next(color)
+        m = next(marker)
+        plt.plot(num_qubits, baselines_comm[baseline][circuit], m, label=baseline, markersize=8)
+        if baseline == 'Atlas':
+            continue
+        else:
+            tmp = np.array(baselines_comm[baseline][circuit])
+            tmp[tmp==None] = 1e10
+            best_baseline = np.minimum(best_baseline, tmp)
+
+    print(circuit)
+    print(simu_time_quartz[circuit])
+    ours = np.array(simu_time_quartz[circuit])
+    improve = best_baseline / ours
+    # i=0
+    # for v in improve:
+    #     plt.text(x=num_qubits[i]-0.3,y=ours[i]+200,s=str(round(v,2))+'x')
+    #     i += 1
+
+    plt.xticks(num_qubits,labels=[str(num_gpus[x])+'\n('+str(round(improve[x] * 100))+'%)' for x in range(len(num_gpus))],fontsize=font_size_xticks)
+    # plt.xticks(num_qubits,labels=[str(num_gpus[x]) for x in range(len(num_gpus))],fontsize=12)
+    plt.yticks(fontsize=font_size_yticks)
+    plt.ylim(bottom=0, top=max_y)
+
+    plt.xlabel('Number of GPUs / Communication Time Percentage     ', fontsize=font_size, fontweight='bold')
+    plt.ylabel('Time (ms)', fontsize=font_size, fontweight='bold')
+    fig = plt.gcf()
+    plt.legend(fontsize=font_size_legend, ncol=1)
+    fig.set_size_inches(6, 2.9)
+    plt.savefig('figures-comm/'+circuit+'_comm.pdf', dpi=1000, bbox_inches='tight')
+
+
+def plot_comm_geomean():
+    plt.cla()
+    plt.grid(False, axis='y')
+    marker_cycler = ['x-', '.--', '^-', '*-', 's', 'D', 'v', 'd', '>', 'h', 'D']
+    marker = iter(marker_cycler)
+    best_baseline = np.repeat(1e12,len(num_qubits))
+    ours = None
+    for baseline in baselines_comm:
+        to_plot = np.ones(len(num_qubits))
+        for circuit in benchmark:
+            to_plot = np.multiply(to_plot, baselines_comm[baseline][circuit])
+        to_plot = [x**(1.0 / len(benchmark)) for x in to_plot]
+        m = next(marker)
+        plt.plot(num_qubits, to_plot, m, label=baseline, markersize=8)
+        if baseline == 'Total':
+            ours = to_plot
+        else:
+            tmp = np.array(to_plot)
+            tmp[tmp==None] = 1e10
+            best_baseline = np.minimum(best_baseline, tmp)
+    print('comm geomean')
+    print(ours)
+    print(best_baseline)
+    improve = best_baseline / ours
+
+    plt.xticks(num_qubits,labels=[str(num_gpus[x])+'\n('+str(round(improve[x] * 100))+'%)' for x in range(len(num_gpus))],fontsize=12)
+    # plt.xticks(num_qubits,labels=[str(num_gpus[x]) for x in range(len(num_gpus))],fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.ylim(bottom=0)
+
+    plt.xlabel('Number of GPUs / Communication Time Percentage     ', fontsize=12, fontweight='bold')
+    plt.ylabel('Geomean Time (ms)', fontsize=12, fontweight='bold')
+    fig = plt.gcf()
+    plt.legend(fontsize=12, ncol=1)
+    fig.set_size_inches(5.6, 2.6)
+    plt.savefig('figures-comm/comm_geomean.pdf', dpi=1000, bbox_inches='tight')
+
+
+def plot_comm_arithmean():
+    plt.cla()
+    plt.grid(False, axis='y')
+    marker_cycler = ['x-', '.--', '^-', '*-', 's', 'D', 'v', 'd', '>', 'h', 'D']
+    marker = iter(marker_cycler)
+    best_baseline = np.repeat(1e12,len(num_qubits))
+    ours = None
+    for baseline in baselines_comm:
+        to_plot = np.zeros(len(num_qubits))
+        for circuit in benchmark:
+            to_plot = np.add(to_plot, baselines_comm[baseline][circuit])
+        to_plot = [x / len(benchmark) for x in to_plot]
+        m = next(marker)
+        plt.plot(num_qubits, to_plot, m, label=baseline, markersize=8)
+        if baseline == 'Total':
+            ours = to_plot
+        else:
+            tmp = np.array(to_plot)
+            tmp[tmp==None] = 1e10
+            best_baseline = np.minimum(best_baseline, tmp)
+    print('comm mean')
+    print(ours)
+    print(best_baseline)
+    improve = best_baseline / ours
+
+    plt.xticks(num_qubits,labels=[str(num_gpus[x])+'\n('+str(round(improve[x] * 100))+'%)' for x in range(len(num_gpus))],fontsize=12)
+    # plt.xticks(num_qubits,labels=[str(num_gpus[x]) for x in range(len(num_gpus))],fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.ylim(bottom=0)
+
+    plt.xlabel('Number of GPUs / Communication Time Percentage     ', fontsize=12, fontweight='bold')
+    plt.ylabel('Average Time (ms)', fontsize=12, fontweight='bold')
+    fig = plt.gcf()
+    plt.legend(fontsize=12, ncol=1)
+    fig.set_size_inches(5.6, 2.6)
+    plt.savefig('figures-comm/comm_mean.pdf', dpi=1000, bbox_inches='tight')
+
 
 if not os.path.exists('figures'):
     os.makedirs('figures')
 for circuit in benchmark:
     plot_perf(circuit)
+if not os.path.exists('figures-comm'):
+    os.makedirs('figures-comm')
+for circuit in benchmark:
+    plot_comm(circuit)
+# plot_comm_geomean()
+plot_comm_arithmean()
 # plot_scalability()

@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FormatStrFormatter
 import numpy as np
 import re
 
@@ -64,7 +65,8 @@ for baseline, simu_time in baselines.items():
         continue
     speedups = []
     mean_speedups = []
-    for g in num_gpus:
+    mean_speedups1 = []
+    for g in [1]:  # num_gpus:
         t = np.array(simu_time[g])
         quartz = np.array(simu_time_quartz[g])
         while len(t) > 0 and t[0] is None:
@@ -74,12 +76,14 @@ for baseline, simu_time in baselines.items():
             continue
         speedup = t / quartz
         mean_speedups.append(speedup.mean())
+        mean_speedups1.append(speedup[1:].mean())
         speedups.append(speedup.max())
     print('max speedup over', baseline, np.array(speedups).max())
     print('mean speedup over', baseline, np.array(mean_speedups).mean())
+    print('mean speedup (without the first) over', baseline, np.array(mean_speedups1).mean())
 
 
-def plot_offload():
+def plot_offload_backup():
     plt.cla()
     fig, ax = plt.subplots(layout='constrained')
     for baseline, simu_time in baselines.items():
@@ -101,4 +105,54 @@ def plot_offload():
     plt.savefig('scalability.pdf', dpi=1000, bbox_inches='tight')
 
 
-plot_offload()
+def plot_offload_with_qdao():
+    plt.cla()
+    fig, ax = plt.subplots(layout='constrained')
+    for baseline, simu_time in baselines.items():
+        for g in [1]:
+            # if simu_time[g][0] is None:
+            #     continue
+            plt.plot(num_qubits, simu_time[g], styles[baseline][g], label=f'{baseline}')
+
+    improve = np.array(simu_time_qdao_qiskit[1]) / np.array(simu_time_quartz[1])
+    plt.xticks(num_qubits,
+               labels=[str(num_qubits[x]) + '\n(' + str(round(improve[x])) + 'x)' for x in range(len(num_qubits))],
+               fontsize=12)
+    plt.yticks(fontsize=12)
+
+    plt.xlabel('Number of Qubits\n(Speedup of Atlas)', fontsize=12, fontweight='bold')
+    plt.ylabel('Simulation Time (s)', fontsize=12, fontweight='bold')
+    plt.yscale('log')
+    ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
+    # plt.ylim(bottom=0, top=60)
+    fig = plt.gcf()
+    plt.legend(fontsize=12, ncol=1, bbox_to_anchor=(0.35, 0.34))
+    fig.set_size_inches(3, 2.7)
+    plt.savefig('scalability-qdao.pdf', dpi=1000, bbox_inches='tight')
+
+
+def plot_offload_atlas():
+    plt.cla()
+    fig, ax = plt.subplots(layout='constrained')
+    plot_num_gpus = [1, 2, 4]
+    results = [simu_time_quartz[g][4] for g in plot_num_gpus]
+    x = np.arange(len(plot_num_gpus))  # the label locations
+    width = 0.5  # the width of the bars
+    multiplier = 0
+    plt.cla()
+    fig, ax = plt.subplots(layout='constrained')
+    rects = ax.bar(x, results, width, label='Atlas')
+    plt.legend(fontsize=12, ncol=1)
+    fig = plt.gcf()
+    plt.xticks(x, plot_num_gpus, fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.ylim(bottom=0)
+    plt.xlabel('Number of GPUs', fontsize=12, fontweight='bold')
+    plt.ylabel('Simulation Time (s)', fontsize=12, fontweight='bold')
+    fig.set_size_inches(2.2, 2.7)
+    plt.savefig('scalability-atlas.pdf', dpi=1000, bbox_inches='tight')
+
+
+if __name__ == '__main__':
+    plot_offload_with_qdao()
+    plot_offload_atlas()
