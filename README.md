@@ -118,11 +118,11 @@ make -j 12
 # in pulp conda environment
 cd ../perlmutter/e2e
 export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact
-sbatch srun-1-quartz.sh
-sbatch srun-2-quartz.sh
-sbatch srun-4-quartz.sh
-sbatch srun-8-quartz.sh
-sbatch srun-16-quartz.sh
+sbatch srun-1-quartz.sh  # takes around 2 minutes
+sbatch srun-2-quartz.sh  # takes around 1 minute
+sbatch srun-4-quartz.sh  # takes around 1 minute
+sbatch srun-8-quartz.sh  # takes around 1 minute
+sbatch srun-16-quartz.sh  # takes around 2 minutes
 ```
 
 ### HyQuas
