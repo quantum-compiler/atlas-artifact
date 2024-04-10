@@ -247,7 +247,7 @@ cp ../atlas-artifact/perlmutter/offload/run_qdao.py .
 cp ../atlas-artifact/perlmutter/offload/run_qdao.sh .
 salloc --nodes 1 -q regular --time 01:20:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
 conda activate qdao
-LD_LIBRARY_PATH="" time bash run_qdao.sh 0 && exit  # takes around 1 hour
+LD_LIBRARY_PATH="" time bash run_qdao.sh 0 && exit  # takes around 60 minutes
 ```
 
 The results are stored in `qdao/logs`.
