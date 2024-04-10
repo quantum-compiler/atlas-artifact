@@ -7,7 +7,7 @@ Following parts will assume that these commands are executed (unless specified o
 ```shell
 # Create Python environment
 cd deps/quartz
-conda env create --name quartz --file env.yml
+conda env create --name quartz python=3.11 --file env.yml
 conda activate quartz
 
 # Build Quartz
@@ -165,6 +165,7 @@ sbatch srun-16-hyquas.sh
 2. Run:
 
 ```shell
+# in quartz conda environment
 # cd perlmutter/e2e
 bash cuQuantum.sh 1 1 28  # takes less than 1 minute each
 bash cuQuantum.sh 1 2 29
@@ -181,6 +182,7 @@ bash cuQuantum.sh 16 4 34
 2. Run:
 
 ```shell
+# in quartz conda environment
 # cd perlmutter/e2e
 bash Qiskit.sh 1 1 28  # takes around 3 minutes
 bash Qiskit.sh 1 2 29  # takes around 12 minutes
