@@ -1,8 +1,12 @@
 # Atlas: Hierarchical Partitioning for Quantum Circuit Simulation on GPUs
 
+We use the Perlmutter supercomputer to evaluate the performance of Atlas,
+and use a single-core CPU (can be a laptop) to evaluate the algorithms Stage and Kernelize.
+
 Atlas is built on [Quartz](https://github.com/quantum-compiler/quartz).
 To run the artifact, please create a Python environment for Quartz and copy the necessary circuits first.
-Following parts will assume that these commands are executed (unless specified otherwise, the `quartz` conda environment is used):
+This needs to be done on both the single-core CPU and Perlmutter.
+The following parts will assume that these commands are executed:
 
 ```shell
 # Create Python environment
@@ -28,6 +32,7 @@ cd ..
 To plot the existing results in Figure 8:
 
 ```shell
+# in quartz conda environment
 cd staging_bench
 python ilp_plot.py
 ```
@@ -35,6 +40,7 @@ python ilp_plot.py
 To run the experiment and reproduce the results (takes ~14 hours):
 
 ```shell
+# in quartz conda environment
 cd deps/quartz/build
 make benchmark_ilp_num_stages
 cd ..
@@ -47,6 +53,7 @@ cp ilp_result.csv ../../staging_bench
 To plot the existing results in Figure 9:
 
 ```shell
+# in quartz conda environment
 cd kernelization_bench
 python dp_plot.py
 ```
@@ -54,6 +61,7 @@ python dp_plot.py
 To run the experiment and reproduce the results (takes ~17 hours):
 
 ```shell
+# in quartz conda environment
 cd deps/quartz/build
 make benchmark_dp
 ./benchmark_dp
@@ -68,6 +76,7 @@ We run the end-to-end experiments on Perlmutter.
 To plot the existing results in Figures 5 and 10:
 
 ```shell
+# in quartz conda environment
 cd perlmutter/e2e/logs
 python plot.py
 ```
@@ -196,6 +205,7 @@ We run the DRAM offloading experiments on Perlmutter.
 To plot the existing results in Figures 6 and 7:
 
 ```shell
+# in quartz conda environment
 cd perlmutter/offload
 python plot_offload.py
 ```
