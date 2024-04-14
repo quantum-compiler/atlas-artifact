@@ -6,9 +6,10 @@
 #SBATCH -N 2
 #SBATCH --gpus-per-node=4
 
-module load cray-mpich/8.1.28
-module load nccl
-module load cudatoolkit
+module load cudatoolkit/11.7
+module load nccl/2.15.5
+module load gcc/11.2.0
+module load cray-mpich/8.1.25
 export MPICH_GPU_SUPPORT_ENABLED=1
 
 cd $HYQUAS_ROOT/build

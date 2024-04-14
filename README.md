@@ -140,24 +140,35 @@ sbatch srun-16-quartz.sh  # takes around 2 minutes
 ```shell
 git clone -b perlmutter https://github.com/caoshiyi/HyQuas --recursive
 ```
-2. Compile the `cutt` lib:
+
+2. load modules
+```shell
+module load cudatoolkit/11.7
+module load nccl/2.15.5
+module load gcc/11.2.0
+module load cray-mpich/8.1.25
+```
+
+3. Compile the `cutt` lib:
 ```shell
 cd HyQuas/third-party/cutt
 make -j
 ```
-3. Specify HyQuas Root Dir:
+
+4. Specify HyQuas Root Dir:
 ```shell
 export HYQUAS_ROOT=${The_directory_running_git_clone}/HyQuas
 ```
-4. To reproduce the results we displayed in the paper, build HyQuas using:
+
+5. To reproduce the results we displayed in the paper, build HyQuas using:
 ```shell
-module load nccl
 cd $HYQUAS_ROOT/scripts
 source ../scripts/init.sh -DBACKEND=mix -DSHOW_SUMMARY=on -DSHOW_SCHEDULE=off -DMICRO_BENCH=on -DUSE_DOUBLE=on -DDISABLE_ASSERT=off -DENABLE_OVERLAP=on -DMEASURE_STAGE=off -DEVALUATOR_PREPROCESS=on -DUSE_MPI=on -DMAT=7
 ```
-5. Replace `YOUR_ACCOUNT` with your account name in `atlas-artifact/perlmutter/e2e/srun-1-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-2-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-4-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-8-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-16-hyquas.sh`.
 
-6. Use the scripts `*-hyquas.sh` under `atlas-artifact/perlmutter/e2e` to run the experiments on different number of GPUs.
+6. Replace `YOUR_ACCOUNT` with your account name in `atlas-artifact/perlmutter/e2e/srun-1-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-2-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-4-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-8-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-16-hyquas.sh`.
+
+7. Use the scripts `*-hyquas.sh` under `atlas-artifact/perlmutter/e2e` to run the experiments on different number of GPUs.
 ```shell
 # assume HyQuas and atlas-artifact share the same parent directory
 cd ../../atlas-artifact/perlmutter/e2e
