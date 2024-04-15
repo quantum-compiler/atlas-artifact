@@ -138,6 +138,7 @@ sbatch srun-16-quartz.sh  # takes around 2 minutes
 
 1. Download our modified HyQuas from the `perlmutter` branch of the [Repo](https://github.com/caoshiyi/HyQuas):
 ```shell
+# It is recommended to let HyQuas and atlas-artifact share the same parent directory.
 git clone -b perlmutter https://github.com/caoshiyi/HyQuas --recursive
 ```
 
@@ -170,11 +171,11 @@ source ../scripts/init.sh -DBACKEND=mix -DSHOW_SUMMARY=on -DSHOW_SCHEDULE=off -D
 ```shell
 # assume HyQuas and atlas-artifact share the same parent directory
 cd ../../atlas-artifact/perlmutter/e2e
-sbatch srun-1-hyquas.sh
-sbatch srun-2-hyquas.sh
-sbatch srun-4-hyquas.sh
-sbatch srun-8-hyquas.sh
-sbatch srun-16-hyquas.sh
+sbatch srun-1-hyquas.sh  # takes around 3 minutes
+sbatch srun-2-hyquas.sh  # takes around 8 minutes
+sbatch srun-4-hyquas.sh  # takes around 2 minutes
+sbatch srun-8-hyquas.sh  # takes around 7 minutes
+sbatch srun-16-hyquas.sh  # takes around 7 minutes
 ```
 
 ### cuQuantum
