@@ -87,7 +87,7 @@ running_time_geomean = [
 labels = ['Baseline', 'Atlas-Naive'] + ['Atlas'] * (num_t - 2)
 styles = ['.-', '+-'] + ['x-'] * (num_t - 2)
 markersize = [8] * num_t
-plot_loc = [15, 1, 0]
+plot_loc = [15, 0]  # plot_loc = [15, 1, 0]
 
 
 def plot_individual():
