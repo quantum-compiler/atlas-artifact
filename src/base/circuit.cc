@@ -12,9 +12,9 @@
 #include "quartz/parser/qasm_parser.h"
 #include "quartz/tasograph/tasograph.h"
 
-namespace quartz {
-
 constexpr bool kDebug = false;
+
+namespace quartz {
 
 // check type
 int num_iterations_by_heuristics(CircuitSeq *seq, int num_local_qubits,
