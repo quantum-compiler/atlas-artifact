@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p logs
+mkdir -p logs/cusvaer
+
 CONSTRAINT="gpu"
 NUM_NODES=$1
 GPUS_PER_TASK=1
@@ -10,7 +13,7 @@ IMAGE_NAME="cuquantum-appliance"
 IMAGE_TAG="23.03"
 
 NUM_GPUS=$((${GPUS_PER_NODE}*${NUM_NODES}))
-srun --account=YOUR_ACCOUNT \
+srun --account=m4138 \
      --qos=regular \
      --constraint=${CONSTRAINT} \
      --nodes=${NUM_NODES} \

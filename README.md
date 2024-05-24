@@ -9,6 +9,9 @@ This needs to be done on both the single-core CPU and Perlmutter.
 The following parts will assume that these commands are executed:
 
 ```shell
+# clone this repo
+git clone git@github.com:quantum-compiler/atlas-artifact.git --recursive
+
 # Create Python environment
 cd deps/quartz
 conda env create --name quartz python=3.11 --file env.yml
@@ -20,9 +23,7 @@ cd build
 cmake ..
 
 # Copy circuits
-cd ../../..
-yes | cp -rf circuit deps/quartz
-cd circuit
+cd ../../../circuit
 bash copy.sh
 cd ..
 ```
@@ -88,7 +89,7 @@ Following are the instructions to run the experiment and reproduce the results.
 1. Set related environment variables in `config/config.linux`
    We support two modes for simulation in Atlas. First one is distributed GPU-based simulation (`USE_LEGION=OFF`). The other one is CPU-offload enabled simulation (`USE_LEGION=ON`), which support simulating more qubits on a single machine. Note that the second mode hasn't been tested for multi-node execution.
 
-In addition, please also replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact.
+In addition, please either run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact` or replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact.
 
 2. Install the HiGHS solver in Quartz:
 
@@ -126,7 +127,7 @@ make -j 12
 ```shell
 # in pulp conda environment
 cd ../perlmutter/e2e
-export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact
+export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact if this variable is not set
 sbatch srun-1-quartz.sh  # takes around 2 minutes
 sbatch srun-2-quartz.sh  # takes around 1 minute
 sbatch srun-4-quartz.sh  # takes around 1 minute
@@ -184,15 +185,17 @@ sbatch srun-16-hyquas.sh  # takes around 7 minutes
 2. Run:
 
 ```shell
-# in quartz conda environment
+# conda environment is not necessary
 # cd perlmutter/e2e
-bash cuQuantum.sh 1 1 28  # takes less than 1 minute each
-bash cuQuantum.sh 1 2 29
-bash cuQuantum.sh 1 4 30
-bash cuQuantum.sh 2 4 31
-bash cuQuantum.sh 4 4 32
-bash cuQuantum.sh 8 4 33
-bash cuQuantum.sh 16 4 34
+bash cuQuantum.sh 1 1 29  # takes around 2 minutes
+bash cuQuantum.sh 1 2 30  # takes around 2 minutes
+bash cuQuantum.sh 1 4 31  # takes around 2 minutes
+bash cuQuantum.sh 2 4 32  # takes around 2 minutes
+bash cuQuantum.sh 4 4 33  # takes around 3 minutes
+bash cuQuantum.sh 8 4 34  # takes around 3 minutes
+bash cuQuantum.sh 16 4 35  # takes around 3 minutes
+bash cuQuantum.sh 32 4 36  # takes around 3 minutes
+bash cuQuantum.sh 64 4 37  # takes around 3 minutes
 ```
 
 ### Qiskit
@@ -224,10 +227,10 @@ Following are the instructions to run the experiment and reproduce the results.
 
 ### Atlas
 
-1. Set related environment variables in `config/config.linux` (setting `USE_LEGION=ON`), replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact,
-   and use a Python 3.8 environment with PuLP and Qiskit.
-2. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct location.
-3. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
+1. Set related environment variables in `config/config.linux` (setting `USE_LEGION=ON`), and use a Python 3.8 environment with PuLP and Qiskit.
+2. Either run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact` (if not already) or replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact.
+3. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct location.
+4. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
 
 ```shell
 cd build
@@ -288,8 +291,9 @@ These instructions are only for your information.
 MQT Bench:
 
 1. Download the circuits from https://www.cda.cit.tum.de/mqtbench/. Choose scalable benchmarks and "Target-independent Level"->"Qiskit".
-2. Replace the SWAP gates with logical qubit swaps because some previous work does not support SWAP gates, and this replacement does not affect the result:
+2. Copy the circuits to `$ATLAS_HOME/circuit/MQTBench_${number_of_qubits}q` and replace the SWAP gates with logical qubit swaps because some previous work does not support SWAP gates, and this replacement does not affect the result:
 
+(You may need to edit `$ATLAS_HOME/deps/quartz/src/test/test_remove_swap.cpp` as needed if you use other circuits that are not in this repository.) 
 ```shell
 cd deps/quartz/build
 make test_remove_swap
@@ -319,9 +323,22 @@ python qsvm_raw.py 31
 python qsvm_raw.py 32
 python qsvm_raw.py 33
 python qsvm_raw.py 34
+python qsvm_raw.py 35
+python qsvm_raw.py 36
+python qsvm_raw.py 37
+python qsvm_raw.py 38
 python qsvm_raw.py 42
 ```
 
 Similar for `ising` and `ising.py`, `vqc` and `vqc_raw.py`.
 
 4. The result circuits are in the folder `(path/to/nwqbench)/NWQ_Bench/qsvm/qasm/` (and similar for others).
+
+5. Copy the circuits to `$ATLAS_HOME/circuit/NWQBench` and replace the SWAP gates with logical qubit swaps because some previous work does not support SWAP gates, and this replacement does not affect the result:
+
+(You may need to edit `$ATLAS_HOME/deps/quartz/src/test/test_remove_swap.cpp` as needed if you use other circuits that are not in this repository.)
+```shell
+cd deps/quartz/build
+make test_remove_swap
+./test_remove_swap
+```

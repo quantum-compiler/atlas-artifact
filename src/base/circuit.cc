@@ -14,6 +14,8 @@
 
 namespace quartz {
 
+constexpr bool kDebug = false;
+
 // check type
 int num_iterations_by_heuristics(CircuitSeq *seq, int num_local_qubits,
                                  std::vector<std::vector<bool>> &local_qubits) {
@@ -260,9 +262,11 @@ bool qcircuit::Circuit<DT>::compile(quartz::CircuitSeq *seq,
         local_mask.push_back(pos[i] < n_local);
       }
 
-      printf("Current Layout0: [");
-      for (int i = 0; i < permutation.size(); i++) {
-        printf("%d, ", permutation[i]);
+      if (kDebug) {
+        printf("Current Layout0: [");
+        for (int i = 0; i < permutation.size(); i++) {
+          printf("%d, ", permutation[i]);
+        }
       }
 
       permutation_record.push_back(permutation);
@@ -284,9 +288,11 @@ bool qcircuit::Circuit<DT>::compile(quartz::CircuitSeq *seq,
       gates.push_back(gate);
       task_map.push_back(SimGateType::SHUFFLE);
       update_layout_from_schedule(schedule, schedules[idx-1]);
-      printf("Current Layout0: [");
-      for (int i = 0; i < permutation.size(); i++) {
-        printf("%d, ", permutation[i]);
+      if (kDebug) {
+        printf("Current Layout0: [");
+        for (int i = 0; i < permutation.size(); i++) {
+          printf("%d, ", permutation[i]);
+        }
       }
       idx++;
     }
@@ -302,13 +308,17 @@ bool qcircuit::Circuit<DT>::compile(quartz::CircuitSeq *seq,
         num_shm++;
         SimGateType g_type = SHM;
         qindex active_qubits_logical = 0;
-        printf("SHM Kernel Physical (%d): [ ", kernel.gates->gates.size());
+        if (kDebug) {
+          printf("SHM Kernel Physical (%d): [ ", kernel.gates->gates.size());
+        }
         for (int i = 0; i < kernel.qubits.size(); i++) {
           active_qubits_logical |= qindex(1) << kernel.qubits[i];
-          if (i != kernel.qubits.size() - 1)
-            printf("%d,", pos[kernel.qubits[i]]);
-          else
-            printf("%d]\n", pos[kernel.qubits[i]]);
+          if (kDebug) {
+            if (i != kernel.qubits.size() - 1)
+              printf("%d,", pos[kernel.qubits[i]]);
+            else
+              printf("%d]\n", pos[kernel.qubits[i]]);
+          }
         }
         // if kernel.qubits.size() < SHARED_MEM_SIZE: fill it
         if (kernel.qubits.size() < SHARED_MEM_SIZE) {
@@ -457,7 +467,9 @@ void qcircuit::Circuit<DT>::simulate(bool use_mpi) {
 template <typename DT>
 bool qcircuit::Circuit<DT>::FuseGates(const quartz::Kernel &kernel,
                                  quartz::Context *ctx) {
-  printf("Start fusing gates...\n");
+  if (kDebug) {
+    printf("Start fusing gates...\n");
+  }
   SimGateType g_type = FUSED;
   unsigned n_target = kernel.qubits.size();
   unsigned n_control = 0;
@@ -465,22 +477,28 @@ bool qcircuit::Circuit<DT>::FuseGates(const quartz::Kernel &kernel,
   std::vector<int> control;
   
   //reset qubit group map for current fusion kernel's qubits
-  printf("Reset qubit group map\n");
+  if (kDebug) {
+    printf("Reset qubit group map\n");
+  }
   int fuse = 0;
   qubit_group_map_fusion.clear();
   for (int i = 0; i < n_local; i++) {
     if (std::find(kernel.qubits.begin(), kernel.qubits.end(), permutation[i]) != kernel.qubits.end()) {
         target.push_back(i); //physical target
-        printf("(%d, %d) ", i, permutation[i]);
+        if (kDebug) {
+          printf("(%d, %d) ", i, permutation[i]);
+        }
         qubit_group_map_fusion[permutation[i]] = fuse++;
     }
   }
 
-  printf("current Layout: [");
-  for (int i = 0; i < permutation.size(); i++){
-    printf("%d,", permutation[i]);
+  if (kDebug) {
+    printf("current Layout: [");
+    for (int i = 0; i < permutation.size(); i++){
+        printf("%d,", permutation[i]);
+    }
+    printf("]\n");
   }
-  printf("]\n");
 
   if(n_target==0) {
     printf("we have 0-qubit fusion kernel\n");
@@ -490,15 +508,17 @@ bool qcircuit::Circuit<DT>::FuseGates(const quartz::Kernel &kernel,
     }
   }
 
-  printf( "Fusing Kernel (%d gates): qubits [", kernel.gates->gates.size());
-  for (int j = 0; j < (int)kernel.qubits.size(); j++) {
-    std::cout << kernel.qubits[j];
-    if (j != (int)kernel.qubits.size() - 1) {
-      std::cout << ", ";
+  if (kDebug) {
+    printf( "Fusing Kernel (%d gates): qubits [", kernel.gates->gates.size());
+    for (int j = 0; j < (int)kernel.qubits.size(); j++) {
+      std::cout << kernel.qubits[j];
+      if (j != (int)kernel.qubits.size() - 1) {
+          std::cout << ", ";
+      }
     }
+    std::cout << "], gates ";
+    std::cout << kernel.to_string() << std::endl;
   }
-  std::cout << "], gates ";
-  std::cout << kernel.to_string() << std::endl;
 
 
   std::vector<int> qubits = kernel.qubits;
@@ -519,18 +539,24 @@ bool qcircuit::Circuit<DT>::FuseGates(const quartz::Kernel &kernel,
   // std::sort(qubits.begin(), qubits.end());
 
   for (int i = 0; i < kernel.gates->gates.size(); i++) {
-    printf("Gate %d: [", i);
+    if (kDebug) {
+      printf("Gate %d: [", i);
+    }
     std::vector<int> qubit_indices;
     std::vector<ParamType> params;
     for (const auto &input_wire : kernel.gates->gates[i]->input_wires) {
       if (input_wire->is_qubit()) {
         qubit_indices.push_back(input_wire->index);
-        printf("%d, ", input_wire->index);
+        if (kDebug) {
+          printf("%d, ", input_wire->index);
+        }
       } else {
         params.push_back(ctx->get_param_value(input_wire->index));
       }
     }
-    printf("]\n");
+    if (kDebug) {
+      printf("]\n");
+    }
 
     for (int d = 0; d < n_devices; d++) {
       unsigned mask = 0;
@@ -562,7 +588,9 @@ void qcircuit::Circuit<DT>::MatMul(unsigned mask, unsigned n_fused, M &res_mat,
   for (int i = 0; i < n_fused; i++) {
     if((mask >> i) & 1) m_size++;
   }
-  printf("Matrix Multiplication (%d, %d), mask %d\n", n_fused, m_size, mask);
+  if (kDebug) {
+    printf("Matrix Multiplication (%d, %d), mask %d\n", n_fused, m_size, mask);
+  }
   unsigned n1 = unsigned{1} << m_size;
   unsigned n = unsigned{1} << n_fused;
   std::vector<std::complex<DT>> temp_mat = res_mat;
@@ -646,7 +674,9 @@ void qcircuit::Circuit<DT>::MatShuffle(M &res_mat, unsigned n_qubit,
 #define IS_HIGH_PART(part_id, logicIdx) ((part_id >> (pos[logicIdx] - n_local) & 1) > 0)
 template <typename DT>
 bool qcircuit::Circuit<DT>::getMat_per_device(quartz::Context *ctx, int part_id, quartz::Gate* gate, std::vector<int> qubit_indices, std::vector<ParamType>& params, std::vector<ComplexType>& res, unsigned &mask, std::vector<int>& perm) {
-  printf("Fusing gate %d(%d) for rank %d\n", gate->tp, gate->get_num_control_qubits(), part_id);
+  if (kDebug) {
+    printf("Fusing gate %d(%d) for rank %d\n", gate->tp, gate->get_num_control_qubits(), part_id);
+  }
   if (gate->get_num_control_qubits() == 2) { //ccx
     int c2 = qubit_indices[0];
     int c1 = qubit_indices[1];
@@ -721,7 +751,9 @@ bool qcircuit::Circuit<DT>::getMat_per_device(quartz::Context *ctx, int part_id,
   }
   else if (gate->get_num_control_qubits() == 1) {//cz, cp, cx
     int c = qubit_indices[0], t = qubit_indices[1];
-    printf("c,t %d,%d\n",c,t);
+    if (kDebug) {
+        printf("c,t %d,%d\n",c,t);
+    }
     if (local_mask[c] && local_mask[t]) { // CU(c, t)
       auto *m = gate->get_matrix(params);
       res = m->flatten();
@@ -818,7 +850,9 @@ bool qcircuit::Circuit<DT>::getMat_per_device(quartz::Context *ctx, int part_id,
   }
   else if (gate->get_num_control_qubits() == 0) {
     int t = qubit_indices[0];
-    printf("t %d\n",t);
+    if (kDebug) {
+        printf("t %d\n",t);
+    }
       if (!local_mask[t]) { // GCC(t)
         switch (gate->tp) {
             case quartz::GateType::p: {

@@ -8,21 +8,21 @@
 #include "kernel.h"
 #include "simulator.h"
 
-__global__ void initData(int* ptr, int data) {
-  int i = blockIdx.x * blockDim.x + threadIdx.x;
+__global__ void initData(unsigned* ptr, unsigned data) {
+  unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
   ptr[i] = data;
   // printf("%d\n", ptr[i]);
 }
 
-__global__ void checkData(int* ptr, int size) {
-  int i = blockIdx.x * blockDim.x + threadIdx.x;
+__global__ void checkData(unsigned* ptr, unsigned size) {
+  unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
   if (i==0)
     printf("hello checking all2all\n");
-  assert(ptr[i] == (int) i / size);
+  assert(ptr[i] == (unsigned) i / size);
 }
 
 __global__ void checkState(qComplex* ptr, qComplex* ptr2) {
-  int i = blockIdx.x * blockDim.x + threadIdx.x;
+  unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
   if (i==0)
     printf("hello checking states\n");
   const double eps = 1.0e-5;
@@ -314,7 +314,7 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
     }
     printf("]\n");
 
-    int sendsize = subSvSize / (1 << nGlobalSwaps);
+    unsigned sendsize = subSvSize / (1 << nGlobalSwaps);
     for (int i = 0; i < n_devices; i++) {
       HANDLE_CUDA_ERROR(cudaSetDevice(devices[i]));
       HANDLE_CUDA_ERROR(
@@ -415,7 +415,7 @@ bool SimulatorCuQuantum<DT>::ApplyRecordedShuffle(unsigned global_swap, const st
     if(global_swap >> i & 1) nGlobalSwaps++;
   }
 
-  int sendsize = subSvSize / (1 << nGlobalSwaps);
+  unsigned sendsize = subSvSize / (1 << nGlobalSwaps);
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaSetDevice(devices[i]));
     HANDLE_CUDA_ERROR(
@@ -473,8 +473,8 @@ bool SimulatorCuQuantum<DT>::ApplyRecordedShuffle(unsigned global_swap, const st
 template <typename DT>
 bool SimulatorCuQuantum<DT>::InitStateSingle(
     std::vector<unsigned> const &init_perm) {
-  int size = init_perm.size();
-  for (int i = 0; i < size; i++) {
+  unsigned size = init_perm.size();
+  for (unsigned i = 0; i < size; i++) {
     permutation.push_back(init_perm[i]);
   }
 
@@ -483,7 +483,7 @@ bool SimulatorCuQuantum<DT>::InitStateSingle(
   else
     using statevector_t = cuDoubleComplex;
 
-  int const subSvSize = (1 << n_local);
+  unsigned const subSvSize = (1u << n_local);
 
   int nDevices;
   HANDLE_CUDA_ERROR(cudaGetDeviceCount(&nDevices));
@@ -562,9 +562,9 @@ bool SimulatorCuQuantum<DT>::InitStateMulti(
   while (x >>= 1)
     n_global_within_node++;
   subSvSize = (1 << n_local);
-  int size = init_perm.size();
+  unsigned size = init_perm.size();
   pos.resize(size);
-  for (int i = 0; i < size; i++) {
+  for (unsigned i = 0; i < size; i++) {
     permutation.push_back(init_perm[i]);
     pos[init_perm[i]] = i;
   }
@@ -631,10 +631,10 @@ bool SimulatorCuQuantum<DT>::InitStateMulti(
   for (int i = n_global - 1; i >= 0; i--) {
     global |= unsigned(1) << i;
   }
-  int sendsize = subSvSize / (1 << n_global);
+  unsigned sendsize = subSvSize / (1 << n_global);
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaSetDevice(devices[i]));
-    initData<<<4*subSvSize/1024, 1024, 0, s[i]>>>((int*)d_sv[i], myRank * n_devices + i);
+    initData<<<subSvSize/256, 1024, 0, s[i]>>>((unsigned*)d_sv[i], myRank * n_devices + i);
   }
   cudaDeviceSynchronize();
   printf("[warmup] size total:%lld\n", sendsize*sizeof(qComplex));
@@ -652,7 +652,7 @@ bool SimulatorCuQuantum<DT>::InitStateMulti(
   NCCLCHECK(ncclGroupEnd());
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaStreamSynchronize(s[i]));
-    checkData<<<4*subSvSize/1024, 1024, 0, s[i]>>>((int*)recv_buf[i], 4*subSvSize/(nRanks*n_devices));
+    checkData<<<subSvSize/256, 1024, 0, s[i]>>>((unsigned*)recv_buf[i], 4llu*subSvSize/(nRanks*n_devices));
   }
   cudaDeviceSynchronize();
   for (int i = 0; i < n_devices; i++) {
@@ -756,7 +756,7 @@ ncclResult_t SimulatorCuQuantum<DT>::all2all(
     unsigned i_ = i;
     unsigned q = 0;
 
-    while ((1 << q) <= ncclnRanks) {
+    while ((1llu << q) <= ncclnRanks) {
       if ((mask >> q) & 1) {
         peer_idx |= ((i_ >> pos) & 1) << q;
         ++pos;
