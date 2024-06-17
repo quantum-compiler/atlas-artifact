@@ -12,8 +12,6 @@
 #include "quartz/parser/qasm_parser.h"
 #include "quartz/tasograph/tasograph.h"
 
-constexpr bool kDebug = false;
-
 namespace quartz {
 
 // check type

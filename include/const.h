@@ -8,6 +8,8 @@
 #include <cuda_runtime_api.h> // cudaMalloc, cudaMemcpy, etc.
 #include <custatevec.h>       // custatevecApplyMatrix
 
+constexpr bool kDebug = false;
+
 // form HyQuas
 #ifdef USE_FLOAT
 typedef float qreal;

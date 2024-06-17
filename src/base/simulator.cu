@@ -16,14 +16,14 @@ __global__ void initData(unsigned long long *ptr, unsigned long long data) {
 
 __global__ void checkData(unsigned long long *ptr, unsigned long long size) {
   unsigned long long i = blockIdx.x * blockDim.x + threadIdx.x;
-  if (i == 0)
+  if (kDebug && i == 0)
     printf("hello checking all2all\n");
   assert(ptr[i] == (unsigned long long)i / size);
 }
 
 __global__ void checkState(qComplex *ptr, qComplex *ptr2) {
   unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
-  if (i == 0)
+  if (kDebug && i == 0)
     printf("hello checking states\n");
   const double eps = 1.0e-5;
   const double diffx = ptr[i].x - ptr2[i].x;
@@ -190,11 +190,13 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
 
   int nGlobalSwaps = n_global;
   int nLocalSwaps = 0;
-  printf("Before Perm: [");
-  for (int i = 0; i < n_local + n_global; i++) {
-    printf("%d,", permutation[i]);
+  if (kDebug) {
+    printf("Before Perm: [");
+    for (int i = 0; i < n_local + n_global; i++) {
+      printf("%d,", permutation[i]);
+    }
+    printf("]\n");
   }
-  printf("]\n");
 
   std::vector<int> new_global_pos;
   int num_swaps = 0;
@@ -246,11 +248,13 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
     }
   }
 
-  printf("Shuffle: [");
-  for (int i = 0; i < n_local + n_global; i++) {
-    printf("%d,", gate.target[i]);
+  if (kDebug) {
+    printf("Shuffle: [");
+    for (int i = 0; i < n_local + n_global; i++) {
+      printf("%d,", gate.target[i]);
+    }
+    printf("]\n");
   }
-  printf("]\n");
 
   if (nGlobalSwaps == 0)
     return true;
@@ -295,7 +299,9 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
     }
     printf("]\n");
   } else { // else transpose + all2all + update curr perm
-    printf("Using NCCL for cross-node shuffle\n");
+    if (kDebug) {
+      printf("Using NCCL for cross-node shuffle\n");
+    }
 
     // local bit swap
     for (int i = 0; i < n_devices; i++) {
@@ -314,11 +320,13 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
                 permutation[LocalIndexBitSwaps[i].y]);
     }
     // print layout
-    printf("After local Perm: [");
-    for (int i = 0; i < n_local + n_global; i++) {
-      printf("%d,", permutation[i]);
+    if (kDebug) {
+      printf("After local Perm: [");
+      for (int i = 0; i < n_local + n_global; i++) {
+        printf("%d,", permutation[i]);
+      }
+      printf("]\n");
     }
-    printf("]\n");
 
     unsigned sendsize = subSvSize / (1 << nGlobalSwaps);
     for (int i = 0; i < n_devices; i++) {
@@ -342,7 +350,9 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
 
     NCCLCHECK(ncclGroupStart());
     for (int i = 0; i < n_devices; ++i) {
-      printf("My physical id:%d, %d\n", myRank * n_devices + i, global_mask);
+      if (kDebug) {
+        printf("My physical id:%d, %d\n", myRank * n_devices + i, global_mask);
+      }
       unsigned myncclrank = device_phy_to_logical.at(myRank * n_devices + i);
       all2all(d_sv[i], sendsize, ncclDouble, recv_buf[i], sendsize, ncclDouble,
               comms[i], s[i], global & (~global_mask), myncclrank);
@@ -383,11 +393,13 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
       }
     }
     // print layout
-    printf("After global Perm: [");
-    for (int i = 0; i < n_local + n_global; i++) {
-      printf("%d,", permutation[i]);
+    if (kDebug) {
+      printf("After global Perm: [");
+      for (int i = 0; i < n_local + n_global; i++) {
+        printf("%d,", permutation[i]);
+      }
+      printf("]\n");
     }
-    printf("]\n");
 
     for (int i = 0; i < n_devices; i++) {
       HANDLE_CUDA_ERROR(cudaFree(recv_buf[i]));
@@ -406,7 +418,9 @@ bool SimulatorCuQuantum<DT>::ApplyRecordedShuffle(
   int maskBitString[] = {};
   int maskOrdering[] = {};
 
-  printf("Using NCCL for cross-node shuffle\n");
+  if (kDebug) {
+    printf("Using NCCL for cross-node shuffle\n");
+  }
 
   // local bit swap
   int nLocalSwaps = local_swap.size();
@@ -443,7 +457,9 @@ bool SimulatorCuQuantum<DT>::ApplyRecordedShuffle(
 
   NCCLCHECK(ncclGroupStart());
   for (int i = 0; i < n_devices; ++i) {
-    printf("My physical id:%d, %d\n", myRank * n_devices + i, global_swap);
+    if (kDebug) {
+      printf("My physical id:%d, %d\n", myRank * n_devices + i, global_swap);
+    }
     unsigned myncclrank = device_phy_to_logical.at(myRank * n_devices + i);
     all2all(d_sv[i], sendsize, ncclDouble, recv_buf[i], sendsize, ncclDouble,
             comms[i], s[i], global_swap, myncclrank);
@@ -498,7 +514,9 @@ bool SimulatorCuQuantum<DT>::InitStateSingle(
   int nDevices;
   HANDLE_CUDA_ERROR(cudaGetDeviceCount(&nDevices));
   nDevices = min(nDevices, n_devices);
-  printf("Simulating on %d devices\n", nDevices);
+  if (kDebug) {
+    printf("Simulating on %d devices\n", nDevices);
+  }
   for (int i = 0; i < nDevices; i++) {
     devices[i] = i;
   }
@@ -766,7 +784,9 @@ ncclResult_t SimulatorCuQuantum<DT>::all2all(
   ncclGroupStart();
   int ncclnRanks;
   ncclCommCount(comm, &ncclnRanks);
-  printf("NCCL comm nRanks: %d, i am %d\n", ncclnRanks, myncclrank);
+  if (kDebug) {
+    printf("NCCL comm nRanks: %d, i am %d\n", ncclnRanks, myncclrank);
+  }
   for (int i = 0; i < subSvSize / sendcount; ++i) {
     unsigned peer_idx = 0;
     unsigned pos = 0;
@@ -794,8 +814,10 @@ ncclResult_t SimulatorCuQuantum<DT>::all2all(
     //   continue;
     // }
 
-    printf("I am %d, mask %d, I am sending to %d\n", myncclrank, mask,
-           peer_idx);
+    if (kDebug) {
+      printf("I am %d, mask %d, I am sending to %d\n", myncclrank, mask,
+             peer_idx);
+    }
 
     unsigned peer_phy = device_logical_to_phy.at(peer_idx);
 
