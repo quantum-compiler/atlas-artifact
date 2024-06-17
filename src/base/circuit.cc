@@ -417,7 +417,7 @@ void qcircuit::Circuit<DT>::simulate(bool use_mpi) {
   else
     simulator.InitStateMulti(init_permutation);
 
-  printf("Init State Vectors!\n");
+  printf("Init State Vectors on %d devices\n", n_devices);
   auto start = std::chrono::system_clock::now();
 
   int normal_idx = 0;

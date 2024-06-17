@@ -8,17 +8,17 @@
 #include "kernel.h"
 #include "simulator.h"
 
-__global__ void initData(unsigned* ptr, unsigned data) {
-  unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
+__global__ void initData(unsigned long long* ptr, unsigned long long data) {
+  unsigned long long i = blockIdx.x * blockDim.x + threadIdx.x;
   ptr[i] = data;
   // printf("%d\n", ptr[i]);
 }
 
-__global__ void checkData(unsigned* ptr, unsigned size) {
-  unsigned i = blockIdx.x * blockDim.x + threadIdx.x;
+__global__ void checkData(unsigned long long* ptr, unsigned long long size) {
+  unsigned long long i = blockIdx.x * blockDim.x + threadIdx.x;
   if (i==0)
     printf("hello checking all2all\n");
-  assert(ptr[i] == (unsigned) i / size);
+  assert(ptr[i] == (unsigned long long) i / size);
 }
 
 __global__ void checkState(qComplex* ptr, qComplex* ptr2) {
@@ -120,9 +120,9 @@ bool SimulatorCuQuantum<DT>::ApplyKernelGates(
     threadHot += x;
     enumerate -= x;
   }
-  unsigned int hostThreadBias[1 << THREAD_DEP];
+  unsigned int hostThreadBias[1ll << THREAD_DEP];
   assert((threadHot | enumerate) == relatedQubits);
-  for (qindex i = (1 << THREAD_DEP) - 1, j = threadHot; i >= 0;
+  for (qindex i = (1ll << THREAD_DEP) - 1, j = threadHot; i >= 0;
        i--, j = threadHot & (j - 1)) {
     hostThreadBias[i] = j;
   }
@@ -144,7 +144,7 @@ bool SimulatorCuQuantum<DT>::ApplyKernelGates(
   std::map<int, int> qubit_group_map;
   int shm = 0;
   int local = 0;
-  int global = 0; 
+  int global = 0;
   for (int i = 0; i < n_local; i++) {
     if (relatedQubits & (qindex(1) << i)) {
         qubit_group_map[permutation[i]] = shm++;
@@ -156,7 +156,7 @@ bool SimulatorCuQuantum<DT>::ApplyKernelGates(
       qubit_group_map[permutation[i]] = global++;
 
 
-  // now we 
+  // now we
   // 1. reset all the gates' target/control qubit to group qubit id
   // 2. generate per-device schedule
   KernelGate hostGates[n_devices * kernelgates.size()];
@@ -201,7 +201,7 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
     if(pos[gate.target[i + n_local]] < n_local) num_swaps++;
   }
   std::sort(new_global_pos.begin(), new_global_pos.end());
-  
+
   unsigned local_mask = 0;
   unsigned global_mask = 0;
   unsigned global = 0;
@@ -224,7 +224,7 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
             break;
           }
       }
-      
+
       // for nccl-based comm, local transpose
       if(new_global_pos[i] >= (n_local - num_swaps)) {
         local_mask |= 1 << (new_global_pos[i] - n_local + num_swaps);
@@ -273,7 +273,7 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
     for (int i = 0; i < n_devices; i++) {
       unsigned myncclrank = device_phy_to_logical.at(myRank * n_devices + i);
       int i_new = myncclrank & (1 << (n_global_within_node - 1));
-      d_sv_[i] = d_sv[i_new]; 
+      d_sv_[i] = d_sv[i_new];
     }
     HANDLE_ERROR(custatevecMultiDeviceSwapIndexBits(
         handle_, n_devices, (void **)d_sv_, data_type, n_global_within_node,
@@ -292,7 +292,7 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
     printf("]\n");
   } else { // else transpose + all2all + update curr perm
     printf("Using NCCL for cross-node shuffle\n");
-    
+
     // local bit swap
     for (int i = 0; i < n_devices; i++) {
       if (nLocalSwaps == 0)
@@ -372,7 +372,7 @@ bool SimulatorCuQuantum<DT>::ApplyShuffle(Gate<DT> &gate) {
         std::swap(pos[permutation[idx+n_local-num_swaps]], pos[permutation[i+n_local]]);
         std::swap(permutation[idx+n_local-num_swaps], permutation[i+n_local]);
         idx++;
-      }     
+      }
     }
     //print layout
     printf("After global Perm: [");
@@ -398,7 +398,7 @@ bool SimulatorCuQuantum<DT>::ApplyRecordedShuffle(unsigned global_swap, const st
   int maskOrdering[] = {};
 
   printf("Using NCCL for cross-node shuffle\n");
-  
+
   // local bit swap
   int nLocalSwaps = local_swap.size();
   for (int i = 0; i < n_devices; i++) {
@@ -466,7 +466,7 @@ bool SimulatorCuQuantum<DT>::ApplyRecordedShuffle(unsigned global_swap, const st
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaFree(recv_buf[i]));
   }
-  
+
   return true;
 }
 // create sv handles and statevectors for each device on single node
@@ -634,9 +634,11 @@ bool SimulatorCuQuantum<DT>::InitStateMulti(
   unsigned sendsize = subSvSize / (1 << n_global);
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaSetDevice(devices[i]));
-    initData<<<subSvSize/256, 1024, 0, s[i]>>>((unsigned*)d_sv[i], myRank * n_devices + i);
+    initData<<<subSvSize/512, 1024, 0, s[i]>>>
+        ((unsigned long long*)d_sv[i],
+         (unsigned long long)myRank * n_devices + i);
   }
-  cudaDeviceSynchronize();
+  HANDLE_CUDA_ERROR(cudaDeviceSynchronize());
   printf("[warmup] size total:%lld\n", sendsize*sizeof(qComplex));
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaSetDevice(devices[i]));
@@ -652,7 +654,9 @@ bool SimulatorCuQuantum<DT>::InitStateMulti(
   NCCLCHECK(ncclGroupEnd());
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaStreamSynchronize(s[i]));
-    checkData<<<subSvSize/256, 1024, 0, s[i]>>>((unsigned*)recv_buf[i], 4llu*subSvSize/(nRanks*n_devices));
+    checkData<<<subSvSize/512, 1024, 0, s[i]>>>
+        ((unsigned long long*)recv_buf[i],
+         4llu*subSvSize/(nRanks*n_devices));
   }
   cudaDeviceSynchronize();
   for (int i = 0; i < n_devices; i++) {
@@ -708,7 +712,7 @@ template <typename DT> bool SimulatorCuQuantum<DT>::Destroy(bool dump_results) {
       printf("[MPI Rank %d]: Shuffle %d cost %.2fms on average.\n", myRank, i, shuffle_time[i]);
     }
   }
-  
+
   if(dump_results) {
     std::vector<qComplex> results_hyquas;
     results_hyquas.resize(subSvSize);
@@ -725,7 +729,7 @@ template <typename DT> bool SimulatorCuQuantum<DT>::Destroy(bool dump_results) {
     HANDLE_CUDA_ERROR(cudaDeviceSynchronize());
     HANDLE_CUDA_ERROR(cudaFree(hyquas));
   }
-  
+
   for (int i = 0; i < n_devices; i++) {
     HANDLE_CUDA_ERROR(cudaSetDevice(devices[i]));
     HANDLE_ERROR(custatevecDestroy(handle_[i]));
@@ -765,7 +769,7 @@ ncclResult_t SimulatorCuQuantum<DT>::all2all(
     }
     peer_idx |= (myncclrank & (~mask));
 
-    
+
     // if(myncclrank == peer_idx) {
     //   // cudaMemcpyAsync(
     //   // static_cast<std::byte *>(sendbuff) + i * ncclTypeSize(senddatatype) * 2 * sendcount,
@@ -778,7 +782,7 @@ ncclResult_t SimulatorCuQuantum<DT>::all2all(
 
     printf("I am %d, mask %d, I am sending to %d\n", myncclrank, mask,
            peer_idx);
-    
+
     unsigned peer_phy = device_logical_to_phy.at(peer_idx);
 
     auto a = NCCLSendrecv(static_cast<std::byte *>(sendbuff) +
@@ -846,7 +850,7 @@ KernelGate SimulatorCuQuantum<DT>::getGate(const KernelGate& gate, int part_id, 
                   break;
                 default:
                     assert(false);
-              }   
+              }
               return KernelGate(
                   new_type,
                   toID.at(c1), 1 - IS_SHARE_QUBIT(c1),
