@@ -346,7 +346,9 @@ bool qcircuit::Circuit<DT>::compile(quartz::CircuitSeq *seq,
           }
         }
         active_logical_qs.push_back(active_qubits_logical);
-        std::cout << kernel.to_string() << std::endl;
+        if (kDebug) {
+          std::cout << kernel.to_string() << std::endl;
+        }
 
         std::vector<KernelGate> kernelgates;
 

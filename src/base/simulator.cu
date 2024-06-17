@@ -684,7 +684,7 @@ bool SimulatorCuQuantum<DT>::InitStateMulti(
     HANDLE_CUDA_ERROR(cudaStreamSynchronize(s[i]));
     checkData<<<subSvSize / 512, 1024, 0, s[i]>>>(
         (unsigned long long *)recv_buf[i],
-        4llu * subSvSize / (nRanks * n_devices));
+        2llu * subSvSize / (nRanks * n_devices));
   }
   cudaDeviceSynchronize();
   for (int i = 0; i < n_devices; i++) {
