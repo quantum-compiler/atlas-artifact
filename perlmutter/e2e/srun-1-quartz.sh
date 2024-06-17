@@ -20,15 +20,15 @@ mkdir -p logs/atlas
 # Iterate over the strings
 for str in "${strings[@]}"; do
     # Execute the command with the current string
-    ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 30 --local 30 --device 1 --use-ilp > logs/atlas/${str}_30_30.log
+    ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 28 --local 28 --device 1 --use-ilp > logs/atlas/${str}_28.log
 done
 
 for str in "${strings[@]}"; do
     # Execute the command with the current string
-    ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 31 --local 30 --device 2 --use-ilp > logs/atlas/${str}_31_30.log
+    ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 29 --local 28 --device 2 --use-ilp > logs/atlas/${str}_29.log
 done
 
 for str in "${strings[@]}"; do
     # Execute the command with the current string
-    ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 32 --local 30 --device 4 --use-ilp > logs/atlas/${str}_32_30.log
+    ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 30 --local 28 --device 4 --use-ilp > logs/atlas/${str}_30.log
 done

@@ -105,14 +105,16 @@ cmake ..
 make -j 12
 ```
 
-3. Create a Python 3.8 environment with PuLP and Qiskit (Qiskit is not necessary for the end-to-end experiments but
+3. Create a Python 3.8 environment with PuLP (with HiGHS solver) and Qiskit (Qiskit is not necessary for the end-to-end
+   experiments but
    necessary for the DRAM offloading experiments):
 
 ```shell
 module load conda
 conda create --name pulp python=3.8
 conda activate pulp
-pip install pulp qiskit
+pip install -U git+https://github.com/coin-or/pulp@2.7.0
+pip install qiskit
 ```
 
 4. Build and install:
@@ -289,7 +291,7 @@ pip install .
 
 ```python
         self._sim.set_options(blocking_enable=True)
-        self._sim.set_options(blocking_qubits=28)
+self._sim.set_options(blocking_qubits=28)
 ```
 
 3. Copy the scripts to QDAO directory and run in interactive mode (please replace `YOUR_ACCOUNT` with your account
@@ -311,10 +313,12 @@ The results are stored in `qdao/logs`.
 cp logs/* ../atlas-artifact/perlmutter/offload/logs/qdao-qiskit
 ```
 
-## How to generate the circuits used in evaluation (optional)
+## How to generate and preprocess the circuits used in evaluation (optional)
 
 We include all circuits used in evaluation in this repository so there is no need to generate them again.
 These instructions are only for your information.
+
+### Generating
 
 MQT Bench:
 
@@ -378,3 +382,33 @@ cd deps/quartz/build
 make test_remove_swap
 ./test_remove_swap
 ```
+
+### Preprocessing
+
+This is done on a single thread of an Intel(R) Xeon(R) W-1350 @ 3.30GHz CPU.
+
+1. Follow the instruction at the beginning of this document to build Quartz and copy the circuits.
+
+2. Create a Python 3.8 environment with PuLP (with HiGHS solver) and Qiskit:
+
+```shell
+conda create --name pulp python=3.8
+conda activate pulp
+pip install -U git+https://github.com/coin-or/pulp@2.7.0
+pip install qiskit==0.39.2
+```
+
+3. Run preprocessing for 28 local qubits:
+
+```shell
+export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact
+cd $ATLAS_HOME
+cd perlmutter/e2e
+bash preprocess.sh  # takes around 17 minutes
+```
+
+4. For different numbers of local qubits, please change `local_values=(28)` in `perlmutter/e2e/preprocess.sh`
+   accordingly.
+   For best result, please also adjust the numbers in the `kernel_cost` object
+   in `deps/quartz/src/test/test_simulation.cpp`
+   according to the benchmark results of 1-to-7-qubit fusion kernels and shared-memory kernels.
