@@ -4,9 +4,9 @@
 #include <cmath>
 #include <complex>
 #include <cstdint>
+#include <map>
 #include <type_traits>
 #include <vector>
-#include <map>
 
 #include "simgate.h"
 
@@ -62,7 +62,8 @@ public:
   static constexpr auto cuCompute =
       is_float ? CUSTATEVEC_COMPUTE_32F : CUSTATEVEC_COMPUTE_64F;
 
-  SimulatorCuQuantum(unsigned nlocal, unsigned nglobal, int ndevices, int myrank, int nranks)
+  SimulatorCuQuantum(unsigned nlocal, unsigned nglobal, int ndevices,
+                     int myrank, int nranks)
       : n_qubits(nlocal + nglobal), n_local(nlocal), n_global(nglobal),
         n_devices(ndevices), myRank(myrank), nRanks(nranks) {}
 
@@ -73,7 +74,8 @@ public:
   bool ApplyKernelGates(std::vector<KernelGate> &kernelgates,
                         qindex logicQubitset);
   bool ApplyShuffle(Gate<DT> &gate);
-  bool ApplyRecordedShuffle(unsigned global_swap, const std::vector<int2> &local_swap);
+  bool ApplyRecordedShuffle(unsigned global_swap,
+                            const std::vector<int2> &local_swap);
   bool Destroy(bool dump_results);
 
 private:
@@ -87,7 +89,8 @@ private:
                             size_t recvcount, ncclComm_t comm,
                             cudaStream_t stream);
   // from HyQuas
-  KernelGate getGate(const KernelGate& gate, int part_id, qindex relatedLogicQb, const std::map<int, int>& toID) const;
+  KernelGate getGate(const KernelGate &gate, int part_id, qindex relatedLogicQb,
+                     const std::map<int, int> &toID) const;
   static KernelGateType toU(KernelGateType type);
 
 public:
@@ -104,7 +107,8 @@ public:
   std::vector<unsigned> permutation;
   std::vector<unsigned> pos;
   cudaStream_t s[MAX_DEVICES];
-  // physical id = myNcclRank; this will be changed when we encouter X gates targeting global qubit
+  // physical id = myNcclRank; this will be changed when we encouter X gates
+  // targeting global qubit
   std::map<unsigned, unsigned> device_logical_to_phy;
   std::map<unsigned, unsigned> device_phy_to_logical;
 
