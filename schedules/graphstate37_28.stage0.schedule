@@ -1,0 +1,96 @@
+28
+[37, 0, 1, 2, 3, 4, 6, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 22, 23, 25, 26, 28, 29, 30, 31, 33, 35, 36, 9, 27, 5, 7, 19, 21, 24, 32, 34]
+3
+32
+5
+// fusion
+// [5, 0, 1, 6, 25, 33]
+OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[37];
+h q[0];
+h q[1];
+cz q[0],q[1];
+h q[6];
+cz q[0],q[6];
+h q[25];
+cz q[1],q[25];
+h q[33];
+cz q[25],q[33];
+@
+// fusion
+// [5, 2, 3, 26, 31, 33]
+OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[37];
+h q[2];
+h q[3];
+cz q[2],q[3];
+h q[26];
+cz q[2],q[26];
+h q[31];
+cz q[3],q[31];
+cz q[26],q[33];
+@
+// fusion
+// [5, 12, 13, 29, 30, 35]
+OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[37];
+h q[12];
+h q[13];
+cz q[12],q[13];
+h q[29];
+h q[30];
+cz q[29],q[30];
+h q[35];
+cz q[29],q[35];
+cz q[30],q[35];
+@
+// fusion
+// [5, 8, 16, 17, 18, 36]
+OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[37];
+h q[16];
+h q[17];
+cz q[16],q[17];
+h q[18];
+cz q[16],q[18];
+h q[8];
+h q[36];
+@
+// fusion
+// [4, 4, 14, 15, 23]
+OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[37];
+h q[14];
+h q[15];
+cz q[14],q[15];
+h q[23];
+cz q[15],q[23];
+h q[4];
+@
+OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[37];
+cz q[0],q[1];
+cz q[2],q[3];
+cz q[0],q[6];
+cz q[12],q[13];
+cz q[14],q[15];
+cz q[16],q[17];
+cz q[16],q[18];
+cz q[15],q[23];
+cz q[1],q[25];
+cz q[2],q[26];
+cz q[29],q[30];
+cz q[3],q[31];
+cz q[25],q[33];
+cz q[26],q[33];
+cz q[29],q[35];
+cz q[30],q[35];
+h q[4];
+h q[8];
+h q[36];
