@@ -151,7 +151,7 @@ sbatch srun-16-quartz.sh  # takes around 2 minutes
 
 If you encounter `QASMParser fails to open $ATLAS_HOME/circuit/...`, please
 replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc`
-and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact.
+and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact
 in Step 1 because the `export` command may not be working properly.
 
 ### HyQuas
@@ -204,7 +204,8 @@ sbatch srun-16-hyquas.sh  # takes around 7 minutes
 
 ### cuQuantum
 
-1. Make sure that the account name in `perlmutter/e2e/cuQuantum.sh` is replaced when running the script at the beginning of this document.
+1. Make sure that the account name in `perlmutter/e2e/cuQuantum.sh` is replaced when running the script at the beginning
+   of this document.
 2. Run:
 
 ```shell
@@ -223,7 +224,8 @@ bash cuQuantum.sh 64 4 37  # takes around 3 minutes
 
 ### Qiskit
 
-1. Make sure that the account name in `perlmutter/e2e/Qiskit.sh` is replaced when running the script at the beginning of this document.
+1. Make sure that the account name in `perlmutter/e2e/Qiskit.sh` is replaced when running the script at the beginning of
+   this document.
 2. Run:
 
 ```shell
