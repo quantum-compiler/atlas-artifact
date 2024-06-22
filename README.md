@@ -6,7 +6,7 @@ and use a single-core CPU (can be a laptop) to evaluate the algorithms Stage and
 Atlas is built on [Quartz](https://github.com/quantum-compiler/quartz).
 To run the artifact, please create a Python environment for Quartz and copy the necessary circuits first.
 This needs to be done on both the single-core CPU and Perlmutter.
-The following parts will assume that these commands are executed:
+The following parts will assume that these commands are executed (please replace `YOUR_ACCOUNT` with your account name):
 
 ```shell
 # clone this repo
@@ -25,7 +25,13 @@ cmake ..
 # Copy circuits
 cd ../../../circuit
 bash copy.sh
-cd ..
+
+# Replace the account name (not necessary if you are only viewing the results and not reproducing any experiments)
+cd ../perlmutter/e2e
+python replace_account_name.py
+YOUR_ACCOUNT
+# (input your account name above)
+cd ../..
 ```
 
 ## Circuit Staging
@@ -128,9 +134,7 @@ bash ../config/config.linux
 make -j 12
 ```
 
-5. Replace `YOUR_ACCOUNT` with your account name
-   in `perlmutter/e2e/srun-1-quartz.sh`, `perlmutter/e2e/srun-2-quartz.sh`, `perlmutter/e2e/srun-4-quartz.sh`, `perlmutter/e2e/srun-8-quartz.sh`, `perlmutter/e2e/srun-16-quartz.sh`.
-6. Run the sbatch scripts:
+5. Run the sbatch scripts:
 
 ```shell
 # in pulp conda environment
@@ -185,10 +189,7 @@ cd ${HYQUAS_ROOT}/scripts
 source ../scripts/init.sh -DBACKEND=mix -DSHOW_SUMMARY=on -DSHOW_SCHEDULE=off -DMICRO_BENCH=on -DUSE_DOUBLE=on -DDISABLE_ASSERT=off -DENABLE_OVERLAP=on -DMEASURE_STAGE=off -DEVALUATOR_PREPROCESS=on -DUSE_MPI=on -DMAT=7
 ```
 
-5. Replace `YOUR_ACCOUNT` with your account name
-   in `atlas-artifact/perlmutter/e2e/srun-1-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-2-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-4-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-8-hyquas.sh`, `atlas-artifact/perlmutter/e2e/srun-16-hyquas.sh`.
-
-6. Use the scripts `*-hyquas.sh` under `atlas-artifact/perlmutter/e2e` to run the experiments on different number of
+5. Use the scripts `*-hyquas.sh` under `atlas-artifact/perlmutter/e2e` to run the experiments on different number of
    GPUs.
 
 ```shell
@@ -203,7 +204,7 @@ sbatch srun-16-hyquas.sh  # takes around 7 minutes
 
 ### cuQuantum
 
-1. Replace `YOUR_ACCOUNT` with your account name in `perlmutter/e2e/cuQuantum.sh`.
+1. Make sure that the account name in `perlmutter/e2e/cuQuantum.sh` is replaced when running the script at the beginning of this document.
 2. Run:
 
 ```shell
@@ -222,7 +223,7 @@ bash cuQuantum.sh 64 4 37  # takes around 3 minutes
 
 ### Qiskit
 
-1. Replace `YOUR_ACCOUNT` with your account name in `perlmutter/e2e/Qiskit.sh`.
+1. Make sure that the account name in `perlmutter/e2e/Qiskit.sh` is replaced when running the script at the beginning of this document.
 2. Run:
 
 ```shell

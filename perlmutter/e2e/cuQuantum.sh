@@ -13,7 +13,7 @@ IMAGE_NAME="cuquantum-appliance"
 IMAGE_TAG="23.03"
 
 NUM_GPUS=$((${GPUS_PER_NODE}*${NUM_NODES}))
-srun --account=m4138 \
+srun --account=YOUR_ACCOUNT \
      --qos=regular \
      --constraint=${CONSTRAINT} \
      --nodes=${NUM_NODES} \

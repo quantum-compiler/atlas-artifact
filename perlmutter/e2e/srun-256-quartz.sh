@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -A m4138
+#SBATCH -A YOUR_ACCOUNT
 #SBATCH -C gpu
 #SBATCH -q regular
 #SBATCH -t 00:30:00
@@ -21,5 +21,5 @@ for str in "${strings[@]}"; do
     srun -u \
          --ntasks="$(( SLURM_JOB_NUM_NODES ))" \
          --ntasks-per-node=1\
-         ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 38 --local 28 --device 4 --use-ilp > logs/atlas/${str}_38_28.log
+         ../../build/examples/mpi-based/simulate --import-circuit ${str} --n 38 --local 28 --device 4 --use-ilp > logs/atlas/${str}_38.log
 done
