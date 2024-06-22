@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p logs
+mkdir -p logs/cusvaer
+
 CONSTRAINT="gpu"
 NUM_NODES=$1
 GPUS_PER_TASK=1

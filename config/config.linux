@@ -14,7 +14,7 @@ NCCL_DIR=/global/common/software/nersc9/nccl/2.19.4
 # NCCL_DIR=~/nccl/build
 
 # backend
-USE_LEGION=ON
+USE_LEGION=OFF
 
 . $(dirname $0)/config.inc
 run_cmake $*

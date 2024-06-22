@@ -106,8 +106,7 @@ std::ostream &operator<<(std::ostream &s, MachineView const &view) {
 }; // namespace sim
 
 namespace std {
-size_t hash<sim::MachineView>::operator()(
-    sim::MachineView const &mv) const {
+size_t hash<sim::MachineView>::operator()(sim::MachineView const &mv) const {
   return mv.hash();
 }
 }; // namespace std
