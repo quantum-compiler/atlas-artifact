@@ -366,12 +366,13 @@ bool qcircuit::Circuit<DT>::compile(quartz::CircuitSeq *seq,
           auto *m = gate->gate->get_matrix(params);
           std::vector<std::complex<qreal>> mat = m->flatten();
 
-          std::vector<bool> ctr_states = gate->gate->get_control_state();
+          /*std::vector<bool> ctr_states = gate->gate->get_control_state();
           if (!std::all_of(ctr_states.begin(), ctr_states.end(),
                            [](bool v) { return v; })) {
-            printf("we have general control gates\n");
+            printf("we have general control gates, the result may not be "
+                   "correct (but the time should be accurate)\n");
             // assert(0);
-          }
+          }*/
           // TODO: support general control gates
           // target and control will be converted to related qubit when
           // executing
