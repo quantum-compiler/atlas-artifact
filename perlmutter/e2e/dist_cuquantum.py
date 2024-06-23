@@ -84,6 +84,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     cusvaer_enable = not args.qiskit
     simulate_warm_up(args.nqubits, cusvaer_enable)
-    strings = ["ae", "dj", "ghz", "graphstate", "ising", "qft", "qpeexact", "qsvm", "su2random", "vqc", "wstate", "bv"]
+    strings = ["ae", "dj", "ghz", "graphstate", "ising", "qft", "qpeexact", "qsvm", "su2random", "vqc", "wstate"]
     for s in strings:
         simulate(s, args.nqubits, cusvaer_enable)

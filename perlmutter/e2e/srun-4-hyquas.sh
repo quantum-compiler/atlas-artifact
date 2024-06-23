@@ -14,7 +14,7 @@ export MPICH_GPU_SUPPORT_ENABLED=1
 
 cd $HYQUAS_ROOT/build
 
-strings=("ae" "dj" "ghz" "graphstate" "ising" "qft" "qpeexact" "qsvm" "su2random" "vqc" "wstate" "bv")
+strings=("ae" "dj" "ghz" "graphstate" "ising" "qft" "qpeexact" "qsvm" "su2random" "vqc" "wstate")
 
 for str in "${strings[@]}"; do
     # Execute the command with the current string

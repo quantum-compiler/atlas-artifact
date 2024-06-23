@@ -1,5 +1,5 @@
 benchmark = {"ae", "dj", "ghz", "graphstate", "ising", "qft", "qpeexact", "qsvm", "su2random", "vqc", "wstate"}
-num_qubits = [28, 29, 30, 31, 32, 33, 34]
+num_qubits = [28, 29, 30, 31, 32, 33, 34, 35, 36]
 for bench in benchmark:
     for nq in num_qubits:
         try:

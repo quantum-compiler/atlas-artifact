@@ -111,9 +111,7 @@ Following are the instructions to run the experiment and reproduce the results.
 
 In this section (end-to-end experiments), please make sure that the distributed GPU-based simulation is used (`USE_LEGION=OFF`).
 
-In addition, please either run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact` or replace each
-occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the
-directory of atlas-artifact.
+In addition, please run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact`.
 
 2. Install the HiGHS solver in Quartz:
 
@@ -156,23 +154,28 @@ cd perlmutter/e2e
 export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact if this variable is not set
 sbatch srun-1-quartz.sh  # takes around 2 minutes (in background)
 sbatch srun-2-quartz.sh  # takes around 1 minute
-sbatch srun-4-quartz.sh  # takes around 1 minute
-sbatch srun-8-quartz.sh  # takes around 1 minute
+sbatch srun-4-quartz.sh  # takes around 2 minutes
+sbatch srun-8-quartz.sh  # takes around 2 minutes
 sbatch srun-16-quartz.sh  # takes around 2 minutes
+# Following are additional experiments
+# sbatch srun-32-quartz.sh  # takes around 2 minutes
+# sbatch srun-64-quartz.sh  # takes around 3 minutes
 ```
 
 #### Troubleshooting
 
-If you encounter `QASMParser fails to open $ATLAS_HOME/circuit/...`, please
-replace each occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc`
-and `examples/mpi-based/test_sim.cc` with the directory of atlas-artifact
-in Step 1 because the `export` command may not be working properly.
+- Please do not build Atlas with different options (`USE_LEGION=OFF`/`USE_LEGION=ON`)
+  when the jobs are submitted but still pending. If you submit the jobs with `USE_LEGION=OFF`
+  and then build Atlas with `USE_LEGION=ON` (or vice versa), overwriting the previous executable, for example,
+  the jobs with `USE_LEGION=OFF` may not run properly.
 
 ### HyQuas
 
 1. Download our modified HyQuas from the `perlmutter` branch of the [Repo](https://github.com/caoshiyi/HyQuas):
 
 ```shell
+cd $ATLAS_HOME
+cd ..
 # It is recommended to let HyQuas and atlas-artifact share the same parent directory.
 git clone -b perlmutter https://github.com/caoshiyi/HyQuas --recursive
 ```
@@ -210,10 +213,13 @@ source ../scripts/init.sh -DBACKEND=mix -DSHOW_SUMMARY=on -DSHOW_SCHEDULE=off -D
 # assume HyQuas and atlas-artifact share the same parent directory
 cd ../../atlas-artifact/perlmutter/e2e
 sbatch srun-1-hyquas.sh  # takes around 3 minutes (in background)
-sbatch srun-2-hyquas.sh  # takes around 8 minutes
+sbatch srun-2-hyquas.sh  # takes around 2 minutes
 sbatch srun-4-hyquas.sh  # takes around 2 minutes
-sbatch srun-8-hyquas.sh  # takes around 7 minutes
-sbatch srun-16-hyquas.sh  # takes around 7 minutes
+sbatch srun-8-hyquas.sh  # takes around 3 minutes
+sbatch srun-16-hyquas.sh  # takes around 3 minutes
+# Following are additional experiments
+# sbatch srun-32-hyquas.sh  # takes around 4 minutes
+# sbatch srun-64-hyquas.sh  # takes around 4 minutes
 ```
 
 ### cuQuantum
@@ -225,15 +231,16 @@ sbatch srun-16-hyquas.sh  # takes around 7 minutes
 ```shell
 # conda environment is not necessary
 # cd perlmutter/e2e
-bash cuQuantum.sh 1 1 28  # takes around 2 minutes (in foreground)
-bash cuQuantum.sh 1 2 29  # takes around 2 minutes
+bash cuQuantum.sh 1 1 28  # takes around 1 minute (in foreground)
+bash cuQuantum.sh 1 2 29  # takes around 1 minute
 bash cuQuantum.sh 1 4 30  # takes around 2 minutes
 bash cuQuantum.sh 2 4 31  # takes around 2 minutes
-bash cuQuantum.sh 4 4 32  # takes around 3 minutes
-bash cuQuantum.sh 8 4 33  # takes around 3 minutes
-bash cuQuantum.sh 16 4 34 # takes around 3 minutes
-bash cuQuantum.sh 32 4 35 # takes around 3 minutes
-bash cuQuantum.sh 64 4 36 # takes around 3 minutes
+bash cuQuantum.sh 4 4 32  # takes around 2 minutes
+bash cuQuantum.sh 8 4 33  # takes around 2 minutes
+bash cuQuantum.sh 16 4 34 # takes around 2 minutes
+# Following are additional experiments
+# bash cuQuantum.sh 32 4 35 # takes around 2 minutes
+# bash cuQuantum.sh 64 4 36 # takes around 4 minutes
 ```
 
 ### Qiskit
@@ -258,8 +265,10 @@ To plot the existing results in Figures 6 and 7:
 
 ```shell
 # in quartz conda environment
+cd $ATLAS_HOME
 cd perlmutter/offload
 python plot_offload.py
+cd ../..
 ```
 
 Following are the instructions to run the experiment and reproduce the results.
@@ -268,12 +277,9 @@ Following are the instructions to run the experiment and reproduce the results.
 
 1. Set related environment variables in `config/config.linux` (setting `USE_LEGION=ON`), and use a Python 3.8
    environment with PuLP and Qiskit.
-2. Either run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact` (if not already) or replace each
-   occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with
-   the directory of atlas-artifact.
-3. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct
+2. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct
    location.
-4. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
+3. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
 
 ```shell
 cd build
@@ -282,6 +288,7 @@ make -j 12
 cd ../perlmutter/offload
 salloc --nodes 1 -q regular --time 00:30:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
 conda activate pulp && time bash offload.sh && exit  # takes around 22 minutes
+cd ../..
 ```
 
 ### QDAO
@@ -289,6 +296,7 @@ conda activate pulp && time bash offload.sh && exit  # takes around 22 minutes
 1. Download and build QDAO v0.1.0 (assuming `qdao/` and `atlas-artifact/` share the same parent directory):
 
 ```shell
+cd ..
 # at the parent directory of atlas-artifact now
 git clone https://github.com/Zhaoyilunnn/qdao.git
 cd qdao
@@ -416,7 +424,7 @@ pip install qiskit==0.39.2
 3. Run preprocessing for 28 local qubits:
 
 ```shell
-export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact
+export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact  # if not already set
 cd $ATLAS_HOME
 cd perlmutter/e2e
 bash preprocess.sh  # takes around 17 minutes
