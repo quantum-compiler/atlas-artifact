@@ -6,6 +6,12 @@ and use a single-core CPU (can be a laptop) to evaluate the algorithms Stage and
 Atlas is built on [Quartz](https://github.com/quantum-compiler/quartz).
 To run the artifact, please create a Python environment for Quartz and copy the necessary circuits first.
 This needs to be done on both the single-core CPU and Perlmutter.
+
+### Prerequisites
+
+- Conda 23.3 or later (`module load conda` on Perlmutter)
+- CMake 3.18 or later
+
 The following parts will assume that these commands are executed (please replace `YOUR_ACCOUNT` with your account name):
 
 ```shell
@@ -13,9 +19,10 @@ The following parts will assume that these commands are executed (please replace
 git clone git@github.com:quantum-compiler/atlas-artifact.git --recursive
 
 # Create Python environment
-cd deps/quartz
-conda env create --name quartz python=3.11 --file env.yml
+cd atlas-artifact/deps/quartz
+conda env create --name quartz --file env.yml
 conda activate quartz
+pip install matplotlib
 
 # Build Quartz
 mkdir build
@@ -42,9 +49,10 @@ To plot the existing results in Figure 8:
 # in quartz conda environment
 cd staging_bench
 python ilp_plot.py
+cd ..
 ```
 
-To run the experiment and reproduce the results (takes ~14 hours):
+To run the experiment and reproduce the results (takes ~14 hours on a single-core CPU):
 
 ```shell
 # in quartz conda environment
@@ -53,6 +61,7 @@ make benchmark_ilp_num_stages
 cd ..
 ./build/benchmark_ilp_num_stages
 cp ilp_result.csv ../../staging_bench
+cd ../..
 ```
 
 ## Circuit Kernelization
@@ -63,9 +72,10 @@ To plot the existing results in Figure 9:
 # in quartz conda environment
 cd kernelization_bench
 python dp_plot.py
+cd ..
 ```
 
-To run the experiment and reproduce the results (takes ~17 hours):
+To run the experiment and reproduce the results (takes ~17 hours on a single-core CPU):
 
 ```shell
 # in quartz conda environment
@@ -74,6 +84,7 @@ make benchmark_dp
 ./benchmark_dp
 cd ..
 cp dp_result.csv ../../kernelization_bench
+cd ../..
 ```
 
 ## End-to-end experiments
@@ -86,16 +97,19 @@ To plot the existing results in Figures 5 and 10:
 # in quartz conda environment
 cd perlmutter/e2e/logs
 python plot.py
+cd ../../..
 ```
 
 Following are the instructions to run the experiment and reproduce the results.
 
 ### Atlas
 
-1. Set related environment variables in `config/config.linux`
+1. Set related environment variables in `config/config.linux` (please download cuQuantum if needed).
    We support two modes for simulation in Atlas. First one is distributed GPU-based simulation (`USE_LEGION=OFF`). The
    other one is CPU-offload enabled simulation (`USE_LEGION=ON`), which support simulating more qubits on a single
-   machine. Note that the second mode hasn't been tested for multi-node execution.
+   machine. Note that the second mode has not been tested for multi-node execution.
+
+In this section (end-to-end experiments), please make sure that the distributed GPU-based simulation is used (`USE_LEGION=OFF`).
 
 In addition, please either run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact` or replace each
 occurrence of `$ATLAS_HOME` in `examples/legion-based/test_sim_legion.cc` and `examples/mpi-based/test_sim.cc` with the
@@ -109,38 +123,38 @@ mkdir build
 cd build
 cmake ..
 make -j 12
+cd ../../../../..
 ```
 
-3. Create a Python 3.8 environment with PuLP (with HiGHS solver) and Qiskit (Qiskit is not necessary for the end-to-end
+3. Create a Python 3.8 environment with PuLP (with HiGHS solver), pybind11, and Qiskit (Qiskit is not necessary for the end-to-end
    experiments but
    necessary for the DRAM offloading experiments):
 
 ```shell
-module load conda
 conda create --name pulp python=3.8
 conda activate pulp
-pip install -U git+https://github.com/coin-or/pulp@2.7.0
-pip install qiskit
+pip install git+https://github.com/coin-or/pulp@2.7.0
+pip install qiskit pybind11
 ```
 
 4. Build and install:
 
 ```shell
 # in pulp conda environment
-cd ../../../../..  # cd $ATLAS_HOME
 mkdir build
 cd build
 bash ../config/config.linux
 make -j 12
+cd ..
 ```
 
 5. Run the sbatch scripts:
 
 ```shell
 # in pulp conda environment
-cd ../perlmutter/e2e
+cd perlmutter/e2e
 export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact if this variable is not set
-sbatch srun-1-quartz.sh  # takes around 2 minutes
+sbatch srun-1-quartz.sh  # takes around 2 minutes (in background)
 sbatch srun-2-quartz.sh  # takes around 1 minute
 sbatch srun-4-quartz.sh  # takes around 1 minute
 sbatch srun-8-quartz.sh  # takes around 1 minute
@@ -195,7 +209,7 @@ source ../scripts/init.sh -DBACKEND=mix -DSHOW_SUMMARY=on -DSHOW_SCHEDULE=off -D
 ```shell
 # assume HyQuas and atlas-artifact share the same parent directory
 cd ../../atlas-artifact/perlmutter/e2e
-sbatch srun-1-hyquas.sh  # takes around 3 minutes
+sbatch srun-1-hyquas.sh  # takes around 3 minutes (in background)
 sbatch srun-2-hyquas.sh  # takes around 8 minutes
 sbatch srun-4-hyquas.sh  # takes around 2 minutes
 sbatch srun-8-hyquas.sh  # takes around 7 minutes
@@ -211,15 +225,15 @@ sbatch srun-16-hyquas.sh  # takes around 7 minutes
 ```shell
 # conda environment is not necessary
 # cd perlmutter/e2e
-bash cuQuantum.sh 1 1 29  # takes around 2 minutes
-bash cuQuantum.sh 1 2 30  # takes around 2 minutes
-bash cuQuantum.sh 1 4 31  # takes around 2 minutes
-bash cuQuantum.sh 2 4 32  # takes around 2 minutes
-bash cuQuantum.sh 4 4 33  # takes around 3 minutes
-bash cuQuantum.sh 8 4 34  # takes around 3 minutes
-bash cuQuantum.sh 16 4 35  # takes around 3 minutes
-bash cuQuantum.sh 32 4 36  # takes around 3 minutes
-bash cuQuantum.sh 64 4 37  # takes around 3 minutes
+bash cuQuantum.sh 1 1 28  # takes around 2 minutes (in foreground)
+bash cuQuantum.sh 1 2 29  # takes around 2 minutes
+bash cuQuantum.sh 1 4 30  # takes around 2 minutes
+bash cuQuantum.sh 2 4 31  # takes around 2 minutes
+bash cuQuantum.sh 4 4 32  # takes around 3 minutes
+bash cuQuantum.sh 8 4 33  # takes around 3 minutes
+bash cuQuantum.sh 16 4 34 # takes around 3 minutes
+bash cuQuantum.sh 32 4 35 # takes around 3 minutes
+bash cuQuantum.sh 64 4 36 # takes around 3 minutes
 ```
 
 ### Qiskit
@@ -231,7 +245,7 @@ bash cuQuantum.sh 64 4 37  # takes around 3 minutes
 ```shell
 # in quartz conda environment
 # cd perlmutter/e2e
-bash Qiskit.sh 1 1 28  # takes around 3 minutes
+bash Qiskit.sh 1 1 28  # takes around 3 minutes (in foreground)
 bash Qiskit.sh 1 2 29  # takes around 12 minutes
 bash Qiskit.sh 1 4 30  # takes around 47 minutes, recommended to allocate a node first
 ```
@@ -267,8 +281,7 @@ bash ../config/config.linux
 make -j 12
 cd ../perlmutter/offload
 salloc --nodes 1 -q regular --time 00:30:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
-conda activate pulp
-time bash offload.sh && exit  # takes around 22 minutes
+conda activate pulp && time bash offload.sh && exit  # takes around 22 minutes
 ```
 
 ### QDAO
@@ -276,7 +289,6 @@ time bash offload.sh && exit  # takes around 22 minutes
 1. Download and build QDAO v0.1.0 (assuming `qdao/` and `atlas-artifact/` share the same parent directory):
 
 ```shell
-module load conda
 # at the parent directory of atlas-artifact now
 git clone https://github.com/Zhaoyilunnn/qdao.git
 cd qdao
@@ -294,7 +306,7 @@ pip install .
 
 ```python
         self._sim.set_options(blocking_enable=True)
-self._sim.set_options(blocking_qubits=28)
+        self._sim.set_options(blocking_qubits=28)
 ```
 
 3. Copy the scripts to QDAO directory and run in interactive mode (please replace `YOUR_ACCOUNT` with your account
