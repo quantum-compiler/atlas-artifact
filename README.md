@@ -33,6 +33,9 @@ cmake ..
 cd ../../../circuit
 bash copy.sh
 
+# The above needs to be done on both the single-core CPU and Perlmutter.
+# The following only needs to be done on Perlmutter.
+
 # Replace the account name (not necessary if you are only viewing the results and not reproducing any experiments)
 cd ../perlmutter/e2e
 python replace_account_name.py
