@@ -892,6 +892,8 @@ SimulatorCuQuantum<DT>::getGate(const KernelGate &gate, int part_id,
           new_type = KernelGateType::CNOT;
           break;
         default:
+          printf("Unsupported partial-local-control 2-control-qubit"
+                 " gate: %d\n", (int)gate.type);
           assert(false);
         }
         return KernelGate(new_type, toID.at(c1), 1 - IS_SHARE_QUBIT(c1),
@@ -939,6 +941,8 @@ SimulatorCuQuantum<DT>::getGate(const KernelGate &gate, int part_id,
                           1 - IS_SHARE_QUBIT(c), mat);
       }
       default: {
+        printf("Unsupported local-control non-local-target"
+               " gate: %d\n", (int)gate.type);
         assert(false);
       }
       }
@@ -978,6 +982,7 @@ SimulatorCuQuantum<DT>::getGate(const KernelGate &gate, int part_id,
           return KernelGate(KernelGateType::GCC, 0, 0, mat);
         }
         default: {
+          printf("Unsupported non-local gate: %d\n", (int)gate.type);
           assert(false);
         }
         }
@@ -1058,7 +1063,13 @@ SimulatorCuQuantum<DT>::getGate(const KernelGate &gate, int part_id,
       case KernelGateType::ID: {
         return KernelGate::ID();
       }
+      case KernelGateType::X: {
+        // TODO
+        printf("Warning: non-local X gate ignored\n");
+        return KernelGate::ID();
+      }
       default: {
+        printf("Unsupported non-local gate: %d\n", (int)gate.type);
         assert(false);
       }
       }

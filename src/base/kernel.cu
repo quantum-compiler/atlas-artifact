@@ -266,7 +266,7 @@ __device__ void doCompute(int numGates, int *loArr, int *shiftAt) {
     }
     if (!controlIsGlobal) {
       if (!targetIsGlobal) {
-        int m = 1 << (SHARED_MEM_SIZE - 2);
+        // int m = 1 << (SHARED_MEM_SIZE - 2);
         int lo = loArr[(controlQubit * 10 + targetQubit) << THREAD_DEP |
                        threadIdx.x];
         int hi = lo ^ (1 << targetQubit) ^ (((1 << targetQubit) >> 3) & 7);
