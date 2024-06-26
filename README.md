@@ -414,20 +414,30 @@ make test_remove_swap
 This is done on a single thread of an Intel(R) Xeon(R) W-1350 @ 3.30GHz CPU.
 
 1. Follow the instruction at the beginning of this document to build Quartz and copy the circuits.
-
-2. Create a Python 3.8 environment with PuLP (with HiGHS solver) and Qiskit:
+   Please also install the HiGHS solver in Quartz:
 
 ```shell
-conda create --name pulp python=3.8
-conda activate pulp
-pip install -U git+https://github.com/coin-or/pulp@2.7.0
-pip install qiskit==0.39.2
+# in quartz conda environment
+cd deps/quartz/external/HiGHS
+mkdir build
+cd build
+cmake ..
+make -j 12
+cd ../../../../..
+```
+
+2. In the Quartz Python environment, install PuLP (with HiGHS solver):
+
+```shell
+# in quartz conda environment
+pip install git+https://github.com/coin-or/pulp@2.7.0
 ```
 
 3. Run preprocessing for 28 local qubits:
 
 ```shell
 export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact  # if not already set
+export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin
 cd $ATLAS_HOME
 cd perlmutter/e2e
 bash preprocess.sh  # takes around 17 minutes
