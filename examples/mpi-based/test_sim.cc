@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <string.h>
 
 #include "circuit.h"
@@ -47,14 +48,17 @@ int main(int argc, char *argv[]) {
                        GateType::h, GateType::x, GateType::ry, GateType::u2,
                        GateType::u3, GateType::cx, GateType::cz, GateType::cp,
                        GateType::p, GateType::z, GateType::rz, GateType::swap});
+  std::filesystem::path this_file(__FILE__);
+  std::string atlas_home =
+      this_file.parent_path().parent_path().parent_path().string();
   auto seq = quartz::CircuitSeq::from_qasm_file(
-      &ctx, std::string("$ATLAS_HOME/circuit/MQTBench_") +
+      &ctx, atlas_home + std::string("/circuit/MQTBench_") +
                 std::to_string(nqubits) + "q/" + circuit_file +
                 "_indep_qiskit_" + std::to_string(nqubits) + "_no_swap.qasm");
   sim::qcircuit::Circuit<double> circuit(nqubits, nlocal, ndevice, myRank,
                                          nRanks);
   circuit.compile(seq.get(), &ctx, &interpreter, use_ilp,
-                  "$ATLAS_HOME/schedules/" + circuit_file +
+                  atlas_home + "/schedules/" + circuit_file +
                       std::to_string(nqubits) + "_" + std::to_string(nlocal));
   circuit.simulate(true);
 

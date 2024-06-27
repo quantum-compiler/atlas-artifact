@@ -1,5 +1,7 @@
 #include "distributed_simulator.h"
 
+#include <filesystem>
+
 using namespace sim;
 using namespace Legion;
 // declare Legion names
@@ -37,8 +39,11 @@ void sim::top_level_task(Task const *task,
   //               std::to_string(config.num_all_qubits) + "q/qft"
   //               "_indep_qiskit_" + std::to_string(config.num_all_qubits) +
   //               ".qasm");
+  std::filesystem::path this_file(__FILE__);
+  std::string atlas_home =
+      this_file.parent_path().parent_path().parent_path().string();
   auto seq = quartz::CircuitSeq::from_qasm_file(
-      &qtz, std::string("$ATLAS_HOME/circuit/MQTBench_") +
+      &qtz, atlas_home + std::string("/circuit/MQTBench_") +
                 std::to_string(config.num_all_qubits) + "q/" + config.circuit +
                 "_indep_qiskit_" + std::to_string(config.num_all_qubits) +
                 "_no_swap.qasm");
