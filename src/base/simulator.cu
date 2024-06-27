@@ -770,7 +770,7 @@ template <typename DT> bool SimulatorCuQuantum<DT>::Destroy(bool dump_results) {
 
   HANDLE_CUDA_ERROR(cudaDeviceSynchronize());
 
-  printf("[MPI Rank %d]: Destroyed everthing!\n", myRank);
+  printf("[MPI Rank %d]: Destroyed everything!\n", myRank);
 
   return true;
 }
