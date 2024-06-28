@@ -171,6 +171,9 @@ sbatch srun-16-quartz.sh  # takes around 2 minutes
   when the jobs are submitted but still pending. If you submit the jobs with `USE_LEGION=OFF`
   and then build Atlas with `USE_LEGION=ON` (or vice versa), overwriting the previous executable, for example,
   the jobs with `USE_LEGION=OFF` may not run properly.
+- In some rare case (observed just before some maintenance of Perlmutter),
+  the communication time on Perlmutter may take as long as 30 seconds while it should take less than one second.
+  If you observe an unreasonably long running time, please simply run the script again.
 
 ### HyQuas
 
@@ -222,7 +225,7 @@ sbatch srun-8-hyquas.sh  # takes around 3 minutes
 sbatch srun-16-hyquas.sh  # takes around 3 minutes
 # Following are additional experiments
 # sbatch srun-32-hyquas.sh  # takes around 4 minutes
-# sbatch srun-64-hyquas.sh  # takes around 4 minutes
+# sbatch srun-64-hyquas.sh  # takes around 10 minutes
 ```
 
 ### cuQuantum
