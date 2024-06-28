@@ -1,5 +1,7 @@
 # Atlas: Hierarchical Partitioning for Quantum Circuit Simulation on GPUs
 
+[![DOI](https://zenodo.org/badge/640074505.svg)](https://zenodo.org/badge/latestdoi/640074505)
+
 We use the Perlmutter supercomputer to evaluate the performance of Atlas,
 and use a single-core CPU (can be a laptop) to evaluate the algorithms Stage and Kernelize.
 
