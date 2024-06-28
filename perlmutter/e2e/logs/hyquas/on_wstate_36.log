@@ -1,0 +1,450 @@
+Logger[30]: Local GPU: 4
+Logger[30]: [0] NVIDIA A100-SXM4-40GB
+Logger[30]: [1] NVIDIA A100-SXM4-40GB
+Logger[30]: [2] NVIDIA A100-SXM4-40GB
+Logger[30]: [3] NVIDIA A100-SXM4-40GB
+Logger[30]: Compile Time: 104 us + 9263 us = 9367 us
+Logger[30]: Time Cost: 8732777 us
+Logger[33]: Local GPU: 4
+Logger[33]: [0] NVIDIA A100-SXM4-40GB
+Logger[33]: [1] NVIDIA A100-SXM4-40GB
+Logger[33]: [2] NVIDIA A100-SXM4-40GB
+Logger[33]: [3] NVIDIA A100-SXM4-40GB
+Logger[33]: Compile Time: 126 us + 9249 us = 9375 us
+Logger[33]: Time Cost: 8846493 us
+Logger[42]: Local GPU: 4
+Logger[42]: [0] NVIDIA A100-SXM4-40GB
+Logger[42]: [1] NVIDIA A100-SXM4-40GB
+Logger[42]: [2] NVIDIA A100-SXM4-40GB
+Logger[42]: [3] NVIDIA A100-SXM4-40GB
+Logger[42]: Compile Time: 118 us + 9070 us = 9188 us
+Logger[42]: Time Cost: 8925593 us
+Logger[32]: Local GPU: 4
+Logger[32]: [0] NVIDIA A100-SXM4-40GB
+Logger[32]: [1] NVIDIA A100-SXM4-40GB
+Logger[32]: [2] NVIDIA A100-SXM4-40GB
+Logger[32]: [3] NVIDIA A100-SXM4-40GB
+Logger[32]: Compile Time: 123423 us + 9937 us = 133360 us
+Logger[32]: Time Cost: 8850804 us
+Logger[34]: Local GPU: 4
+Logger[34]: [0] NVIDIA A100-SXM4-40GB
+Logger[34]: [1] NVIDIA A100-SXM4-40GB
+Logger[34]: [2] NVIDIA A100-SXM4-40GB
+Logger[34]: [3] NVIDIA A100-SXM4-40GB
+Logger[34]: Compile Time: 109 us + 9040 us = 9149 us
+Logger[34]: Time Cost: 8889614 us
+Logger[29]: Local GPU: 4
+Logger[29]: [0] NVIDIA A100-SXM4-40GB
+Logger[29]: [1] NVIDIA A100-SXM4-40GB
+Logger[29]: [2] NVIDIA A100-SXM4-40GB
+Logger[29]: [3] NVIDIA A100-SXM4-40GB
+Logger[29]: Compile Time: 131 us + 8997 us = 9128 us
+Logger[29]: Time Cost: 8773785 us
+Logger[21]: Local GPU: 4
+Logger[21]: [0] NVIDIA A100-SXM4-40GB
+Logger[21]: [1] NVIDIA A100-SXM4-40GB
+Logger[21]: [2] NVIDIA A100-SXM4-40GB
+Logger[21]: [3] NVIDIA A100-SXM4-40GB
+Logger[21]: Compile Time: 98 us + 9550 us = 9648 us
+Logger[21]: Time Cost: 8903347 us
+Logger[31]: Local GPU: 4
+Logger[31]: [0] NVIDIA A100-SXM4-40GB
+Logger[31]: [1] NVIDIA A100-SXM4-40GB
+Logger[31]: [2] NVIDIA A100-SXM4-40GB
+Logger[31]: [3] NVIDIA A100-SXM4-40GB
+Logger[31]: Compile Time: 116 us + 9335 us = 9451 us
+Logger[31]: Time Cost: 8821938 us
+Logger[18]: Local GPU: 4
+Logger[18]: [0] NVIDIA A100-SXM4-40GB
+Logger[18]: [1] NVIDIA A100-SXM4-40GB
+Logger[18]: [2] NVIDIA A100-SXM4-40GB
+Logger[18]: [3] NVIDIA A100-SXM4-40GB
+Logger[18]: Compile Time: 99 us + 9214 us = 9313 us
+Logger[18]: Time Cost: 8924073 us
+Logger[45]: Local GPU: 4
+Logger[45]: [0] NVIDIA A100-SXM4-40GB
+Logger[45]: [1] NVIDIA A100-SXM4-40GB
+Logger[45]: [2] NVIDIA A100-SXM4-40GB
+Logger[45]: [3] NVIDIA A100-SXM4-40GB
+Logger[45]: Compile Time: 118 us + 9151 us = 9269 us
+Logger[45]: Time Cost: 8909678 us
+Logger[28]: Local GPU: 4
+Logger[28]: [0] NVIDIA A100-SXM4-40GB
+Logger[28]: [1] NVIDIA A100-SXM4-40GB
+Logger[28]: [2] NVIDIA A100-SXM4-40GB
+Logger[28]: [3] NVIDIA A100-SXM4-40GB
+Logger[28]: Compile Time: 135 us + 9334 us = 9469 us
+Logger[28]: Time Cost: 8892734 us
+Logger[35]: Local GPU: 4
+Logger[35]: [0] NVIDIA A100-SXM4-40GB
+Logger[35]: [1] NVIDIA A100-SXM4-40GB
+Logger[35]: [2] NVIDIA A100-SXM4-40GB
+Logger[35]: [3] NVIDIA A100-SXM4-40GB
+Logger[35]: Compile Time: 97 us + 13350 us = 13447 us
+Logger[35]: Time Cost: 8914285 us
+Logger[47]: Local GPU: 4
+Logger[47]: [0] NVIDIA A100-SXM4-40GB
+Logger[47]: [1] NVIDIA A100-SXM4-40GB
+Logger[47]: [2] NVIDIA A100-SXM4-40GB
+Logger[47]: [3] NVIDIA A100-SXM4-40GB
+Logger[47]: Compile Time: 116 us + 9367 us = 9483 us
+Logger[47]: Time Cost: 8944321 us
+Logger[16]: Local GPU: 4
+Logger[16]: [0] NVIDIA A100-SXM4-40GB
+Logger[16]: [1] NVIDIA A100-SXM4-40GB
+Logger[16]: [2] NVIDIA A100-SXM4-40GB
+Logger[16]: [3] NVIDIA A100-SXM4-40GB
+Logger[16]: Compile Time: 111840 us + 13518 us = 125358 us
+Logger[16]: Time Cost: 8911407 us
+Logger[11]: Local GPU: 4
+Logger[11]: [0] NVIDIA A100-SXM4-40GB
+Logger[11]: [1] NVIDIA A100-SXM4-40GB
+Logger[11]: [2] NVIDIA A100-SXM4-40GB
+Logger[11]: [3] NVIDIA A100-SXM4-40GB
+Logger[11]: Compile Time: 131 us + 9224 us = 9355 us
+Logger[11]: Time Cost: 9039365 us
+Logger[52]: Local GPU: 4
+Logger[52]: [0] NVIDIA A100-SXM4-40GB
+Logger[52]: [1] NVIDIA A100-SXM4-40GB
+Logger[52]: [2] NVIDIA A100-SXM4-40GB
+Logger[52]: [3] NVIDIA A100-SXM4-40GB
+Logger[52]: Compile Time: 110 us + 9074 us = 9184 us
+Logger[52]: Time Cost: 8987668 us
+Logger[20]: Local GPU: 4
+Logger[20]: [0] NVIDIA A100-SXM4-40GB
+Logger[20]: [1] NVIDIA A100-SXM4-40GB
+Logger[20]: [2] NVIDIA A100-SXM4-40GB
+Logger[20]: [3] NVIDIA A100-SXM4-40GB
+Logger[20]: Compile Time: 136 us + 13398 us = 13534 us
+Logger[20]: Time Cost: 9016056 us
+Logger[43]: Local GPU: 4
+Logger[43]: [0] NVIDIA A100-SXM4-40GB
+Logger[43]: [1] NVIDIA A100-SXM4-40GB
+Logger[43]: [2] NVIDIA A100-SXM4-40GB
+Logger[43]: [3] NVIDIA A100-SXM4-40GB
+Logger[43]: Compile Time: 106 us + 9087 us = 9193 us
+Logger[43]: Time Cost: 8995920 us
+Logger[22]: Local GPU: 4
+Logger[22]: [0] NVIDIA A100-SXM4-40GB
+Logger[22]: [1] NVIDIA A100-SXM4-40GB
+Logger[22]: [2] NVIDIA A100-SXM4-40GB
+Logger[22]: [3] NVIDIA A100-SXM4-40GB
+Logger[22]: Compile Time: 104 us + 13567 us = 13671 us
+Logger[22]: Time Cost: 8979691 us
+Logger[46]: Local GPU: 4
+Logger[46]: [0] NVIDIA A100-SXM4-40GB
+Logger[46]: [1] NVIDIA A100-SXM4-40GB
+Logger[46]: [2] NVIDIA A100-SXM4-40GB
+Logger[46]: [3] NVIDIA A100-SXM4-40GB
+Logger[46]: Compile Time: 101 us + 18184 us = 18285 us
+Logger[46]: Time Cost: 8951644 us
+Logger[41]: Local GPU: 4
+Logger[41]: [0] NVIDIA A100-SXM4-40GB
+Logger[41]: [1] NVIDIA A100-SXM4-40GB
+Logger[41]: [2] NVIDIA A100-SXM4-40GB
+Logger[41]: [3] NVIDIA A100-SXM4-40GB
+Logger[41]: Compile Time: 113 us + 9261 us = 9374 us
+Logger[41]: Time Cost: 9011549 us
+Logger[17]: Local GPU: 4
+Logger[17]: [0] NVIDIA A100-SXM4-40GB
+Logger[17]: [1] NVIDIA A100-SXM4-40GB
+Logger[17]: [2] NVIDIA A100-SXM4-40GB
+Logger[17]: [3] NVIDIA A100-SXM4-40GB
+Logger[17]: Compile Time: 94 us + 8985 us = 9079 us
+Logger[17]: Time Cost: 9036230 us
+Logger[44]: Local GPU: 4
+Logger[44]: [0] NVIDIA A100-SXM4-40GB
+Logger[44]: [1] NVIDIA A100-SXM4-40GB
+Logger[44]: [2] NVIDIA A100-SXM4-40GB
+Logger[44]: [3] NVIDIA A100-SXM4-40GB
+Logger[44]: Compile Time: 129 us + 9238 us = 9367 us
+Logger[44]: Time Cost: 9014945 us
+Logger[19]: Local GPU: 4
+Logger[19]: [0] NVIDIA A100-SXM4-40GB
+Logger[19]: [1] NVIDIA A100-SXM4-40GB
+Logger[19]: [2] NVIDIA A100-SXM4-40GB
+Logger[19]: [3] NVIDIA A100-SXM4-40GB
+Logger[19]: Compile Time: 9029 us + 9204 us = 18233 us
+Logger[19]: Time Cost: 9063708 us
+Logger[25]: Local GPU: 4
+Logger[25]: [0] NVIDIA A100-SXM4-40GB
+Logger[25]: [1] NVIDIA A100-SXM4-40GB
+Logger[25]: [2] NVIDIA A100-SXM4-40GB
+Logger[25]: [3] NVIDIA A100-SXM4-40GB
+Logger[25]: Compile Time: 95 us + 8975 us = 9070 us
+Logger[25]: Time Cost: 9011328 us
+Logger[38]: Local GPU: 4
+Logger[38]: [0] NVIDIA A100-SXM4-40GB
+Logger[38]: [1] NVIDIA A100-SXM4-40GB
+Logger[38]: [2] NVIDIA A100-SXM4-40GB
+Logger[38]: [3] NVIDIA A100-SXM4-40GB
+Logger[38]: Compile Time: 102 us + 9142 us = 9244 us
+Logger[38]: Time Cost: 8962382 us
+Logger[54]: Local GPU: 4
+Logger[54]: [0] NVIDIA A100-SXM4-40GB
+Logger[54]: [1] NVIDIA A100-SXM4-40GB
+Logger[54]: [2] NVIDIA A100-SXM4-40GB
+Logger[54]: [3] NVIDIA A100-SXM4-40GB
+Logger[54]: Compile Time: 112 us + 9182 us = 9294 us
+Logger[54]: Time Cost: 8999865 us
+Logger[26]: Local GPU: 4
+Logger[26]: [0] NVIDIA A100-SXM4-40GB
+Logger[26]: [1] NVIDIA A100-SXM4-40GB
+Logger[26]: [2] NVIDIA A100-SXM4-40GB
+Logger[26]: [3] NVIDIA A100-SXM4-40GB
+Logger[26]: Compile Time: 108 us + 8883 us = 8991 us
+Logger[26]: Time Cost: 8950287 us
+Logger[37]: Local GPU: 4
+Logger[37]: [0] NVIDIA A100-SXM4-40GB
+Logger[37]: [1] NVIDIA A100-SXM4-40GB
+Logger[37]: [2] NVIDIA A100-SXM4-40GB
+Logger[37]: [3] NVIDIA A100-SXM4-40GB
+Logger[37]: Compile Time: 116 us + 9101 us = 9217 us
+Logger[37]: Time Cost: 8986129 us
+Logger[10]: Local GPU: 4
+Logger[10]: [0] NVIDIA A100-SXM4-40GB
+Logger[10]: [1] NVIDIA A100-SXM4-40GB
+Logger[10]: [2] NVIDIA A100-SXM4-40GB
+Logger[10]: [3] NVIDIA A100-SXM4-40GB
+Logger[10]: Compile Time: 125 us + 9277 us = 9402 us
+Logger[10]: Time Cost: 9057137 us
+Logger[4]: Local GPU: 4
+Logger[4]: [0] NVIDIA A100-SXM4-40GB
+Logger[4]: [1] NVIDIA A100-SXM4-40GB
+Logger[4]: [2] NVIDIA A100-SXM4-40GB
+Logger[4]: [3] NVIDIA A100-SXM4-40GB
+Logger[4]: Compile Time: 67291 us + 9055 us = 76346 us
+Logger[4]: Time Cost: 9018666 us
+Logger[23]: Local GPU: 4
+Logger[23]: [0] NVIDIA A100-SXM4-40GB
+Logger[23]: [1] NVIDIA A100-SXM4-40GB
+Logger[23]: [2] NVIDIA A100-SXM4-40GB
+Logger[23]: [3] NVIDIA A100-SXM4-40GB
+Logger[23]: Compile Time: 8107 us + 9168 us = 17275 us
+Logger[23]: Time Cost: 9069294 us
+Logger[9]: Local GPU: 4
+Logger[9]: [0] NVIDIA A100-SXM4-40GB
+Logger[9]: [1] NVIDIA A100-SXM4-40GB
+Logger[9]: [2] NVIDIA A100-SXM4-40GB
+Logger[9]: [3] NVIDIA A100-SXM4-40GB
+Logger[9]: Compile Time: 102 us + 9139 us = 9241 us
+Logger[9]: Time Cost: 9086988 us
+Logger[53]: Local GPU: 4
+Logger[53]: [0] NVIDIA A100-SXM4-40GB
+Logger[53]: [1] NVIDIA A100-SXM4-40GB
+Logger[53]: [2] NVIDIA A100-SXM4-40GB
+Logger[53]: [3] NVIDIA A100-SXM4-40GB
+Logger[53]: Compile Time: 96 us + 13338 us = 13434 us
+Logger[53]: Time Cost: 9001745 us
+Logger[40]: Local GPU: 4
+Logger[40]: [0] NVIDIA A100-SXM4-40GB
+Logger[40]: [1] NVIDIA A100-SXM4-40GB
+Logger[40]: [2] NVIDIA A100-SXM4-40GB
+Logger[40]: [3] NVIDIA A100-SXM4-40GB
+Logger[40]: Compile Time: 113845 us + 13460 us = 127305 us
+Logger[40]: Time Cost: 8991238 us
+Logger[59]: Local GPU: 4
+Logger[59]: [0] NVIDIA A100-SXM4-40GB
+Logger[59]: [1] NVIDIA A100-SXM4-40GB
+Logger[59]: [2] NVIDIA A100-SXM4-40GB
+Logger[59]: [3] NVIDIA A100-SXM4-40GB
+Logger[59]: Compile Time: 134 us + 9463 us = 9597 us
+Logger[59]: Time Cost: 8958808 us
+Logger[57]: Local GPU: 4
+Logger[57]: [0] NVIDIA A100-SXM4-40GB
+Logger[57]: [1] NVIDIA A100-SXM4-40GB
+Logger[57]: [2] NVIDIA A100-SXM4-40GB
+Logger[57]: [3] NVIDIA A100-SXM4-40GB
+Logger[57]: Compile Time: 102 us + 13404 us = 13506 us
+Logger[57]: Time Cost: 8990495 us
+Logger[6]: Local GPU: 4
+Logger[6]: [0] NVIDIA A100-SXM4-40GB
+Logger[6]: [1] NVIDIA A100-SXM4-40GB
+Logger[6]: [2] NVIDIA A100-SXM4-40GB
+Logger[6]: [3] NVIDIA A100-SXM4-40GB
+Logger[6]: Compile Time: 41130 us + 13247 us = 54377 us
+Logger[6]: Time Cost: 9054373 us
+Logger[39]: Local GPU: 4
+Logger[39]: [0] NVIDIA A100-SXM4-40GB
+Logger[39]: [1] NVIDIA A100-SXM4-40GB
+Logger[39]: [2] NVIDIA A100-SXM4-40GB
+Logger[39]: [3] NVIDIA A100-SXM4-40GB
+Logger[39]: Compile Time: 105 us + 9887 us = 9992 us
+Logger[39]: Time Cost: 9036788 us
+Logger[7]: Local GPU: 4
+Logger[7]: [0] NVIDIA A100-SXM4-40GB
+Logger[7]: [1] NVIDIA A100-SXM4-40GB
+Logger[7]: [2] NVIDIA A100-SXM4-40GB
+Logger[7]: [3] NVIDIA A100-SXM4-40GB
+Logger[7]: Compile Time: 69592 us + 9426 us = 79018 us
+Logger[7]: Time Cost: 9063260 us
+Logger[36]: Local GPU: 4
+Logger[36]: [0] NVIDIA A100-SXM4-40GB
+Logger[36]: [1] NVIDIA A100-SXM4-40GB
+Logger[36]: [2] NVIDIA A100-SXM4-40GB
+Logger[36]: [3] NVIDIA A100-SXM4-40GB
+Logger[36]: Compile Time: 108 us + 9299 us = 9407 us
+Logger[36]: Time Cost: 9053478 us
+Logger[24]: Local GPU: 4
+Logger[24]: [0] NVIDIA A100-SXM4-40GB
+Logger[24]: [1] NVIDIA A100-SXM4-40GB
+Logger[24]: [2] NVIDIA A100-SXM4-40GB
+Logger[24]: [3] NVIDIA A100-SXM4-40GB
+Logger[24]: Compile Time: 149217 us + 9272 us = 158489 us
+Logger[24]: Time Cost: 8932152 us
+Logger[27]: Local GPU: 4
+Logger[27]: [0] NVIDIA A100-SXM4-40GB
+Logger[27]: [1] NVIDIA A100-SXM4-40GB
+Logger[27]: [2] NVIDIA A100-SXM4-40GB
+Logger[27]: [3] NVIDIA A100-SXM4-40GB
+Logger[27]: Compile Time: 98 us + 9152 us = 9250 us
+Logger[27]: Time Cost: 9040273 us
+Logger[56]: Local GPU: 4
+Logger[56]: [0] NVIDIA A100-SXM4-40GB
+Logger[56]: [1] NVIDIA A100-SXM4-40GB
+Logger[56]: [2] NVIDIA A100-SXM4-40GB
+Logger[56]: [3] NVIDIA A100-SXM4-40GB
+Logger[56]: Compile Time: 70044 us + 9064 us = 79108 us
+Logger[56]: Time Cost: 8994552 us
+Logger[8]: Local GPU: 4
+Logger[8]: [0] NVIDIA A100-SXM4-40GB
+Logger[8]: [1] NVIDIA A100-SXM4-40GB
+Logger[8]: [2] NVIDIA A100-SXM4-40GB
+Logger[8]: [3] NVIDIA A100-SXM4-40GB
+Logger[8]: Compile Time: 127592 us + 9220 us = 136812 us
+Logger[8]: Time Cost: 9057027 us
+Logger[55]: Local GPU: 4
+Logger[55]: [0] NVIDIA A100-SXM4-40GB
+Logger[55]: [1] NVIDIA A100-SXM4-40GB
+Logger[55]: [2] NVIDIA A100-SXM4-40GB
+Logger[55]: [3] NVIDIA A100-SXM4-40GB
+Logger[55]: Compile Time: 106 us + 9144 us = 9250 us
+Logger[55]: Time Cost: 9047966 us
+Logger[49]: Local GPU: 4
+Logger[49]: [0] NVIDIA A100-SXM4-40GB
+Logger[49]: [1] NVIDIA A100-SXM4-40GB
+Logger[49]: [2] NVIDIA A100-SXM4-40GB
+Logger[49]: [3] NVIDIA A100-SXM4-40GB
+Logger[49]: Compile Time: 116 us + 9562 us = 9678 us
+Logger[49]: Time Cost: 9054075 us
+Logger[14]: Local GPU: 4
+Logger[14]: [0] NVIDIA A100-SXM4-40GB
+Logger[14]: [1] NVIDIA A100-SXM4-40GB
+Logger[14]: [2] NVIDIA A100-SXM4-40GB
+Logger[14]: [3] NVIDIA A100-SXM4-40GB
+Logger[14]: Compile Time: 125 us + 13373 us = 13498 us
+Logger[14]: Time Cost: 9042729 us
+Logger[3]: Local GPU: 4
+Logger[3]: [0] NVIDIA A100-SXM4-40GB
+Logger[3]: [1] NVIDIA A100-SXM4-40GB
+Logger[3]: [2] NVIDIA A100-SXM4-40GB
+Logger[3]: [3] NVIDIA A100-SXM4-40GB
+Logger[3]: Compile Time: 42954 us + 9046 us = 52000 us
+Logger[3]: Time Cost: 9091805 us
+Logger[60]: Local GPU: 4
+Logger[60]: [0] NVIDIA A100-SXM4-40GB
+Logger[60]: [1] NVIDIA A100-SXM4-40GB
+Logger[60]: [2] NVIDIA A100-SXM4-40GB
+Logger[60]: [3] NVIDIA A100-SXM4-40GB
+Logger[60]: Compile Time: 121 us + 9102 us = 9223 us
+Logger[60]: Time Cost: 9070205 us
+Logger[58]: Local GPU: 4
+Logger[58]: [0] NVIDIA A100-SXM4-40GB
+Logger[58]: [1] NVIDIA A100-SXM4-40GB
+Logger[58]: [2] NVIDIA A100-SXM4-40GB
+Logger[58]: [3] NVIDIA A100-SXM4-40GB
+Logger[58]: Compile Time: 91 us + 9120 us = 9211 us
+Logger[58]: Time Cost: 9038615 us
+Logger[63]: Local GPU: 4
+Logger[63]: [0] NVIDIA A100-SXM4-80GB
+Logger[63]: [1] NVIDIA A100-SXM4-80GB
+Logger[63]: [2] NVIDIA A100-SXM4-80GB
+Logger[63]: [3] NVIDIA A100-SXM4-80GB
+Logger[63]: Compile Time: 115 us + 9664 us = 9779 us
+Logger[63]: Time Cost: 9080857 us
+Logger[5]: Local GPU: 4
+Logger[5]: [0] NVIDIA A100-SXM4-40GB
+Logger[5]: [1] NVIDIA A100-SXM4-40GB
+Logger[5]: [2] NVIDIA A100-SXM4-40GB
+Logger[5]: [3] NVIDIA A100-SXM4-40GB
+Logger[5]: Compile Time: 48067 us + 9299 us = 57366 us
+Logger[5]: Time Cost: 9098743 us
+Logger[0]: Local GPU: 4
+Logger[0]: [0] NVIDIA A100-SXM4-40GB
+Logger[0]: [1] NVIDIA A100-SXM4-40GB
+Logger[0]: [2] NVIDIA A100-SXM4-40GB
+Logger[0]: [3] NVIDIA A100-SXM4-40GB
+Logger[0]: Total Gates 141
+Logger[0]: Total Groups: 2 7 100 41
+Logger[0]: Compile Time: 77927 us + 12801 us = 90728 us
+Logger[0]: Time Cost: 9100691 us
+Logger[50]: Local GPU: 4
+Logger[50]: [0] NVIDIA A100-SXM4-40GB
+Logger[50]: [1] NVIDIA A100-SXM4-40GB
+Logger[50]: [2] NVIDIA A100-SXM4-40GB
+Logger[50]: [3] NVIDIA A100-SXM4-40GB
+Logger[50]: Compile Time: 112 us + 9071 us = 9183 us
+Logger[50]: Time Cost: 9108636 us
+Logger[13]: Local GPU: 4
+Logger[13]: [0] NVIDIA A100-SXM4-40GB
+Logger[13]: [1] NVIDIA A100-SXM4-40GB
+Logger[13]: [2] NVIDIA A100-SXM4-40GB
+Logger[13]: [3] NVIDIA A100-SXM4-40GB
+Logger[13]: Compile Time: 99 us + 9205 us = 9304 us
+Logger[13]: Time Cost: 9131805 us
+Logger[61]: Local GPU: 4
+Logger[61]: [0] NVIDIA A100-SXM4-80GB
+Logger[61]: [1] NVIDIA A100-SXM4-80GB
+Logger[61]: [2] NVIDIA A100-SXM4-80GB
+Logger[61]: [3] NVIDIA A100-SXM4-80GB
+Logger[61]: Compile Time: 115 us + 9166 us = 9281 us
+Logger[61]: Time Cost: 9107950 us
+Logger[2]: Local GPU: 4
+Logger[2]: [0] NVIDIA A100-SXM4-40GB
+Logger[2]: [1] NVIDIA A100-SXM4-40GB
+Logger[2]: [2] NVIDIA A100-SXM4-40GB
+Logger[2]: [3] NVIDIA A100-SXM4-40GB
+Logger[2]: Compile Time: 14662 us + 9287 us = 23949 us
+Logger[2]: Time Cost: 9128196 us
+Logger[62]: Local GPU: 4
+Logger[62]: [0] NVIDIA A100-SXM4-80GB
+Logger[62]: [1] NVIDIA A100-SXM4-80GB
+Logger[62]: [2] NVIDIA A100-SXM4-80GB
+Logger[62]: [3] NVIDIA A100-SXM4-80GB
+Logger[62]: Compile Time: 96 us + 9015 us = 9111 us
+Logger[62]: Time Cost: 9121603 us
+Logger[1]: Local GPU: 4
+Logger[1]: [0] NVIDIA A100-SXM4-40GB
+Logger[1]: [1] NVIDIA A100-SXM4-40GB
+Logger[1]: [2] NVIDIA A100-SXM4-40GB
+Logger[1]: [3] NVIDIA A100-SXM4-40GB
+Logger[1]: Compile Time: 114 us + 9364 us = 9478 us
+Logger[1]: Time Cost: 9188317 us
+Logger[51]: Local GPU: 4
+Logger[51]: [0] NVIDIA A100-SXM4-40GB
+Logger[51]: [1] NVIDIA A100-SXM4-40GB
+Logger[51]: [2] NVIDIA A100-SXM4-40GB
+Logger[51]: [3] NVIDIA A100-SXM4-40GB
+Logger[51]: Compile Time: 125 us + 9451 us = 9576 us
+Logger[51]: Time Cost: 9172819 us
+Logger[12]: Local GPU: 4
+Logger[12]: [0] NVIDIA A100-SXM4-40GB
+Logger[12]: [1] NVIDIA A100-SXM4-40GB
+Logger[12]: [2] NVIDIA A100-SXM4-40GB
+Logger[12]: [3] NVIDIA A100-SXM4-40GB
+Logger[12]: Compile Time: 124 us + 9172 us = 9296 us
+Logger[12]: Time Cost: 9179129 us
+Logger[15]: Local GPU: 4
+Logger[15]: [0] NVIDIA A100-SXM4-40GB
+Logger[15]: [1] NVIDIA A100-SXM4-40GB
+Logger[15]: [2] NVIDIA A100-SXM4-40GB
+Logger[15]: [3] NVIDIA A100-SXM4-40GB
+Logger[15]: Compile Time: 55219 us + 9069 us = 64288 us
+Logger[15]: Time Cost: 9192082 us
+Logger[48]: Local GPU: 4
+Logger[48]: [0] NVIDIA A100-SXM4-40GB
+Logger[48]: [1] NVIDIA A100-SXM4-40GB
+Logger[48]: [2] NVIDIA A100-SXM4-40GB
+Logger[48]: [3] NVIDIA A100-SXM4-40GB
+Logger[48]: Compile Time: 74588 us + 13322 us = 87910 us
+Logger[48]: Time Cost: 9117833 us

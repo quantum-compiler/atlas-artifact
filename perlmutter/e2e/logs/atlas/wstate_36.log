@@ -1,0 +1,1345 @@
+Num ranks: 64, myrank: 1
+Num ranks: 64, myrank: 0
+Num ranks: 64, myrank: 10
+Num ranks: 64, myrank: 54
+Num ranks: 64, myrank: 36
+Num ranks: 64, myrank: 8
+Num ranks: 64, myrank: 22
+Num ranks: 64, myrank: 12
+Num ranks: 64, myrank: 52
+Num ranks: 64, myrank: 42
+Num ranks: 64, myrank: 56
+Num ranks: 64, myrank: 60
+Num ranks: 64, myrank: 50
+Num ranks: 64, myrank: 20
+Num ranks: 64, myrank: 4
+Num ranks: 64, myrank: 6
+Num ranks: 64, myrank: 51
+Num ranks: 64, myrank: 15
+Num ranks: 64, myrank: 33
+Num ranks: 64, myrank: 47
+Num ranks: 64, myrank: 35
+Num ranks: 64, myrank: 55
+Num ranks: 64, myrank: 7
+Num ranks: 64, myrank: 11
+Num ranks: 64, myrank: 45
+Num ranks: 64, myrank: 27
+Num ranks: 64, myrank: 43
+Num ranks: 64, myrank: 61
+Num ranks: 64, myrank: 5
+Num ranks: 64, myrank: 3
+Num ranks: 64, myrank: 57
+Num ranks: 64, myrank: 46
+Num ranks: 64, myrank: 16
+Num ranks: 64, myrank: 44
+Num ranks: 64, myrank: 62
+Num ranks: 64, myrank: 26
+Num ranks: 64, myrank: 2
+Num ranks: 64, myrank: 32
+Num ranks: 64, myrank: 30
+Num ranks: 64, myrank: 58
+Num ranks: 64, myrank: 28
+Num ranks: 64, myrank: 24
+Num ranks: 64, myrank: 18
+Num ranks: 64, myrank: 40
+Num ranks: 64, myrank: 48
+Num ranks: 64, myrank: 34
+Num ranks: 64, myrank: 59
+Num ranks: 64, myrank: 53
+Num ranks: 64, myrank: 29
+Num ranks: 64, myrank: 63
+Num ranks: 64, myrank: 23
+Num ranks: 64, myrank: 9
+Num ranks: 64, myrank: 41
+Num ranks: 64, myrank: 17
+Num ranks: 64, myrank: 49
+Num ranks: 64, myrank: 39
+Num ranks: 64, myrank: 13
+Num ranks: 64, myrank: 31
+Num ranks: 64, myrank: 25
+Num ranks: 64, myrank: 21
+Num ranks: 64, myrank: 37
+Num ranks: 64, myrank: 14
+Num ranks: 64, myrank: 38
+Num ranks: 64, myrank: 19
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Use cached schedule
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+Compilation Done! 
+Num Shuffles: 1
+Num FUSION Kernel: 7
+Num SHM Kernel: 1
+Start Simulating...
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+[warmup] size total:16777216
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+Init State Vectors on 4 devices
+[NCCL Rank 156] Shuffle Time: 347.42ms
+[NCCL Rank 157] Shuffle Time: 347.43ms
+[NCCL Rank 158] Shuffle Time: 347.45ms
+[NCCL Rank 208] Shuffle Time: 334.49ms
+[NCCL Rank 209] Shuffle Time: 334.51ms
+[NCCL Rank 210] Shuffle Time: 334.52ms
+[NCCL Rank 200] Shuffle Time: 347.86ms
+[NCCL Rank 201] Shuffle Time: 347.89ms
+[NCCL Rank 140] Shuffle Time: 346.50ms
+[NCCL Rank 141] Shuffle Time: 346.63ms
+[NCCL Rank 142] Shuffle Time: 346.64ms
+[NCCL Rank 20] Shuffle Time: 348.53ms
+[NCCL Rank 12] Shuffle Time: 329.86ms
+[NCCL Rank 13] Shuffle Time: 329.88ms
+[NCCL Rank 14] Shuffle Time: 329.89ms
+[NCCL Rank 15] Shuffle Time: 329.90ms
+[NCCL Rank 72] Shuffle Time: 332.86ms
+[NCCL Rank 73] Shuffle Time: 332.87ms
+[NCCL Rank 159] Shuffle Time: 347.45ms
+[NCCL Rank 84] Shuffle Time: 337.79ms
+[NCCL Rank 85] Shuffle Time: 337.81ms
+[NCCL Rank 86] Shuffle Time: 337.82ms
+[NCCL Rank 87] Shuffle Time: 337.83ms
+[NCCL Rank 148] Shuffle Time: 348.57ms
+[NCCL Rank 149] Shuffle Time: 348.60ms
+[NCCL Rank 150] Shuffle Time: 348.61ms
+[NCCL Rank 151] Shuffle Time: 348.62ms
+[NCCL Rank 211] Shuffle Time: 334.53ms
+[NCCL Rank 202] Shuffle Time: 347.91ms
+[NCCL Rank 80] Shuffle Time: 349.48ms
+[NCCL Rank 81] Shuffle Time: 349.50ms
+[NCCL Rank 82] Shuffle Time: 349.51ms
+[NCCL Rank 83] Shuffle Time: 349.51ms
+[NCCL Rank 143] Shuffle Time: 346.65ms
+[NCCL Rank 21] Shuffle Time: 348.99ms
+[NCCL Rank 22] Shuffle Time: 349.00ms
+[NCCL Rank 74] Shuffle Time: 333.01ms
+[NCCL Rank 75] Shuffle Time: 333.02ms
+[NCCL Rank 4] Shuffle Time: 349.47ms
+[NCCL Rank 5] Shuffle Time: 349.49ms
+[NCCL Rank 6] Shuffle Time: 349.50ms
+[NCCL Rank 144] Shuffle Time: 344.82ms
+[NCCL Rank 145] Shuffle Time: 344.84ms
+[NCCL Rank 146] Shuffle Time: 344.98ms
+[NCCL Rank 147] Shuffle Time: 345.00ms
+[NCCL Rank 88] Shuffle Time: 348.58ms
+[NCCL Rank 89] Shuffle Time: 348.61ms
+[NCCL Rank 90] Shuffle Time: 348.62ms
+[NCCL Rank 91] Shuffle Time: 348.63ms
+[NCCL Rank 224] Shuffle Time: 340.07ms
+[NCCL Rank 225] Shuffle Time: 340.09ms
+[NCCL Rank 226] Shuffle Time: 340.12ms
+[NCCL Rank 227] Shuffle Time: 340.12ms
+[NCCL Rank 203] Shuffle Time: 347.93ms
+[NCCL Rank 16] Shuffle Time: 346.06ms
+[NCCL Rank 24] Shuffle Time: 340.01ms
+[NCCL Rank 25] Shuffle Time: 340.03ms
+[NCCL Rank 26] Shuffle Time: 340.04ms
+[NCCL Rank 27] Shuffle Time: 340.05ms
+[NCCL Rank 132] Shuffle Time: 335.86ms
+[NCCL Rank 220] Shuffle Time: 350.09ms
+[NCCL Rank 221] Shuffle Time: 350.13ms
+[NCCL Rank 222] Shuffle Time: 350.22ms
+[NCCL Rank 223] Shuffle Time: 350.23ms
+[NCCL Rank 23] Shuffle Time: 349.01ms
+[NCCL Rank 184] Shuffle Time: 350.23ms
+[NCCL Rank 185] Shuffle Time: 350.25ms
+[NCCL Rank 186] Shuffle Time: 350.26ms
+[NCCL Rank 212] Shuffle Time: 334.23ms
+[NCCL Rank 213] Shuffle Time: 334.25ms
+[NCCL Rank 214] Shuffle Time: 334.26ms
+[NCCL Rank 215] Shuffle Time: 334.27ms
+[NCCL Rank 252] Shuffle Time: 349.96ms
+[NCCL Rank 92] Shuffle Time: 347.51ms
+[NCCL Rank 93] Shuffle Time: 347.57ms
+[NCCL Rank 124] Shuffle Time: 333.82ms
+[NCCL Rank 125] Shuffle Time: 333.86ms
+[NCCL Rank 126] Shuffle Time: 333.87ms
+[NCCL Rank 127] Shuffle Time: 333.88ms
+[NCCL Rank 56] Shuffle Time: 349.69ms
+[NCCL Rank 152] Shuffle Time: 348.55ms
+[NCCL Rank 153] Shuffle Time: 348.56ms
+[NCCL Rank 154] Shuffle Time: 348.57ms
+[NCCL Rank 155] Shuffle Time: 348.58ms
+[NCCL Rank 7] Shuffle Time: 349.57ms
+[NCCL Rank 216] Shuffle Time: 339.85ms
+[NCCL Rank 217] Shuffle Time: 339.96ms
+[NCCL Rank 218] Shuffle Time: 339.97ms
+[NCCL Rank 219] Shuffle Time: 339.98ms
+[NCCL Rank 17] Shuffle Time: 346.12ms
+[NCCL Rank 204] Shuffle Time: 346.65ms
+[NCCL Rank 205] Shuffle Time: 346.67ms
+[NCCL Rank 206] Shuffle Time: 346.69ms
+[NCCL Rank 133] Shuffle Time: 335.95ms
+[NCCL Rank 28] Shuffle Time: 335.49ms
+[NCCL Rank 29] Shuffle Time: 335.51ms
+[NCCL Rank 30] Shuffle Time: 335.52ms
+[NCCL Rank 31] Shuffle Time: 335.53ms
+[NCCL Rank 108] Shuffle Time: 349.27ms
+[NCCL Rank 228] Shuffle Time: 322.73ms
+[NCCL Rank 229] Shuffle Time: 322.76ms
+[NCCL Rank 230] Shuffle Time: 322.77ms
+[NCCL Rank 187] Shuffle Time: 350.27ms
+[NCCL Rank 64] Shuffle Time: 350.08ms
+[NCCL Rank 65] Shuffle Time: 350.10ms
+[NCCL Rank 66] Shuffle Time: 350.11ms
+[NCCL Rank 67] Shuffle Time: 350.12ms
+[NCCL Rank 8] Shuffle Time: 331.03ms
+[NCCL Rank 9] Shuffle Time: 331.05ms
+[NCCL Rank 10] Shuffle Time: 331.06ms
+[NCCL Rank 96] Shuffle Time: 349.85ms
+[NCCL Rank 97] Shuffle Time: 349.87ms
+[NCCL Rank 98] Shuffle Time: 349.88ms
+[NCCL Rank 99] Shuffle Time: 349.89ms
+[NCCL Rank 192] Shuffle Time: 342.07ms
+[NCCL Rank 193] Shuffle Time: 342.09ms
+[NCCL Rank 194] Shuffle Time: 342.10ms
+[NCCL Rank 195] Shuffle Time: 342.11ms
+[NCCL Rank 136] Shuffle Time: 345.62ms
+[NCCL Rank 253] Shuffle Time: 350.44ms
+[NCCL Rank 254] Shuffle Time: 350.45ms
+[NCCL Rank 255] Shuffle Time: 350.46ms
+[NCCL Rank 94] Shuffle Time: 347.62ms
+[NCCL Rank 57] Shuffle Time: 350.01ms
+[NCCL Rank 58] Shuffle Time: 350.02ms
+[NCCL Rank 59] Shuffle Time: 350.03ms
+[NCCL Rank 76] Shuffle Time: 332.88ms
+[NCCL Rank 77] Shuffle Time: 332.90ms
+[NCCL Rank 78] Shuffle Time: 332.91ms
+[NCCL Rank 48] Shuffle Time: 334.94ms
+[NCCL Rank 49] Shuffle Time: 334.96ms
+[NCCL Rank 18] Shuffle Time: 346.22ms
+[NCCL Rank 19] Shuffle Time: 346.23ms
+[NCCL Rank 207] Shuffle Time: 346.72ms
+[NCCL Rank 134] Shuffle Time: 336.01ms
+[NCCL Rank 188] Shuffle Time: 348.75ms
+[NCCL Rank 189] Shuffle Time: 348.78ms
+[NCCL Rank 190] Shuffle Time: 348.79ms
+[NCCL Rank 191] Shuffle Time: 348.79ms
+[NCCL Rank 109] Shuffle Time: 349.83ms
+[NCCL Rank 110] Shuffle Time: 349.84ms
+[NCCL Rank 111] Shuffle Time: 349.85ms
+[NCCL Rank 244] Shuffle Time: 350.18ms
+[NCCL Rank 176] Shuffle Time: 351.15ms
+[NCCL Rank 177] Shuffle Time: 351.18ms
+[NCCL Rank 11] Shuffle Time: 331.07ms
+[NCCL Rank 232] Shuffle Time: 349.20ms
+[NCCL Rank 233] Shuffle Time: 349.22ms
+[NCCL Rank 234] Shuffle Time: 349.23ms
+[NCCL Rank 235] Shuffle Time: 349.24ms
+[NCCL Rank 160] Shuffle Time: 340.45ms
+[NCCL Rank 161] Shuffle Time: 340.46ms
+[NCCL Rank 137] Shuffle Time: 345.69ms
+[NCCL Rank 236] Shuffle Time: 350.39ms
+[NCCL Rank 237] Shuffle Time: 350.41ms
+[NCCL Rank 238] Shuffle Time: 350.42ms
+[NCCL Rank 239] Shuffle Time: 350.43ms
+[NCCL Rank 116] Shuffle Time: 349.24ms
+[NCCL Rank 117] Shuffle Time: 349.27ms
+[NCCL Rank 118] Shuffle Time: 349.28ms
+[NCCL Rank 95] Shuffle Time: 347.64ms
+[NCCL Rank 36] Shuffle Time: 348.99ms
+[NCCL Rank 37] Shuffle Time: 349.00ms
+[NCCL Rank 164] Shuffle Time: 350.70ms
+[NCCL Rank 165] Shuffle Time: 350.72ms
+[NCCL Rank 79] Shuffle Time: 332.92ms
+[NCCL Rank 40] Shuffle Time: 350.47ms
+[NCCL Rank 41] Shuffle Time: 350.49ms
+[NCCL Rank 42] Shuffle Time: 350.49ms
+[NCCL Rank 43] Shuffle Time: 350.50ms
+[NCCL Rank 50] Shuffle Time: 335.04ms
+[NCCL Rank 60] Shuffle Time: 350.33ms
+[NCCL Rank 135] Shuffle Time: 336.02ms
+[NCCL Rank 44] Shuffle Time: 350.80ms
+[NCCL Rank 45] Shuffle Time: 350.83ms
+[NCCL Rank 46] Shuffle Time: 350.85ms
+[NCCL Rank 172] Shuffle Time: 340.59ms
+[NCCL Rank 173] Shuffle Time: 340.60ms
+[NCCL Rank 174] Shuffle Time: 340.63ms
+[NCCL Rank 245] Shuffle Time: 350.52ms
+[NCCL Rank 246] Shuffle Time: 350.53ms
+[NCCL Rank 247] Shuffle Time: 350.54ms
+[NCCL Rank 178] Shuffle Time: 351.56ms
+[NCCL Rank 179] Shuffle Time: 351.57ms
+[NCCL Rank 104] Shuffle Time: 332.48ms
+[NCCL Rank 105] Shuffle Time: 332.52ms
+[NCCL Rank 106] Shuffle Time: 332.53ms
+[NCCL Rank 128] Shuffle Time: 347.39ms
+[NCCL Rank 162] Shuffle Time: 340.52ms
+[NCCL Rank 138] Shuffle Time: 345.70ms
+[NCCL Rank 119] Shuffle Time: 349.29ms
+[NCCL Rank 38] Shuffle Time: 349.03ms
+[NCCL Rank 166] Shuffle Time: 350.75ms
+[NCCL Rank 0] Shuffle Time: 346.09ms
+[NCCL Rank 1] Shuffle Time: 346.11ms
+[NCCL Rank 32] Shuffle Time: 337.01ms
+[NCCL Rank 33] Shuffle Time: 337.03ms
+[NCCL Rank 34] Shuffle Time: 337.04ms
+[NCCL Rank 35] Shuffle Time: 337.04ms
+[NCCL Rank 51] Shuffle Time: 335.05ms
+[NCCL Rank 168] Shuffle Time: 351.10ms
+[NCCL Rank 169] Shuffle Time: 351.12ms
+[NCCL Rank 170] Shuffle Time: 351.13ms
+[NCCL Rank 61] Shuffle Time: 350.43ms
+[NCCL Rank 47] Shuffle Time: 350.86ms
+[NCCL Rank 175] Shuffle Time: 340.64ms
+[NCCL Rank 231] Shuffle Time: 324.08ms
+[NCCL Rank 107] Shuffle Time: 332.54ms
+[NCCL Rank 129] Shuffle Time: 347.47ms
+[NCCL Rank 163] Shuffle Time: 340.60ms
+[NCCL Rank 139] Shuffle Time: 345.71ms
+[NCCL Rank 39] Shuffle Time: 349.04ms
+[NCCL Rank 167] Shuffle Time: 350.76ms
+[NCCL Rank 68] Shuffle Time: 347.26ms
+[NCCL Rank 69] Shuffle Time: 347.28ms
+[NCCL Rank 70] Shuffle Time: 347.29ms
+[NCCL Rank 71] Shuffle Time: 347.30ms
+[NCCL Rank 196] Shuffle Time: 347.41ms
+[NCCL Rank 197] Shuffle Time: 347.43ms
+[NCCL Rank 198] Shuffle Time: 347.44ms
+[NCCL Rank 199] Shuffle Time: 347.45ms
+[NCCL Rank 100] Shuffle Time: 352.14ms
+[NCCL Rank 2] Shuffle Time: 346.22ms
+[NCCL Rank 171] Shuffle Time: 351.15ms
+[NCCL Rank 62] Shuffle Time: 350.44ms
+[NCCL Rank 130] Shuffle Time: 347.48ms
+[NCCL Rank 101] Shuffle Time: 352.19ms
+[NCCL Rank 102] Shuffle Time: 352.20ms
+[NCCL Rank 3] Shuffle Time: 346.33ms
+[NCCL Rank 240] Shuffle Time: 352.84ms
+[NCCL Rank 241] Shuffle Time: 352.86ms
+[NCCL Rank 242] Shuffle Time: 352.87ms
+[NCCL Rank 63] Shuffle Time: 350.45ms
+[NCCL Rank 131] Shuffle Time: 347.50ms
+[NCCL Rank 103] Shuffle Time: 352.21ms
+[NCCL Rank 243] Shuffle Time: 352.93ms
+[NCCL Rank 180] Shuffle Time: 352.42ms
+[NCCL Rank 181] Shuffle Time: 352.45ms
+[NCCL Rank 182] Shuffle Time: 352.46ms
+[NCCL Rank 183] Shuffle Time: 352.52ms
+[NCCL Rank 248] Shuffle Time: 352.49ms
+[NCCL Rank 249] Shuffle Time: 352.52ms
+[NCCL Rank 250] Shuffle Time: 352.53ms
+[NCCL Rank 251] Shuffle Time: 352.54ms
+[NCCL Rank 120] Shuffle Time: 352.46ms
+[NCCL Rank 121] Shuffle Time: 352.48ms
+[NCCL Rank 122] Shuffle Time: 352.49ms
+[NCCL Rank 123] Shuffle Time: 352.50ms
+[NCCL Rank 112] Shuffle Time: 352.92ms
+[NCCL Rank 113] Shuffle Time: 352.96ms
+[NCCL Rank 114] Shuffle Time: 352.97ms
+[NCCL Rank 115] Shuffle Time: 352.97ms
+[NCCL Rank 52] Shuffle Time: 328.91ms
+[NCCL Rank 53] Shuffle Time: 328.93ms
+[NCCL Rank 54] Shuffle Time: 328.94ms
+[NCCL Rank 55] Shuffle Time: 328.94ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 156] Total Simulation Time: 459.30ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 12] Total Simulation Time: 455.65ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 72] Total Simulation Time: 461.03ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 140] Total Simulation Time: 460.24ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 20] Total Simulation Time: 462.89ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 4] Total Simulation Time: 462.90ms
+[NCCL Rank 80] Total Simulation Time: 463.56ms
+[NCCL Rank 157] Total Simulation Time: 463.12ms
+[NCCL Rank 56] Total Simulation Time: 463.74ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 84] Total Simulation Time: 452.57ms
+[NCCL Rank 200] Total Simulation Time: 463.57ms
+[NCCL Rank 208] Total Simulation Time: 464.28ms
+[NCCL Rank 13] Total Simulation Time: 460.08ms
+[NCCL Rank 92] Total Simulation Time: 465.44ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 64] Total Simulation Time: 464.49ms
+[NCCL Rank 192] Total Simulation Time: 456.75ms
+[NCCL Rank 216] Total Simulation Time: 455.41ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 141] Total Simulation Time: 464.01ms
+[NCCL Rank 252] Total Simulation Time: 465.19ms
+[NCCL Rank 152] Total Simulation Time: 464.75ms
+[NCCL Rank 73] Total Simulation Time: 465.44ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 96] Total Simulation Time: 465.53ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 220] Total Simulation Time: 466.30ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 21] Total Simulation Time: 466.64ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 5] Total Simulation Time: 466.68ms
+[NCCL Rank 81] Total Simulation Time: 467.28ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 158] Total Simulation Time: 466.93ms
+[NCCL Rank 164] Total Simulation Time: 466.38ms
+[NCCL Rank 100] Total Simulation Time: 466.93ms
+[NCCL Rank 57] Total Simulation Time: 467.49ms
+[NCCL Rank 60] Total Simulation Time: 465.39ms
+[NCCL Rank 184] Total Simulation Time: 467.54ms
+[NCCL Rank 159] Total Simulation Time: 467.11ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 85] Total Simulation Time: 456.37ms
+[NCCL Rank 144] Total Simulation Time: 463.23ms
+[NCCL Rank 168] Total Simulation Time: 467.16ms
+[NCCL Rank 201] Total Simulation Time: 467.34ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 224] Total Simulation Time: 458.17ms
+[NCCL Rank 244] Total Simulation Time: 466.69ms
+[NCCL Rank 236] Total Simulation Time: 466.92ms
+[NCCL Rank 88] Total Simulation Time: 467.58ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 24] Total Simulation Time: 468.99ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 116] Total Simulation Time: 466.63ms
+[NCCL Rank 196] Total Simulation Time: 463.98ms
+[NCCL Rank 209] Total Simulation Time: 468.46ms
+[NCCL Rank 16] Total Simulation Time: 465.09ms
+[NCCL Rank 44] Total Simulation Time: 467.79ms
+[NCCL Rank 65] Total Simulation Time: 468.28ms
+[NCCL Rank 193] Total Simulation Time: 460.48ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 217] Total Simulation Time: 459.17ms
+[NCCL Rank 204] Total Simulation Time: 465.48ms
+[NCCL Rank 136] Total Simulation Time: 464.35ms
+[NCCL Rank 93] Total Simulation Time: 469.85ms
+[NCCL Rank 142] Total Simulation Time: 467.79ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 120] Total Simulation Time: 467.60ms
+[NCCL Rank 253] Total Simulation Time: 469.00ms
+[NCCL Rank 36] Total Simulation Time: 467.52ms
+[NCCL Rank 153] Total Simulation Time: 468.46ms
+[NCCL Rank 14] Total Simulation Time: 464.82ms
+[NCCL Rank 232] Total Simulation Time: 467.84ms
+[NCCL Rank 97] Total Simulation Time: 469.28ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 143] Total Simulation Time: 468.02ms
+[NCCL Rank 15] Total Simulation Time: 465.00ms
+[NCCL Rank 74] Total Simulation Time: 469.75ms
+[NCCL Rank 0] Total Simulation Time: 464.49ms
+[NCCL Rank 188] Total Simulation Time: 467.28ms
+[NCCL Rank 75] Total Simulation Time: 469.92ms
+[NCCL Rank 22] Total Simulation Time: 470.39ms
+[NCCL Rank 40] Total Simulation Time: 469.37ms
+[NCCL Rank 82] Total Simulation Time: 470.77ms
+Finish Simulating! Total: 7 FUSE Kernel, 1 SHM Kernel, 1 Shuffles.
+[NCCL Rank 6] Total Simulation Time: 470.43ms
+[NCCL Rank 23] Total Simulation Time: 470.56ms
+[NCCL Rank 101] Total Simulation Time: 470.68ms
+[NCCL Rank 83] Total Simulation Time: 470.92ms
+[NCCL Rank 7] Total Simulation Time: 470.62ms
+[NCCL Rank 52] Total Simulation Time: 469.69ms
+[NCCL Rank 58] Total Simulation Time: 471.26ms
+[NCCL Rank 185] Total Simulation Time: 471.21ms
+[NCCL Rank 176] Total Simulation Time: 470.89ms
+[NCCL Rank 59] Total Simulation Time: 471.48ms
+[NCCL Rank 145] Total Simulation Time: 467.00ms
+[NCCL Rank 61] Total Simulation Time: 469.75ms
+[NCCL Rank 86] Total Simulation Time: 460.11ms
+[NCCL Rank 169] Total Simulation Time: 470.92ms
+[NCCL Rank 240] Total Simulation Time: 471.01ms
+[NCCL Rank 165] Total Simulation Time: 470.73ms
+[NCCL Rank 202] Total Simulation Time: 471.12ms
+[NCCL Rank 203] Total Simulation Time: 471.33ms
+[NCCL Rank 160] Total Simulation Time: 460.61ms
+[NCCL Rank 68] Total Simulation Time: 466.86ms
+[NCCL Rank 87] Total Simulation Time: 460.29ms
+[NCCL Rank 225] Total Simulation Time: 461.94ms
+[NCCL Rank 221] Total Simulation Time: 472.17ms
+[NCCL Rank 237] Total Simulation Time: 470.61ms
+[NCCL Rank 89] Total Simulation Time: 471.31ms
+[NCCL Rank 66] Total Simulation Time: 471.86ms
+[NCCL Rank 197] Total Simulation Time: 467.74ms
+[NCCL Rank 45] Total Simulation Time: 471.51ms
+[NCCL Rank 194] Total Simulation Time: 464.23ms
+[NCCL Rank 17] Total Simulation Time: 468.85ms
+[NCCL Rank 108] Total Simulation Time: 471.58ms
+[NCCL Rank 245] Total Simulation Time: 471.10ms
+[NCCL Rank 67] Total Simulation Time: 472.06ms
+[NCCL Rank 218] Total Simulation Time: 462.99ms
+[NCCL Rank 210] Total Simulation Time: 472.58ms
+[NCCL Rank 25] Total Simulation Time: 473.37ms
+[NCCL Rank 205] Total Simulation Time: 469.28ms
+[NCCL Rank 121] Total Simulation Time: 471.29ms
+[NCCL Rank 195] Total Simulation Time: 464.40ms
+[NCCL Rank 137] Total Simulation Time: 468.12ms
+[NCCL Rank 117] Total Simulation Time: 470.90ms
+[NCCL Rank 37] Total Simulation Time: 471.21ms
+[NCCL Rank 154] Total Simulation Time: 472.17ms
+[NCCL Rank 233] Total Simulation Time: 471.54ms
+[NCCL Rank 254] Total Simulation Time: 472.77ms
+[NCCL Rank 219] Total Simulation Time: 463.14ms
+[NCCL Rank 98] Total Simulation Time: 473.04ms
+[NCCL Rank 155] Total Simulation Time: 472.34ms
+[NCCL Rank 32] Total Simulation Time: 472.80ms
+[NCCL Rank 180] Total Simulation Time: 471.59ms
+[NCCL Rank 255] Total Simulation Time: 472.96ms
+[NCCL Rank 211] Total Simulation Time: 472.77ms
+[NCCL Rank 128] Total Simulation Time: 469.32ms
+[NCCL Rank 99] Total Simulation Time: 473.18ms
+[NCCL Rank 94] Total Simulation Time: 474.32ms
+[NCCL Rank 148] Total Simulation Time: 473.68ms
+[NCCL Rank 1] Total Simulation Time: 468.26ms
+[NCCL Rank 189] Total Simulation Time: 471.08ms
+[NCCL Rank 112] Total Simulation Time: 472.75ms
+[NCCL Rank 132] Total Simulation Time: 474.10ms
+[NCCL Rank 28] Total Simulation Time: 473.68ms
+[NCCL Rank 248] Total Simulation Time: 472.43ms
+[NCCL Rank 95] Total Simulation Time: 474.50ms
+[NCCL Rank 41] Total Simulation Time: 473.13ms
+[NCCL Rank 102] Total Simulation Time: 474.47ms
+[NCCL Rank 8] Total Simulation Time: 469.47ms
+[NCCL Rank 186] Total Simulation Time: 474.75ms
+[NCCL Rank 103] Total Simulation Time: 474.64ms
+[NCCL Rank 177] Total Simulation Time: 474.67ms
+[NCCL Rank 76] Total Simulation Time: 471.26ms
+[NCCL Rank 187] Total Simulation Time: 474.92ms
+[NCCL Rank 212] Total Simulation Time: 472.98ms
+[NCCL Rank 124] Total Simulation Time: 473.60ms
+[NCCL Rank 146] Total Simulation Time: 470.77ms
+[NCCL Rank 172] Total Simulation Time: 465.33ms
+[NCCL Rank 170] Total Simulation Time: 474.68ms
+[NCCL Rank 228] Total Simulation Time: 467.60ms
+[NCCL Rank 166] Total Simulation Time: 474.49ms
+[NCCL Rank 147] Total Simulation Time: 470.95ms
+[NCCL Rank 238] Total Simulation Time: 474.22ms
+[NCCL Rank 90] Total Simulation Time: 475.03ms
+[NCCL Rank 48] Total Simulation Time: 473.97ms
+[NCCL Rank 171] Total Simulation Time: 474.86ms
+[NCCL Rank 226] Total Simulation Time: 465.66ms
+[NCCL Rank 167] Total Simulation Time: 474.65ms
+[NCCL Rank 53] Total Simulation Time: 474.11ms
+[NCCL Rank 62] Total Simulation Time: 474.27ms
+[NCCL Rank 46] Total Simulation Time: 475.10ms
+[NCCL Rank 239] Total Simulation Time: 474.37ms
+[NCCL Rank 198] Total Simulation Time: 471.47ms
+[NCCL Rank 91] Total Simulation Time: 475.21ms
+[NCCL Rank 227] Total Simulation Time: 465.83ms
+[NCCL Rank 241] Total Simulation Time: 475.55ms
+[NCCL Rank 18] Total Simulation Time: 472.65ms
+[NCCL Rank 63] Total Simulation Time: 474.46ms
+[NCCL Rank 47] Total Simulation Time: 475.27ms
+[NCCL Rank 69] Total Simulation Time: 471.35ms
+[NCCL Rank 199] Total Simulation Time: 471.65ms
+[NCCL Rank 222] Total Simulation Time: 476.65ms
+[NCCL Rank 109] Total Simulation Time: 475.38ms
+[NCCL Rank 138] Total Simulation Time: 471.88ms
+[NCCL Rank 38] Total Simulation Time: 474.94ms
+[NCCL Rank 19] Total Simulation Time: 472.84ms
+[NCCL Rank 206] Total Simulation Time: 473.12ms
+[NCCL Rank 122] Total Simulation Time: 475.01ms
+[NCCL Rank 161] Total Simulation Time: 465.53ms
+[NCCL Rank 223] Total Simulation Time: 476.83ms
+[NCCL Rank 104] Total Simulation Time: 471.42ms
+[NCCL Rank 234] Total Simulation Time: 475.26ms
+[NCCL Rank 139] Total Simulation Time: 472.06ms
+[NCCL Rank 39] Total Simulation Time: 475.10ms
+[NCCL Rank 207] Total Simulation Time: 473.37ms
+[NCCL Rank 181] Total Simulation Time: 475.36ms
+[NCCL Rank 246] Total Simulation Time: 475.63ms
+[NCCL Rank 123] Total Simulation Time: 475.20ms
+[NCCL Rank 118] Total Simulation Time: 475.05ms
+[NCCL Rank 235] Total Simulation Time: 475.44ms
+[NCCL Rank 33] Total Simulation Time: 476.88ms
+[NCCL Rank 247] Total Simulation Time: 475.80ms
+[NCCL Rank 129] Total Simulation Time: 473.02ms
+[NCCL Rank 119] Total Simulation Time: 475.23ms
+[NCCL Rank 149] Total Simulation Time: 477.39ms
+[NCCL Rank 2] Total Simulation Time: 472.02ms
+[NCCL Rank 26] Total Simulation Time: 478.03ms
+[NCCL Rank 190] Total Simulation Time: 474.80ms
+[NCCL Rank 113] Total Simulation Time: 476.47ms
+[NCCL Rank 3] Total Simulation Time: 472.23ms
+[MPI Rank 0]: Shuffle 0 cost 346.19ms on average.
+[NCCL Rank 249] Total Simulation Time: 476.12ms
+[NCCL Rank 42] Total Simulation Time: 476.87ms
+[NCCL Rank 27] Total Simulation Time: 478.19ms
+[NCCL Rank 191] Total Simulation Time: 474.97ms
+[NCCL Rank 43] Total Simulation Time: 477.05ms
+[NCCL Rank 9] Total Simulation Time: 473.28ms
+[NCCL Rank 133] Total Simulation Time: 478.49ms
+[NCCL Rank 178] Total Simulation Time: 478.47ms
+[NCCL Rank 29] Total Simulation Time: 478.12ms
+[NCCL Rank 173] Total Simulation Time: 469.07ms
+[NCCL Rank 179] Total Simulation Time: 478.72ms
+[NCCL Rank 213] Total Simulation Time: 477.30ms
+[NCCL Rank 125] Total Simulation Time: 477.92ms
+[NCCL Rank 77] Total Simulation Time: 475.59ms
+[NCCL Rank 229] Total Simulation Time: 471.97ms
+[NCCL Rank 54] Total Simulation Time: 478.50ms
+[NCCL Rank 49] Total Simulation Time: 478.40ms
+[NCCL Rank 110] Total Simulation Time: 479.18ms
+[NCCL Rank 55] Total Simulation Time: 478.68ms
+[NCCL Rank 242] Total Simulation Time: 479.92ms
+[NCCL Rank 111] Total Simulation Time: 479.43ms
+[NCCL Rank 162] Total Simulation Time: 469.52ms
+[NCCL Rank 70] Total Simulation Time: 475.67ms
+[NCCL Rank 243] Total Simulation Time: 480.10ms
+[NCCL Rank 182] Total Simulation Time: 479.12ms
+[NCCL Rank 105] Total Simulation Time: 475.73ms
+[NCCL Rank 163] Total Simulation Time: 469.72ms
+[NCCL Rank 71] Total Simulation Time: 475.84ms
+[NCCL Rank 183] Total Simulation Time: 479.34ms
+[NCCL Rank 250] Total Simulation Time: 479.66ms
+[NCCL Rank 251] Total Simulation Time: 479.82ms
+[NCCL Rank 130] Total Simulation Time: 476.73ms
+[NCCL Rank 131] Total Simulation Time: 476.88ms
+[NCCL Rank 114] Total Simulation Time: 480.07ms
+[NCCL Rank 150] Total Simulation Time: 481.08ms
+[NCCL Rank 151] Total Simulation Time: 481.23ms
+[NCCL Rank 34] Total Simulation Time: 481.05ms
+[NCCL Rank 115] Total Simulation Time: 480.24ms
+[NCCL Rank 10] Total Simulation Time: 476.97ms
+[NCCL Rank 35] Total Simulation Time: 481.22ms
+[NCCL Rank 11] Total Simulation Time: 477.14ms
+[NCCL Rank 134] Total Simulation Time: 482.79ms
+[NCCL Rank 174] Total Simulation Time: 472.82ms
+[NCCL Rank 135] Total Simulation Time: 482.95ms
+[NCCL Rank 175] Total Simulation Time: 472.99ms
+[NCCL Rank 30] Total Simulation Time: 482.64ms
+[NCCL Rank 31] Total Simulation Time: 482.81ms
+[NCCL Rank 214] Total Simulation Time: 481.58ms
+[NCCL Rank 215] Total Simulation Time: 481.77ms
+[NCCL Rank 126] Total Simulation Time: 482.44ms
+[NCCL Rank 78] Total Simulation Time: 479.86ms
+[NCCL Rank 79] Total Simulation Time: 480.05ms
+[NCCL Rank 127] Total Simulation Time: 482.62ms
+[NCCL Rank 230] Total Simulation Time: 476.37ms
+[NCCL Rank 231] Total Simulation Time: 476.59ms
+[NCCL Rank 50] Total Simulation Time: 482.94ms
+[NCCL Rank 51] Total Simulation Time: 483.10ms
+[NCCL Rank 106] Total Simulation Time: 480.43ms
+[NCCL Rank 107] Total Simulation Time: 480.67ms
+[MPI Rank 0]: Destroyed everything!
+Time Cost: 738273 us
+Destroyed the simulator
+[MPI Rank 63]: Destroyed everything!
+Time Cost: 748811 us
+Destroyed the simulator
+[MPI Rank 35]: Destroyed everything!
+Time Cost: 753322 us
+Destroyed the simulator
+[MPI Rank 20]: Destroyed everything!
+Time Cost: 760743 us
+Destroyed the simulator
+[MPI Rank 18]: Destroyed everything!
+Time Cost: 761466 us
+Destroyed the simulator
+[MPI Rank 47]: Destroyed everything!
+Time Cost: 766686 us
+Destroyed the simulator
+[MPI Rank 14]: Destroyed everything!
+Time Cost: 771187 us
+Destroyed the simulator
+[MPI Rank 31]: Destroyed everything!
+Time Cost: 770272 us
+Destroyed the simulator
+[MPI Rank 16]: Destroyed everything!
+Time Cost: 772000 us
+Destroyed the simulator
+[MPI Rank 5]: Destroyed everything!
+Time Cost: 774512 us
+Destroyed the simulator
+[MPI Rank 33]: Destroyed everything!
+Time Cost: 777306 us
+Destroyed the simulator
+[MPI Rank 6]: Destroyed everything!
+Time Cost: 779151 us
+Destroyed the simulator
+[MPI Rank 58]: Destroyed everything!
+Time Cost: 777037 us
+Destroyed the simulator
+[MPI Rank 9]: Destroyed everything!
+Time Cost: 775732 us
+Destroyed the simulator
+[MPI Rank 38]: Destroyed everything!
+Time Cost: 777332 us
+Destroyed the simulator
+[MPI Rank 59]: Destroyed everything!
+Time Cost: 777586 us
+Destroyed the simulator
+[MPI Rank 21]: Destroyed everything!
+Time Cost: 767495 us
+Destroyed the simulator
+[MPI Rank 29]: Destroyed everything!
+Time Cost: 777519 us
+Destroyed the simulator
+[MPI Rank 15]: Destroyed everything!
+Time Cost: 778734 us
+Destroyed the simulator
+[MPI Rank 46]: Destroyed everything!
+Time Cost: 780210 us
+Destroyed the simulator
+[MPI Rank 23]: Destroyed everything!
+Time Cost: 782649 us
+Destroyed the simulator
+[MPI Rank 22]: Destroyed everything!
+Time Cost: 782369 us
+Destroyed the simulator
+[MPI Rank 57]: Destroyed everything!
+Time Cost: 776016 us
+Destroyed the simulator
+[MPI Rank 48]: Destroyed everything!
+Time Cost: 775607 us
+Destroyed the simulator
+[MPI Rank 53]: Destroyed everything!
+Time Cost: 781943 us
+Destroyed the simulator
+[MPI Rank 19]: Destroyed everything!
+Time Cost: 780144 us
+Destroyed the simulator
+[MPI Rank 3]: Destroyed everything!
+Time Cost: 779840 us
+Destroyed the simulator
+[MPI Rank 28]: Destroyed everything!
+Time Cost: 783109 us
+Destroyed the simulator
+[MPI Rank 54]: Destroyed everything!
+Time Cost: 775295 us
+Destroyed the simulator
+[MPI Rank 24]: Destroyed everything!
+Time Cost: 785293 us
+Destroyed the simulator
+[MPI Rank 39]: Destroyed everything!
+Time Cost: 786841 us
+Destroyed the simulator
+[MPI Rank 27]: Destroyed everything!
+Time Cost: 787458 us
+Destroyed the simulator
+[MPI Rank 32]: Destroyed everything!
+Time Cost: 784240 us
+Destroyed the simulator
+[MPI Rank 30]: Destroyed everything!
+Time Cost: 787506 us
+Destroyed the simulator
+[MPI Rank 40]: Destroyed everything!
+Time Cost: 778089 us
+Destroyed the simulator
+[MPI Rank 13]: Destroyed everything!
+Time Cost: 788003 us
+Destroyed the simulator
+[MPI Rank 8]: Destroyed everything!
+Time Cost: 789429 us
+Destroyed the simulator
+[MPI Rank 43]: Destroyed everything!
+Time Cost: 780620 us
+Destroyed the simulator
+[MPI Rank 25]: Destroyed everything!
+Time Cost: 790807 us
+Destroyed the simulator
+[MPI Rank 26]: Destroyed everything!
+Time Cost: 786970 us
+Destroyed the simulator
+[MPI Rank 34]: Destroyed everything!
+Time Cost: 789971 us
+Destroyed the simulator
+[MPI Rank 52]: Destroyed everything!
+Time Cost: 795478 us
+Destroyed the simulator
+[MPI Rank 1]: Destroyed everything!
+Time Cost: 795885 us
+Destroyed the simulator
+[MPI Rank 51]: Destroyed everything!
+Time Cost: 794094 us
+Destroyed the simulator
+[MPI Rank 56]: Destroyed everything!
+Time Cost: 788293 us
+Destroyed the simulator
+[MPI Rank 61]: Destroyed everything!
+Time Cost: 797921 us
+Destroyed the simulator
+[MPI Rank 36]: Destroyed everything!
+Time Cost: 795443 us
+Destroyed the simulator
+[MPI Rank 60]: Destroyed everything!
+Time Cost: 799622 us
+Destroyed the simulator
+[MPI Rank 2]: Destroyed everything!
+Time Cost: 794644 us
+Destroyed the simulator
+[MPI Rank 17]: Destroyed everything!
+Time Cost: 795670 us
+Destroyed the simulator
+[MPI Rank 12]: Destroyed everything!
+Time Cost: 800349 us
+Destroyed the simulator
+[MPI Rank 55]: Destroyed everything!
+Time Cost: 802160 us
+Destroyed the simulator
+[MPI Rank 7]: Destroyed everything!
+Time Cost: 802002 us
+Destroyed the simulator
+[MPI Rank 4]: Destroyed everything!
+Time Cost: 804515 us
+Destroyed the simulator
+[MPI Rank 37]: Destroyed everything!
+Time Cost: 808462 us
+Destroyed the simulator
+[MPI Rank 11]: Destroyed everything!
+Time Cost: 810129 us
+Destroyed the simulator
+[MPI Rank 49]: Destroyed everything!
+Time Cost: 807668 us
+Destroyed the simulator
+[MPI Rank 10]: Destroyed everything!
+Time Cost: 813877 us
+Destroyed the simulator
+[MPI Rank 50]: Destroyed everything!
+Time Cost: 816026 us
+Destroyed the simulator
+[MPI Rank 44]: Destroyed everything!
+Time Cost: 818044 us
+Destroyed the simulator
+[MPI Rank 42]: Destroyed everything!
+Time Cost: 818968 us
+Destroyed the simulator
+[MPI Rank 45]: Destroyed everything!
+Time Cost: 819837 us
+Destroyed the simulator
+[MPI Rank 62]: Destroyed everything!
+Time Cost: 818755 us
+Destroyed the simulator
+[MPI Rank 41]: Destroyed everything!
+Time Cost: 822055 us
+Destroyed the simulator
