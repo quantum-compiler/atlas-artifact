@@ -1,7 +1,5 @@
 # Atlas: Hierarchical Partitioning for Quantum Circuit Simulation on GPUs
 
-[![DOI](https://zenodo.org/badge/640074505.svg)](https://zenodo.org/badge/latestdoi/640074505)
-
 We use the Perlmutter supercomputer to evaluate the performance of Atlas,
 and use a single-core CPU (can be a laptop) to evaluate the algorithms Stage and Kernelize.
 
@@ -32,8 +30,8 @@ cd build
 cmake ..
 
 # Copy circuits
-cd ../../../circuit
-bash copy.sh
+# cd ../../../circuit
+# bash copy.sh
 
 # The above needs to be done on both the single-core CPU and Perlmutter.
 # The following only needs to be done on Perlmutter.
@@ -62,8 +60,11 @@ To run the experiment and reproduce the results (takes ~14 hours on a single-cor
 ```shell
 # in quartz conda environment
 cd deps/quartz/build
+# make test_remove_swap
+# ./test_remove_swap
 make benchmark_ilp_num_stages
 cd ..
+# yes | cp -r ../../circuit/* circuit/
 ./build/benchmark_ilp_num_stages
 cp ilp_result.csv ../../staging_bench
 cd ../..
@@ -80,9 +81,18 @@ python dp_plot.py
 cd ..
 ```
 
-To run the experiment and reproduce the results (takes ~17 hours on a single-core CPU):
+To run the experiment and reproduce the results (takes ~13 hours on a single-core CPU):
 
 ```shell
+# Install the HiGHS solver
+cd deps/quartz/external/HiGHS
+mkdir build
+cd build
+cmake ..
+make -j 12
+cd ../../../../..
+export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact  # if not already set
+export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # if not already set
 # in quartz conda environment
 cd deps/quartz/build
 make benchmark_dp
@@ -442,7 +452,7 @@ pip install git+https://github.com/coin-or/pulp@2.7.0
 
 ```shell
 export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact  # if not already set
-export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin
+export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # if not already set
 cd $ATLAS_HOME
 cd perlmutter/e2e
 bash preprocess.sh  # takes around 17 minutes
