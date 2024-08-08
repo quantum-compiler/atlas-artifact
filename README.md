@@ -30,9 +30,10 @@ pip install matplotlib
 mkdir build
 cd build
 cmake ..
+cd ../..
 
-# Copy circuits
-# cd ../../../circuit
+# Copy circuits (unnecessary)
+# cd ../circuit
 # bash copy.sh
 
 # The above needs to be done on both the single-core CPU and Perlmutter.
