@@ -1,5 +1,5 @@
 file_list = [f'srun-{n}-{s}.sh' for n in [1, 2, 4, 8, 16, 32, 64, 128, 256]
-             for s in ['hyquas', 'quartz']] + ['cuQuantum.sh', 'Qiskit.sh']
+             for s in ['hyquas', 'quartz']] + ['cuQuantum.sh', 'Qiskit.sh', '../offload/srun_offload.sh']
 
 
 def replace_account_name(input_line, file_list):

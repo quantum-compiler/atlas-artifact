@@ -30,7 +30,16 @@ pip install matplotlib
 mkdir build
 cd build
 cmake ..
-cd ../..
+
+# Install the HiGHS solver
+cd ../external/HiGHS
+mkdir build
+cd build
+cmake ..
+make -j 12
+cd ../../../..
+export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact
+export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin
 
 # Copy circuits (unnecessary)
 # cd ../circuit
@@ -87,15 +96,6 @@ cd ..
 To run the experiment and reproduce the results (takes ~13 hours on a single-core CPU):
 
 ```shell
-# Install the HiGHS solver
-cd deps/quartz/external/HiGHS
-mkdir build
-cd build
-cmake ..
-make -j 12
-cd ../../../../..
-export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact  # if not already set
-export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # if not already set
 # in quartz conda environment
 cd deps/quartz/build
 make benchmark_dp
@@ -129,20 +129,10 @@ Following are the instructions to run the experiment and reproduce the results.
 
 In this section (end-to-end experiments), please make sure that the distributed GPU-based simulation is used (`USE_LEGION=OFF`).
 
-In addition, please run `export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact`.
+In addition, please make sure that the HiGHS solver is installed, the environment variable `ATLAS_HOME` is set,
+and `PATH` is updated to `$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin`.
 
-2. Install the HiGHS solver in Quartz:
-
-```shell
-cd deps/quartz/external/HiGHS
-mkdir build
-cd build
-cmake ..
-make -j 12
-cd ../../../../..
-```
-
-3. Create a Python 3.8 environment with PuLP (with HiGHS solver), pybind11, and Qiskit (Qiskit is not necessary for the end-to-end
+2. Create a Python 3.8 environment with PuLP (with HiGHS solver), pybind11, and Qiskit (Qiskit is not necessary for the end-to-end
    experiments but
    necessary for the DRAM offloading experiments):
 
@@ -153,7 +143,7 @@ pip install git+https://github.com/coin-or/pulp@2.7.0
 pip install qiskit pybind11
 ```
 
-4. Build and install:
+3. Build and install:
 
 ```shell
 # in pulp conda environment
@@ -164,12 +154,11 @@ make -j 12
 cd ..
 ```
 
-5. Run the sbatch scripts:
+4. Run the sbatch scripts:
 
 ```shell
 # in pulp conda environment
 cd perlmutter/e2e
-export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin  # please replace $ATLAS_HOME with the directory of atlas-artifact if this variable is not set
 sbatch srun-1-quartz.sh  # takes around 2 minutes (in background)
 sbatch srun-2-quartz.sh  # takes around 1 minute
 sbatch srun-4-quartz.sh  # takes around 2 minutes
@@ -296,19 +285,28 @@ Following are the instructions to run the experiment and reproduce the results.
 
 ### Atlas
 
-1. Set related environment variables in `config/config.linux` (setting `USE_LEGION=ON`), and use a Python 3.8
+1. Set related environment variables in `config/config.linux` **(setting `USE_LEGION=ON`)**, and use a Python 3.8
    environment with PuLP and Qiskit.
 2. Make sure the `setenv("PYTHONPATH", ...)` in `examples/legion-based/test_sim_legion.cc` is pointing to the correct
    location.
-3. Build and run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
+3. Build:
 
 ```shell
 cd build
 bash ../config/config.linux
 make -j 12
 cd ../perlmutter/offload
+```
+
+4. Either run in interactive mode (please replace `YOUR_ACCOUNT` with your account name):
+```shell
 salloc --nodes 1 -q regular --time 00:30:00 --constraint gpu --gpus-per-node 4 --account=YOUR_ACCOUNT
 conda activate pulp && time bash offload.sh && exit  # takes around 22 minutes
+cd ../..
+```
+or run in sbatch:
+```shell
+sbatch srun_offload.sh # takes around 22 minutes in background
 cd ../..
 ```
 
