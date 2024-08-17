@@ -41,10 +41,6 @@ cd ../../../..
 export ATLAS_HOME=${The_directory_running_git_clone}/atlas-artifact
 export PATH=$PATH:$ATLAS_HOME/deps/quartz/external/HiGHS/build/bin
 
-# Copy circuits (unnecessary)
-# cd ../circuit
-# bash copy.sh
-
 # The above needs to be done on both the single-core CPU and Perlmutter.
 # The following only needs to be done on Perlmutter.
 
