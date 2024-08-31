@@ -16,6 +16,7 @@ running_time = [{} for _ in range(num_t)]
 ilp_time = {}
 total_time = 0.0
 total_preprocessing_time = {}
+circuit_count = {}
 keep_circuit_names = {"ae", "dj", "ghz", "graphstate", "qft", "qpeexact", "su2random", "wstate", "ising", "qsvm",
                       "vqc", "hhl"}
 num_circuits = len(keep_circuit_names)
@@ -44,12 +45,14 @@ with open('dp_result.csv') as f:
         if circuit_name not in ilp_time.keys():
             ilp_time[circuit_name] = []
             total_preprocessing_time[circuit_name] = 0.0
+            circuit_count[circuit_name] = 0
         for i in range(num_t):
             running_time[i][circuit_name].append(float(numbers[i + num_t + 2].strip()))
             total_time += float(numbers[i + num_t + 2].strip())
         ilp_time[circuit_name].append(float(numbers[num_t * 2 + 2].strip()))
         total_preprocessing_time[circuit_name] += float(numbers[num_t * 2 + 2].strip()) + float(
             numbers[15 + num_t + 2].strip())
+        circuit_count[circuit_name] += 1
         total_time += float(numbers[num_t * 2 + 2].strip())
 
 results_without_hhl = [
@@ -87,7 +90,7 @@ running_time_geomean = [
 labels = ['Baseline', 'Atlas-Naive'] + ['Atlas'] * (num_t - 2)
 styles = ['.-', '+-'] + ['x-'] * (num_t - 2)
 markersize = [8] * num_t
-plot_loc = [15, 0]  # plot_loc = [15, 1, 0]
+plot_loc = [15, 1, 0]
 
 
 def plot_individual():
@@ -101,7 +104,7 @@ def plot_individual():
     # print(f'\\Cref{{{to_ref}}} show the preprocessing time of them.')
 
     for circuit in keep_circuit_names_sorted:
-        qubit_range = range(28, 35) if circuit != "hhl" else [4, 7, 9, 10]
+        qubit_range = range(28, 37) if circuit != "hhl" else [4, 7, 9, 10]
         plt.cla()
         plt.figure(constrained_layout=True)
         for i in plot_loc:
@@ -146,7 +149,7 @@ def plot_individual():
         plt.close()
 
     for circuit in keep_circuit_names_sorted:
-        qubit_range = range(28, 35) if circuit != "hhl" else [4, 7, 9, 10]
+        qubit_range = range(28, 37) if circuit != "hhl" else [4, 7, 9, 10]
         plt.cla()
         plt.figure(constrained_layout=True)
         for i in plot_loc:
@@ -366,10 +369,16 @@ def plot_pruning_threshold():
 
 
 if __name__ == '__main__':
+    plt.rcParams['pdf.fonttype'] = 42  # TrueType
     plot_individual()
     plot_geomean()
     plot_geomean_relative()
     plot_pruning_threshold()
     print('total time =', total_time)
     print('total preprocessing time =', total_preprocessing_time)
-    print(sum(v for k, v in total_preprocessing_time.items() if k != 'hhl'))
+    t = sum(v for k, v in total_preprocessing_time.items() if k != 'hhl')
+    ilp_t = sum(sum(v) for k, v in ilp_time.items() if k != 'hhl')
+    count = sum(v for k, v in circuit_count.items() if k != 'hhl')
+    print(f'{t} seconds preprocessing (among which {ilp_t} seconds for ILP) for {count} circuits')
+    print(f'{t / count} seconds on average for preprocessing')
+    print(f'{ilp_t / count} seconds on average for ILP and {(t - ilp_t) / count} seconds for DP')

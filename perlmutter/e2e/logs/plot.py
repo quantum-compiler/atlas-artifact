@@ -22,8 +22,8 @@ pattern_shuffles_hyquas = r"Logger\[(\d+)\]: Total Groups: (\d+) (\d+) (\d+) (\d
 # process data
 benchmark = {"ae", "dj", "ghz", "graphstate", "ising", "qft", "qpeexact", "qsvm", "su2random", "vqc", "wstate"}
 # benchmark = {"ae", "qft", "qftentangled", "ghz", "graphstate", "twolocalrandom", "realamprandom", "su2random"}
-num_qubits = [28,29,30,31,32,33,34]
-num_gpus = [1,2,4,8,16,32,64]
+num_qubits = [28,29,30,31,32,33,34,35,36]
+num_gpus = [1,2,4,8,16,32,64,128,256]
 # num_qubits = [28,29,30,31,32,33]
 # num_gpus = [1,2,4,8,16,32]
 launch_method = "result-srun"
@@ -72,6 +72,8 @@ for bench in benchmark:
     shuffle_time_quartz[bench] = shuffle_times
 
 print(simu_time_quartz['graphstate'])
+print(f"graphstate {simu_time_quartz['graphstate'][-1] / simu_time_quartz['graphstate'][0]}x")
+
 
 #read data from file: hyquas
 for bench in benchmark:
@@ -98,6 +100,8 @@ for bench in benchmark:
     num_shuffles_hyquas[bench] = num_shuffles
 
 print(simu_time_hyquas['graphstate'])
+print(f"graphstate {simu_time_hyquas['graphstate'][-1] / simu_time_hyquas['graphstate'][0]}x")
+
 
 #read data from file: cusv
 for bench in benchmark:
@@ -187,7 +191,7 @@ for circuit in benchmark:
     speedups.append(speedup.max())
 print('max speedup over best for each individual circuit', np.array(speedups).max())
 print('mean speedup over best for each individual circuit', np.array(mean_speedups).mean())
-def plot_perf(circuit):
+def plot_perf(circuit, show_full_qiskit=False):
     # plt.style.use('seaborn-bright')
     # plt.figure(figsize=(18, 9))
     plt.cla()
@@ -201,7 +205,6 @@ def plot_perf(circuit):
     ax = plt.gca()
     plt.grid(False, axis='y')
     best_baseline = np.repeat(1e12,len(num_qubits))
-    show_full_qiskit = False
     max_y = 0
     for baseline in baselines:
         if baseline != 'Qiskit':
@@ -213,7 +216,8 @@ def plot_perf(circuit):
         if baseline == 'Qiskit' and not show_full_qiskit and baselines[baseline][circuit][0] * 1.05 >= max_y:
             # out of plot, do not plot
             continue
-        plt.plot(num_qubits, baselines[baseline][circuit], m, label=name, markersize=8)
+        # ms -> s: divide by 1000
+        plt.plot(num_qubits, [x / 1000 if x is not None else None for x in baselines[baseline][circuit]], m, label=name, markersize=8)
         if baseline != 'Atlas':
             tmp = np.array(baselines[baseline][circuit])
             tmp[tmp==None] = 1e10
@@ -234,10 +238,10 @@ def plot_perf(circuit):
     if show_full_qiskit:
         plt.yscale('log')
     else:
-        plt.ylim(bottom=0, top=max_y)
+        plt.ylim(bottom=0, top=max_y / 1000)  # ms -> s
 
     plt.xlabel('Number of GPUs / Speedup of Atlas', fontsize=14, fontweight='bold')
-    plt.ylabel('Simulation Time (ms)', fontsize=14, fontweight='bold')
+    plt.ylabel('Simulation Time (s)', fontsize=14, fontweight='bold')
     fig = plt.gcf()
     plt.legend(fontsize=13, ncol=1)
     fig.set_size_inches(6, 2.9)
@@ -324,7 +328,7 @@ def plot_comm(circuit, font_size=14, font_size_legend=13, font_size_xticks=13, f
     plt.yticks(fontsize=font_size_yticks)
     plt.ylim(bottom=0, top=max_y)
 
-    plt.xlabel('Number of GPUs / Communication Time Percentage     ', fontsize=font_size, fontweight='bold')
+    plt.xlabel('Number of GPUs / Communication Time Percentage          ', fontsize=font_size, fontweight='bold')
     plt.ylabel('Time (ms)', fontsize=font_size, fontweight='bold')
     fig = plt.gcf()
     plt.legend(fontsize=font_size_legend, ncol=1)
@@ -408,10 +412,12 @@ def plot_comm_arithmean():
     plt.savefig('figures-comm/comm_mean.pdf', dpi=1000, bbox_inches='tight')
 
 
+plt.rcParams['pdf.fonttype'] = 42  # TrueType
 if not os.path.exists('figures'):
     os.makedirs('figures')
 for circuit in benchmark:
     plot_perf(circuit)
+    plot_perf(circuit, True)
 if not os.path.exists('figures-comm'):
     os.makedirs('figures-comm')
 for circuit in benchmark:

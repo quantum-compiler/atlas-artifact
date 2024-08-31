@@ -3,6 +3,7 @@ import os
 
 import matplotlib.pyplot as plt
 
+plt.rcParams['pdf.fonttype'] = 42  # TrueType
 results = [{}, {}, {}, {}]  # heuristics (#stages, #swaps), ilp (#stages, #swaps)
 num_of_num_local_qubits = {}
 max_global_qubits = 24

@@ -154,5 +154,6 @@ def plot_offload_atlas():
 
 
 if __name__ == '__main__':
+    plt.rcParams['pdf.fonttype'] = 42  # TrueType
     plot_offload_with_qdao()
     plot_offload_atlas()

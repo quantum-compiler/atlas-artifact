@@ -19,7 +19,7 @@ description = {
 def print_circuit_num_gates():
     for circuit_name in sorted(circuit_names):
         print(f'{circuit_name} & {description[circuit_name]}', end='')
-        for qubit in range(28, 35):
+        for qubit in range(28, 37):
             nwq_path = f'../circuit/NWQBench/{circuit_name}_n{qubit}_no_swap.qasm'
             mqt_path = f'../circuit/MQTBench_{qubit}q/{circuit_name}_indep_qiskit_{qubit}_no_swap.qasm'
             if os.path.exists(nwq_path):
